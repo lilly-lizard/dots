@@ -1,0 +1,37 @@
+{
+    "extensions.ignoreRecommendations": true,
+    "editor.minimap.enabled": false,
+    "cmake.configureOnOpen": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "files.associations": {
+        "*.fsh": "glsl",
+        "*.vsh": "glsl"
+    },
+    "glsllint.glslangValidatorPath": "C:\\Users\\David.Hamill\\scoop\\apps\\vulkan\\current\\Bin\\glslangValidator.exe",
+    "glsllint.glslangValidatorArgs": "-V",
+    "glsllint.additionalStageAssociations": {
+        ".fsh": "frag",
+        ".vsh": "vert"
+    },
+    "editor.insertSpaces": false,
+    "security.workspace.trust.enabled": false,
+    "cSpell.language": "en-GB",
+    "workbench.startupEditor": "none",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
+    "cSpell.userWords": [
+        "unessisary"
+    ],
+    "cSpell.enabled": true,
+    "vim.disableExtension": true,
+    "vim.useCtrlKeys": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "C:\\Users\\David.Hamill\\scoop\\shims\\nvim.exe",
+}

@@ -17,3 +17,6 @@ yabai -m config mouse_modifier cmd
 
 # focus follows mouse
 yabai -m config mouse_follows_focus off
+
+# float system preferences
+yabai -m rule --add app="^System Preferences$" manage=off

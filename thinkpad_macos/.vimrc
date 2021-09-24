@@ -21,9 +21,10 @@ set tabstop=4
 " allow backspace to work outside of current insert session
 set backspace=indent,eol,start
 
-" ctrl backspace delete word (same as ctrl + w)
+" ctrl/alt backspace delete word (same as ctrl + w)
 inoremap <C-BS> <C-w>
-inoremap <C-h> <C-w>
+" https://stackoverflow.com/questions/5379837/is-it-possible-to-mapping-alt-hjkl-in-insert-mode
+inoremap <Esc>ab <C-w>
 
 " scroll with arrow keys in normal mode
 nnoremap <Up> <C-y>

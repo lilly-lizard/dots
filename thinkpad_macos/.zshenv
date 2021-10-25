@@ -2,6 +2,9 @@ export VISUAL=vim
 
 export XDG_CONFIG_HOME=$HOME/.config
 
+# by default / and = are included here meaning that kill-word for example won't use these characters as delimiters
+export WORDCHARS="*?_-.[]~&;\!#$%^(){}<>"
+
 # rust
 source $HOME/.cargo/env
 

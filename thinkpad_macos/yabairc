@@ -18,5 +18,6 @@ yabai -m config mouse_modifier cmd
 # focus follows mouse
 yabai -m config mouse_follows_focus off
 
-# float system preferences
+# float apps by default
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Digital Colour Meter$" manage=off

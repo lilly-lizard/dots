@@ -71,8 +71,14 @@ alt + shift - escape : skhd --reload
 # close window
 alt - q : yabai -m window --close
 
-# open alacritty
+# open terminal
 alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# open finder
+alt - e : open /Users/davidhamill
+
+# open browser
+alt - b : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -81,10 +87,10 @@ alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
 # move window (within space)
-alt + shift - h : yabai -m window --swap west
-alt + shift - j : yabai -m window --swap south
-alt + shift - k : yabai -m window --swap north
-alt + shift - l : yabai -m window --swap east
+alt + ctrl - h : yabai -m window --swap west
+alt + ctrl - j : yabai -m window --swap south
+alt + ctrl - k : yabai -m window --swap north
+alt + ctrl - l : yabai -m window --swap east
 
 # floating window toggle
 alt - f : yabai -m window --toggle float
@@ -92,27 +98,27 @@ alt - f : yabai -m window --toggle float
 # below requires disabled SIP
 
 # create/destroy space
-alt - n : yabai -m space --create; yabai -m space --focus last
-alt + shift - n : yabai -m space --destroy
+#alt - n : yabai -m space --create; yabai -m space --focus last
+#alt + shift - n : yabai -m space --destroy
 
 # move spaces
-alt + ctrl - h : yabai -m space --focus prev
-alt + ctrl - l : yabai -m space --focus next
+#alt + shift - h : yabai -m space --focus prev
+#alt + shift - l : yabai -m space --focus next
 
 # got to space
-alt - 1 : yabai -m space --focus 1
-alt - 2 : yabai -m space --focus 2
-alt - 3 : yabai -m space --focus 3
-alt - 4 : yabai -m space --focus 4
-alt - 5 : yabai -m space --focus 5
+#alt - 1 : yabai -m space --focus 1
+#alt - 2 : yabai -m space --focus 2
+#alt - 3 : yabai -m space --focus 3
+#alt - 4 : yabai -m space --focus 4
+#alt - 5 : yabai -m space --focus 5
 # todo create space if not created: yabai -m space --create
 
 # send window to space
-alt + shift - 1 : yabai -m window --space 1
-alt + shift - 2 : yabai -m window --space 2
-alt + shift - 3 : yabai -m window --space 3
-alt + shift - 4 : yabai -m window --space 4
-alt + shift - 5 : yabai -m window --space 5
+#alt + shift - 1 : yabai -m window --space 1
+#alt + shift - 2 : yabai -m window --space 2
+#alt + shift - 3 : yabai -m window --space 3
+#alt + shift - 4 : yabai -m window --space 4
+#alt + shift - 5 : yabai -m window --space 5
 
 # ~~ EXAMPLES ~~
 

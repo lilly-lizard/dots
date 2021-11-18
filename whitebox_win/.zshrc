@@ -22,11 +22,15 @@ bindkey -v
 # show mode status on right
 function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} ${EPS1}"
+	# disable blinking in normal mode
+	if [ ${KEYMAP} = 'vicmd' ]; then echo -en '\e[?12l'; else echo -en '\e[?12h'; fi
     zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+# vi mode backspace after leaving insert mode
+bindkey -v '^?' backward-delete-char
 
 # tab completion navigation
 bindkey -M menuselect 'h' vi-backward-char
@@ -42,41 +46,45 @@ bindkey '^N' down-history
 bindkey '^K' history-beginning-search-backward
 bindkey '^J' history-beginning-search-forward
 
-typeset -g -A key
+# ctrl + H/L: forward/backward-word
+bindkey '^H' backward-word
+bindkey '^L' forward-word
 
 # fixing some key functions
+typeset -g -A key
 key[Home]="${terminfo[khome]}"
 key[End]="${terminfo[kend]}"
 key[Insert]="${terminfo[kich1]}"
-key[Backspace]="${terminfo[kbs]}"
-key[Delete]="${terminfo[kdch1]}"
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"      beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"       end-of-line
 [[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
-[[ -n "${key[Backspace]}" ]] && bindkey -- "${key[Backspace]}" backward-delete-char
-[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"    delete-char
 
 # command aliases
+# https://en.wikipedia.org/wiki/ANSI_escape_code
+# '\e' -> ESC
+# '\e[' -> CSI
+# '\e[?25h' -> show cursor
+# https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#cursor-visibility
+# '\e[?12h' -> enabling blinking
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd $(cat $HOME/.config/ranger/.rangerdir); echo -e "\x1b[?12;25h"; }
-function vim () { command vim "$@"; echo -e "\e[?12h"; }
-#source $HOME/Documents/scripts/aliases.sh
+# enable blinking and show cursor after ranger
+function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd $(cat $HOME/.config/ranger/.rangerdir); echo -en "\e[?12;25h"; }
+# enable blinking after vim
+function vim () { command vim "$@"; echo -en "\e[?12h"; }
 
-# bindkeys
+# ctrl + backspace
 bindkey '^H' backward-kill-word
-bindkey '^[[3^' kill-word
-bindkey '^[Od' backward-word
-bindkey '^[^[[D' backward-word
-bindkey '^[Oc' forward-word
-bindkey '^[^[[C' forward-word
+
+#bindkey '^[[3^' kill-word
+#bindkey '^[Od' backward-word
+#bindkey '^[^[[D' backward-word
+#bindkey '^[Oc' forward-word
+#bindkey '^[^[[C' forward-word
 
 # ctrl + left/right
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-
-# set repeat speed for x (because it sometimes get reset)
-#xset r rate 200 35
 
 # allow ^ glob operator for match excludes
 setopt extendedglob

@@ -4,9 +4,6 @@ set notermguicolors t_Co=16
 filetype plugin on
 set viminfo+=n~/.config/vim/.viminfo
 
-" make backspace work normally in insert mode
-set backspace=indent,eol,start
-
 " disable screen flash
 set t_vb=
 " disable hell screech

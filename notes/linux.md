@@ -14,6 +14,21 @@ ctrl + w; w
 - close window
 ctrl + w; c
 
+# git
+
+- change name of default branch, update on local clones:
+	git branch -m master main
+	git fetch origin
+	git branch -u origin/main main
+	git remote set-head origin -a
+- init gpg commit signing
+	export GPG_TTY=$(tty) # should be in .zshenv
+	git config user.name "dave-is-dave"
+    git config user.email "bigbanana29@aol.com"
+    gpg --list-secret-keys --keyid-format=long # sec rsa4096/<key ID>
+    git config user.signingkey <key ID>
+    git config commit.gpgsign true
+
 # misc
 
 - show command terminal writes

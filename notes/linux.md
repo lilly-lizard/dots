@@ -28,6 +28,8 @@ ctrl + w; c
     gpg --list-secret-keys --keyid-format=long # sec rsa4096/<key ID>
     git config user.signingkey <key ID>
     git config commit.gpgsign true
+- config global gitignore
+	git config --global core.excludesfile ~/.config/gitignore_global
 
 # misc
 

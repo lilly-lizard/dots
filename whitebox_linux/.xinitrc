@@ -50,8 +50,5 @@ picom -CGb -m 1.0 -i 1.0
 # free wireless devices jic
 doas rfkill unblock all
 
-# and then disable wifi lol
-#doas ip link set wlan0 down
-
 exec echo "---" >>/tmp/sxhkd.log & echo "---" >>/tmp/bspwm.log
 exec bspwm >>/tmp/bspwm.log 2>&1

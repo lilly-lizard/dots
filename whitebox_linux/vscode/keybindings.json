@@ -1,0 +1,27 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "ctrl+-",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		"key": "ctrl+=",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+=",
+		"command": "editor.action.fontZoomIn"
+	},
+	{
+		"key": "ctrl+-",
+		"command": "editor.action.fontZoomOut"
+	},
+	{
+		"key": "ctrl+alt+s",
+		"command": "cSpell.toggleEnableForGlobal"
+	},
+	{
+		"key": "ctrl+alt+v",
+		"command": "toggleVim"
+	},
+]

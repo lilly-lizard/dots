@@ -65,17 +65,21 @@ alias ds='doas systemctl'
 function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd $(cat $HOME/.config/ranger/.rangerdir); } #echo -e "\x1b[?12;25h";
 #function vim () { command vim "$@"; echo -e "\e[?12h"; }
 
-# bindkeys
+# ctrl + backspace
 bindkey '^H' backward-kill-word
 bindkey '^[[3^' kill-word
 bindkey '^[Od' backward-word
 bindkey '^[^[[D' backward-word
 bindkey '^[Oc' forward-word
 bindkey '^[^[[C' forward-word
+# alt + backspace
+bindkey '\e^?' backward-delete-word
 
 # ctrl + left/right
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey '^H' backward-word
+bindkey '^L' forward-word
 
 # allow ^ glob operator for match excludes
 setopt extendedglob

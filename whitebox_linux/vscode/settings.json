@@ -1,0 +1,40 @@
+{
+    "extensions.ignoreRecommendations": true,
+    "editor.minimap.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.insertSpaces": false,
+    "security.workspace.trust.enabled": false,
+    "cSpell.language": "en-GB",
+    "workbench.startupEditor": "none",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "cSpell.userWords": [
+        "unessisary"
+    ],
+    "cSpell.enabled": true,
+    "editor.fontFamily": "'Input', 'Font Awesome 5 Free Solid', 'Material-Design-Iconic-Font', 'MaterialIcons'",
+    "editor.fontSize": 12,
+    "workbench.colorTheme": "Winter is Coming (Dark Blue)",
+    //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
+    //"cmake.configureOnOpen": false,
+    //"files.associations": {
+    //    "*.fsh": "glsl",
+    //    "*.vsh": "glsl"
+    //},
+    //"glsllint.glslangValidatorPath": "C:\\Users\\David.Hamill\\scoop\\apps\\vulkan\\current\\Bin\\glslangValidator.exe",
+    //"glsllint.glslangValidatorArgs": "-V",
+    //"glsllint.additionalStageAssociations": {
+    //    ".fsh": "frag",
+    //    ".vsh": "vert"
+    //},
+    //"vim.disableExtension": true,
+    //"vim.useCtrlKeys": true,
+    //"vim.enableNeovim": true,
+    //"vim.neovimPath": "C:\\Users\\David.Hamill\\scoop\\shims\\nvim.exe",
+}

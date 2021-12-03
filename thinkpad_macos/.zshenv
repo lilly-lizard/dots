@@ -2,6 +2,9 @@ export VISUAL=vim
 
 export XDG_CONFIG_HOME=$HOME/.config
 
+# GPG command line
+export GPG_TTY=$(tty)
+
 # by default / and = are included here meaning that kill-word for example won't use these characters as delimiters
 export WORDCHARS="*?_-.[]~&;\!#$%^(){}<>"
 

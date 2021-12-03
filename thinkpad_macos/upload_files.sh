@@ -6,3 +6,5 @@ cp ~/.config/zsh/.zshenv .
 cp ~/.config/alacritty/alacritty.yml .
 cp ~/.config/skhd/skhdrc .
 cp ~/.config/yabai/yabairc .
+cp ~/.config/karabiner/karabiner.json ./karabiner/karabiner.json
+cp -r ~/.config/karabiner/assets/* ./karabiner/assets/

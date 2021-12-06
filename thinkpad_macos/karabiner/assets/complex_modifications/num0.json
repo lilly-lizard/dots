@@ -1,0 +1,33 @@
+{
+  "title": "alt + shift + 0 -> numpad 0",
+  "rules": [
+    {
+      "description": "alt + shift + 0 -> numpad 0",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": [
+                "right_option",
+				"right_shift"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+			  "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

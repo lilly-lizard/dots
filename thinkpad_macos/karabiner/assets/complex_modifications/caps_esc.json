@@ -1,0 +1,29 @@
+{
+  "title": "Command + Esc -> Caps_Lock",
+  "rules": [
+    {
+      "description": "Command + Esc -> Caps_Lock",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

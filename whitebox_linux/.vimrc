@@ -37,8 +37,8 @@ set tabstop=4
 set backspace=indent,eol,start
 
 " ctrl backspace delete word (same as ctrl + w)
-inoremap <C-BS> <C-w>
-inoremap <C-h> <C-w>
+"inoremap <C-BS> <C-w>
+"inoremap <C-h> <C-w>
 
 " up down to scroll in normal mode
 nnoremap <Up> <C-y>

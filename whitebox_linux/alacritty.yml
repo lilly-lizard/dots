@@ -124,7 +124,7 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Medium
+    style: Bold
 
   # Italic font face
   italic:
@@ -148,7 +148,7 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Medium Italic
+    style: BoldItalic
 
   # Point size
   size: 10.0
@@ -174,7 +174,7 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
 colors:
@@ -732,7 +732,7 @@ key_bindings:
   #- { key: F,              mods: Control|Shift,           action: SearchForward    }
   #- { key: B,              mods: Control|Shift,           action: SearchBackward   }
   #- { key: C,              mods: Control|Shift, mode: Vi, action: ClearSelection   }
-  #- { key: Insert,         mods: Shift,                   action: PasteSelection   }
+  - { key: Insert,         mods: Shift,                   action: PasteSelection   }
   #- { key: Key0,           mods: Control,                 action: ResetFontSize    }
   # change font size
   - { key: Equals,         mods: Control,                 action: IncreaseFontSize }

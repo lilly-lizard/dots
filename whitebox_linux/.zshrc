@@ -89,9 +89,6 @@ xset r rate 200 35
 
 #ln -fs /home/david/mnt/data/android ~/.android
 
-# allow ^ glob operator for match excludes
-setopt extendedglob
-
 # Load zsh-syntax-highlighting; should be last.
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'

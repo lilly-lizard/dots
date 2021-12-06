@@ -5,6 +5,7 @@ cp ~/.config/zsh/.zshrc .
 cp ~/.config/zsh/.zshenv .
 cp ~/.config/gitignore_global .
 
+cp ~/.config/zsh/.zprofile .
 cp ~/.xinitrc .
 cp ~/.config/alacritty/alacritty.yml .
 cp ~/.config/sxhkd/sxhkdrc .

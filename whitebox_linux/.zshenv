@@ -26,6 +26,9 @@ export RUA_SUDO_COMMAND="doas"
 # defines installed vulkan layers (enabled by the application)
 export VK_LAYER_PATH=/usr/share/vulkan/explicit_layer.d
 
+# dark theme for gtk apps
+export GTK_THEME=Adwaita:dark
+
 # less: ascii colors and no bell
 export LESS="$LESS -R -Q"
 # termcap color customisation (e.g. affects less and man):

@@ -44,6 +44,10 @@ set backspace=indent,eol,start
 nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
 
+" ctrl+e/y to scroll in insert mode
+inoremap <C-e> <C-o><C-e>
+inoremap <C-y> <C-o><C-y>
+
 " search within subfolders (e.g. :find filename)
 set path+=**
 

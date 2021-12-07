@@ -20,7 +20,6 @@
     "cSpell.enabled": true,
     "editor.fontFamily": "'Input', 'Font Awesome 5 Free Solid', 'Material Icons'",
     "editor.fontSize": 12,
-    "workbench.colorTheme": "Winter is Coming (Dark Black)",
     //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
     //"cmake.configureOnOpen": false,
     //"files.associations": {

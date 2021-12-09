@@ -26,7 +26,7 @@ font-3 = SourceHanSansJP-ExtraLight
 enable-ipc = true
 
 modules-left = powermenu
-modules-right = sound-sink-status playerctl wireless-network wired-network time
+modules-right = sound-sink-status playerctl wired-network wireless-network time
 
 [bar/bottom-right]
 ;monitor = HDMI-2

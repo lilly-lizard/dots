@@ -17,7 +17,7 @@
     "cSpell.userWords": [
         "unessisary"
     ],
-    "cSpell.enabled": true,
+    "cSpell.enabled": false,
     "editor.fontFamily": "'Input', 'Font Awesome 5 Free Solid', 'Material Icons'",
     "editor.fontSize": 12,
     //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",

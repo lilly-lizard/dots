@@ -84,7 +84,7 @@ bindkey '^L' forward-word
 # allow ^ glob operator for match excludes
 setopt extendedglob
 
-# set repeat speed for x (because it sometimes get reset)
+# set repeat speed for X11 (because it sometimes get reset)
 xset r rate 200 35
 
 #ln -fs /home/david/mnt/data/android ~/.android

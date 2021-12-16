@@ -38,11 +38,11 @@ xset r rate 200 35
 
 # set second monitor to portrait
 #xrandr --output HDMI-2 --rotate right --right-of HDMI-1
-xrandr --output HDMI-0 --rotate right --right-of DP-0
+#xrandr --output HDMI-0 --rotate right --right-of DP-0
 
 # set primary monitor position
 #xrandr --output HDMI-1 --pos 0x840
-xrandr --output DP-0 --pos 0x840
+#xrandr --output DP-0 --pos 0x840
 
 # compositor (allows transparency)
 picom -CGb -m 1.0 -i 1.0

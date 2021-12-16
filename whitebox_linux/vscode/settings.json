@@ -17,9 +17,13 @@
     "cSpell.userWords": [
         "unessisary"
     ],
-    "cSpell.enabled": false,
     "editor.fontFamily": "'Input', 'Font Awesome 5 Free Solid', 'Material Icons'",
-    "editor.fontSize": 12,
+    "editor.fontSize": 11,
+    "terminal.integrated.fontSize": 12,
+    "debug.console.fontSize": 12,
+    "markdown.preview.fontSize": 12,
+    "workbench.colorTheme": "Ayu Light Bordered",
+    "scm.diffDecorationsGutterVisibility": "hover",
     //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
     //"cmake.configureOnOpen": false,
     //"files.associations": {

@@ -3,8 +3,8 @@
 # Terminate already running bar instances
 killall -q polybar
 
-echo "---" | tee -a /tmp/polybar_bottom1.log /tmp/polybar_bottom1.log
-echo "---" | tee -a /tmp/polybar_bottom2.log /tmp/polybar_bottom2.log
+echo "---" | tee -a /tmp/polybar_bottom1.log /tmp/polybar_bottom_left.log
+echo "---" | tee -a /tmp/polybar_bottom2.log /tmp/polybar_bottom_right.log
 echo "---" | tee -a /tmp/polybar_top.log /tmp/polybar_top.log
 
 if [ -z "$FOREGROUND_BR"	]; then export FOREGROUND_BR=$FOREGROUND;	fi
@@ -13,7 +13,7 @@ if [ -z "$GREY_BR"			]; then export GREY_BR=$GREY;				fi
 
 polybar --reload top-right >>/tmp/polybar_top.log 2>&1 &
 polybar --reload bottom-left >>/tmp/polybar_bottom_left.log 2>&1 &
-FOREGROUND=$FOREGROUND_BR TRANSPARENT=$TRANSPARENT_BR GREY=$GREY_BR polybar --reload bottom-right >>/tmp/polybar_bottom_right.log 2>&1 &
+#FOREGROUND=$FOREGROUND_BR TRANSPARENT=$TRANSPARENT_BR GREY=$GREY_BR polybar --reload bottom-right >>/tmp/polybar_bottom_right.log 2>&1 &
 
 echo "bars launched."
 

@@ -212,5 +212,5 @@ alt + m
 # application shortcuts
 #
 
-alt + {b,e}
-	{brave, nemo}
+alt + {b,e,c}
+	{brave, nemo, code}

@@ -1,40 +1,61 @@
 {
-    "extensions.ignoreRecommendations": true,
-    "editor.minimap.enabled": false,
     "editor.acceptSuggestionOnEnter": "off",
+	"editor.fontFamily": "'SF Mono', 'monospace', monospace",
+    "editor.fontSize": 12,
+    "editor.insertSpaces": false,
+    "editor.minimap.enabled": false,
+    // rust fmt on save (requires rust-analyzer extension)
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.editor.untitled.hint": "hidden",
-    "editor.insertSpaces": false,
-    "security.workspace.trust.enabled": false,
-    "cSpell.language": "en-GB",
     "workbench.startupEditor": "none",
+
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.sendKeybindingsToShell": true,
+
+
+    // X11 custom key bindings fix
+    "keyboard.dispatch": "keyCode",
+    
+    "security.workspace.trust.enabled": false,
+
+    "debug.console.fontSize": 12,
+    "markdown.preview.fontSize": 12,
+    "scm.diffDecorationsGutterVisibility": "hover",
+    "explorer.confirmDragAndDrop": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
+
+    "extensions.ignoreRecommendations": true,
+
+    // extensions
+
+    "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "unessisary"
     ],
-    "editor.fontFamily": "'Input', 'Font Awesome 5 Free Solid', 'Material Icons'",
-    "editor.fontSize": 11,
-    "terminal.integrated.fontSize": 12,
-    "debug.console.fontSize": 12,
-    "markdown.preview.fontSize": 12,
-    "workbench.colorTheme": "Ayu Light Bordered",
-    "scm.diffDecorationsGutterVisibility": "hover",
+    "editor.foldingMaximumRegions": 50000,
+    "cSpell.enabled": false,
+    "workbench.colorTheme": "Default Light+",
+
+    //"glsllint.glslangValidatorArgs": "-V",
+    "glsllint.additionalStageAssociations": {
+        ".fsh": "frag",
+        ".vsh": "vert",
+    },
+    
     //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
     //"cmake.configureOnOpen": false,
     //"files.associations": {
     //    "*.fsh": "glsl",
     //    "*.vsh": "glsl"
-    //},
-    //"glsllint.glslangValidatorPath": "C:\\Users\\David.Hamill\\scoop\\apps\\vulkan\\current\\Bin\\glslangValidator.exe",
-    //"glsllint.glslangValidatorArgs": "-V",
-    //"glsllint.additionalStageAssociations": {
-    //    ".fsh": "frag",
-    //    ".vsh": "vert"
     //},
     //"vim.disableExtension": true,
     //"vim.useCtrlKeys": true,

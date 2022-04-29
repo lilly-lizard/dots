@@ -37,18 +37,18 @@ xset r rate 200 35
 #xgamma -gamma 0.7
 
 # set second monitor to portrait
-#xrandr --output HDMI-2 --rotate right --right-of HDMI-1
-#xrandr --output HDMI-0 --rotate right --right-of DP-0
+xrandr --output HDMI-2 --rotate right --right-of HDMI-1
 
 # set primary monitor position
-#xrandr --output HDMI-1 --pos 0x840
-#xrandr --output DP-0 --pos 0x840
+xrandr --output HDMI-1 --pos 0x500
 
 # compositor (allows transparency)
 picom -CGb -m 1.0 -i 1.0
 
 # free wireless devices jic
 doas rfkill unblock all
+
+xrdb $HOME/.config/X11/.Xresources
 
 exec echo "---" >>/tmp/sxhkd.log & echo "---" >>/tmp/bspwm.log
 exec bspwm >>/tmp/bspwm.log 2>&1

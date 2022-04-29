@@ -29,23 +29,23 @@ alt + q
 	bspc node -c
 
 # alternate between the tiled and monocle layout
-super + shift + f
+super + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest window
-super + r
-	bspc node -s biggest.window
+# swap the current node and the previous window
+super + w
+	bspc node -s older.window
 
 #
 # state/flags
 #
 
 # set the window state
-super + {f,t,g}
+super + {r,t,g}
 	bspc node -t {floating,tiled,fullscreen}
 
 # set the node flags
@@ -90,31 +90,33 @@ alt + {o,i}
 # focus or send to the given desktop
 alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
 	bspc {desktop -f,node -d} '^{1,6,2,7,3,8,4,9,5,10}'
-alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
-	bspc {desktop -f,node -d} '^{1,6,2,7,3,8,4,9,5,10}'
+#alt + {_,shift + }{1,2,3,4,5}
+#	bspc {desktop -f,node -d} '^{1,2,3,4,5}'
 alt + button{4,5}
 	bspc monitor -f pointed; \
     bspc desktop -f {prev,next}.local
+alt + {_,shift + }{n,p}
+	bspc {desktop -f,node -d} {prev,next}.local
 
 #
 # preselect
 #
 
 # preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+#super + ctrl + {h,j,k,l}
+#	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+#super + ctrl + {1-9}
+#	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
+#super + ctrl + space
+#	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+#super + ctrl + shift + space
+#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -179,13 +181,16 @@ XF86AudioMicMute
 	set-source-mute @DEFAULT_SOURCE@ toggle
 
 XF86AudioPlay
-	playerctl play-pause
+	mpris2controller PlayPause
+	#playerctl play-pause
 
 XF86AudioPrev
-	playerctl previous
+	mpris2controller Previous
+	#playerctl previous
 
 XF86AudioNext
-	playerctl next
+	mpris2controller Next
+	#playerctl next
 
 #
 # audio sink selection
@@ -195,11 +200,11 @@ XF86AudioNext
 # - alsa_output.pci-0000_0c_00.3.analog-stereo
 #
 
-alt + n
-	pacmd "set-default-sink alsa_output.usb-Logitech_G533_Gaming_Headset-00.analog-stereo" & polybar-msg hook sound-sink-status 2
-
-alt + m
-	pacmd "set-default-sink alsa_output.pci-0000_0c_00.3.analog-stereo" & polybar-msg hook sound-sink-status 3
+#alt + n
+#	pacmd "set-default-sink alsa_output.usb-Logitech_G533_Gaming_Headset-00.analog-stereo" & polybar-msg hook sound-sink-status 2
+#
+#alt + m
+#	pacmd "set-default-sink alsa_output.pci-0000_0c_00.3.analog-stereo" & polybar-msg hook sound-sink-status 3
 
 #
 # paste from primary clipboard https://unix.stackexchange.com/questions/11889/pasting-x-selection-not-clipboard-contents-with-keyboard
@@ -212,5 +217,5 @@ alt + m
 # application shortcuts
 #
 
-alt + {b,e,c}
-	{brave, nemo, code}
+super + {f,e,c}
+	{firefox, nemo, code}

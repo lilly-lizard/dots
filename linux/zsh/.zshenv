@@ -12,10 +12,12 @@ export BROWSER=brave
 
 # config locations
 export XDG_CONFIG_HOME=$HOME/.config
-export MYVIMRC=$HOME/.config/vim/.vimrc
-export VIMINIT="source ${MYVIMRC}"
-export CARGO_HOME=$HOME/.config/cargo
-export RUSTUP_HOME=$HOME/.config/rustup
+#export MYVIMRC=$HOME/.config/vim/.vimrc
+#export VIMINIT="source ${MYVIMRC}"
+
+# data locations
+export CARGO_HOME=$HOME/.local/share/cargo
+export RUSTUP_HOME=$HOME/.local/share/rustup
 
 # enable gpg command line
 export GPG_TTY=$(tty)
@@ -27,8 +29,8 @@ export RUA_SUDO_COMMAND="doas"
 export VK_LAYER_PATH=/usr/share/vulkan/explicit_layer.d
 
 # dark theme for gtk apps
-#export GTK_THEME=Adwaita:dark
-export GTK_THEME=Yaru-Orange-dark
+#export GTK_THEME=Yaru-Orange-dark
+export GTK_THEME="$(cat ~/.config/theme_gtk)"
 
 # less: ascii colors and no bell
 export LESS="$LESS -R -Q"

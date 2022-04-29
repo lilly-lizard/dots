@@ -14,10 +14,16 @@
     },
     "workbench.editor.untitled.hint": "hidden",
     "workbench.startupEditor": "none",
+    "workbench.colorCustomizations": {
+    	//"editor.background": "#f3f3f3",
+		//"sideBar.background": "#e8e8e8",
+		//"list.hoverBackground": "#dfdfdf",
+		//"notebook.cellBorderColor": "#dfdfdf",
+		//"editor.rangeHighlightBackground": "#caca003a",
+    },
 
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.sendKeybindingsToShell": true,
-
 
     // X11 custom key bindings fix
     "keyboard.dispatch": "keyCode",
@@ -42,14 +48,22 @@
         "unessisary"
     ],
     "editor.foldingMaximumRegions": 50000,
-    "cSpell.enabled": false,
-    "workbench.colorTheme": "Default Light+",
 
-    //"glsllint.glslangValidatorArgs": "-V",
+    "glsllint.glslangValidatorArgs": "-V",
     "glsllint.additionalStageAssociations": {
         ".fsh": "frag",
         ".vsh": "vert",
     },
+    
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        //"warning",
+        //"info",
+    ],
+    "window.menuBarVisibility": "toggle",
+    "cSpell.enabled": false,
+    "errorLens.gutterIconsEnabled": true,
+    "scm.diffDecorations": "gutter",
     
     //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
     //"cmake.configureOnOpen": false,

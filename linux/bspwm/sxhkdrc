@@ -25,8 +25,6 @@ super + alt + {t,r}
 # close/kill
 super + {_,shift + }q
 	bspc node -{c,k}
-alt + q
-	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m
@@ -37,8 +35,8 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the previous window
-super + w
-	bspc node -s older.window
+alt + w
+	bspc node -s last.window
 
 #
 # state/flags
@@ -62,6 +60,23 @@ alt + {_,shift + }{h,j,k,l}
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
+# focus or send to the given desktop
+alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
+	bspc {desktop -f,node -d} '^{1,6,2,7,3,8,4,9,5,10}'
+#alt + {_,shift + }{1,2,3,4,5}
+#	bspc {desktop -f,node -d} '^{1,2,3,4,5}'
+alt + button{4,5}
+	bspc monitor -f pointed; \
+    bspc desktop -f {next,prev}.local
+
+# alt tab
+alt + Tab
+	bspc node -f last
+
+# focus the next/previous desktop in the current monitor
+alt + {_,shift + }{p,n}
+	bspc {desktop -f,node -d} {prev,next}.local
+
 # focus the node for the given path jump
 super + ctrl + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
@@ -70,33 +85,12 @@ super + ctrl + {p,b,comma,period}
 #super + {period,comma}
 #	bspc node -f {next,prev}.local.!hidden.window
 
-alt + Tab
-	bspc node -f last
-
-# focus the next/previous desktop in the current monitor
-alt + bracket{left,right}
-	bspc node -f {prev,next}
-
-# focus the last node/desktop
-alt + Tab
-	bspc desktop -f last
-
 # focus the older or newer node in the focus history
 alt + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
-alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
-	bspc {desktop -f,node -d} '^{1,6,2,7,3,8,4,9,5,10}'
-#alt + {_,shift + }{1,2,3,4,5}
-#	bspc {desktop -f,node -d} '^{1,2,3,4,5}'
-alt + button{4,5}
-	bspc monitor -f pointed; \
-    bspc desktop -f {prev,next}.local
-alt + {_,shift + }{n,p}
-	bspc {desktop -f,node -d} {prev,next}.local
 
 #
 # preselect

@@ -64,7 +64,8 @@ alias pacman='pacman --color always'
 alias dp='doas pacman --color always'
 alias ds='doas systemctl'
 alias vim='vim -u /home/david/.config/vim/.vimrc'
-function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd $(cat $HOME/.config/ranger/.rangerdir); } #echo -e "\x1b[?12;25h";
+alias ddocker='doas docker'
+function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
 #function vim () { command vim "$@"; echo -e "\e[?12h"; }
 
 # ctrl + backspace

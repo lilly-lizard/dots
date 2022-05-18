@@ -44,4 +44,12 @@
 		"command": "-editor.action.copyLinesUpAction",
 		"when": "editorTextFocus && !editorReadonly"
 	},
+	{
+		"key": "shift+insert",
+		"command": "editor.action.selectionClipboardPaste"
+	},
+	{
+		"key": "shift+insert",
+		"command": "-editor.action.clipboardPasteAction"
+	},
 ]

@@ -4,9 +4,9 @@
     "editor.fontSize": 12,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": false,
-    // rust fmt on save (requires rust-analyzer extension)
+    "editor.find.seedSearchStringFromSelection": "selection",
     "[rust]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true, // rust fmt on save (requires rust-analyzer extension)
     },
 
     "workbench.editorAssociations": {
@@ -14,34 +14,32 @@
     },
     "workbench.editor.untitled.hint": "hidden",
     "workbench.startupEditor": "none",
-    "workbench.colorCustomizations": {
-    	//"editor.background": "#f3f3f3",
-		//"sideBar.background": "#e8e8e8",
-		//"list.hoverBackground": "#dfdfdf",
-		//"notebook.cellBorderColor": "#dfdfdf",
-		//"editor.rangeHighlightBackground": "#caca003a",
-    },
+    "explorer.confirmDragAndDrop": false,
 
+    "terminal.external.linuxExec": "alacritty",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.sendKeybindingsToShell": true,
-
-    // X11 custom key bindings fix
-    "keyboard.dispatch": "keyCode",
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.fontFamily": "'Input', 'monospace', monospace",
     
     "security.workspace.trust.enabled": false,
+    "scm.diffDecorations": "gutter",
 
     "debug.console.fontSize": 12,
     "markdown.preview.fontSize": 12,
-    "scm.diffDecorationsGutterVisibility": "hover",
-    "explorer.confirmDragAndDrop": false,
+
+    "window.menuBarVisibility": "toggle",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
 
+    "keyboard.dispatch": "keyCode", // X11 custom key bindings fix
+    
     "extensions.ignoreRecommendations": true,
-
-    // extensions
+    
+    // EXTENSIONS
 
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
@@ -60,19 +58,30 @@
         //"warning",
         //"info",
     ],
-    "window.menuBarVisibility": "toggle",
-    "cSpell.enabled": false,
     "errorLens.gutterIconsEnabled": true,
-    "scm.diffDecorations": "gutter",
     
-    //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
-    //"cmake.configureOnOpen": false,
+    "vim.disableExtension": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.useCtrlKeys": true,
+
+    "todohighlight.keywords": [
+        "TODO",
+    ],
+    "cSpell.enabled": false,
+    "editor.find.cursorMoveOnType": false,
+    "errorLens.removeLinebreaks": false,
+
     //"files.associations": {
     //    "*.fsh": "glsl",
     //    "*.vsh": "glsl"
     //},
-    //"vim.disableExtension": true,
-    //"vim.useCtrlKeys": true,
-    //"vim.enableNeovim": true,
-    //"vim.neovimPath": "C:\\Users\\David.Hamill\\scoop\\shims\\nvim.exe",
+    // light+ mod:
+    //"workbench.colorCustomizations": {
+    	//"editor.background": "#f3f3f3",
+		//"sideBar.background": "#e8e8e8",
+		//"list.hoverBackground": "#dfdfdf",
+		//"notebook.cellBorderColor": "#dfdfdf",
+		//"editor.rangeHighlightBackground": "#caca003a",
+    //},
 }

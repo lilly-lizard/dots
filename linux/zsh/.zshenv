@@ -1,12 +1,12 @@
 # path
-export PATH=$PATH:/home/david/Documents/scripts
+export PATH=$HOME/Documents/bin:$HOME/Documents/scripts:$PATH
 
 # zsh word commands skip these characters
 # by default this includes / and =
 export WORDCHARS="*?_-.[]~&;\!#$%^(){}<>"
 
 # default programs
-export VISUAL=vim
+export VISUAL=nvim
 export TERMINAL=alacritty
 export BROWSER=brave
 

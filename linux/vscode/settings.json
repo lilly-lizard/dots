@@ -68,9 +68,12 @@
     "todohighlight.keywords": [
         "TODO",
     ],
-    "cSpell.enabled": false,
     "editor.find.cursorMoveOnType": false,
     "errorLens.removeLinebreaks": false,
+    "git.autofetch": true,
+    "cSpell.maxNumberOfProblems": 1000,
+    "cSpell.enabled": false,
+    "workbench.colorTheme": "CRT UI - Default with alt syntax color",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

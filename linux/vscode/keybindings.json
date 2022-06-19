@@ -52,4 +52,32 @@
 		"key": "shift+insert",
 		"command": "-editor.action.clipboardPasteAction"
 	},
+	{
+		"key": "ctrl+k ctrl+g",
+		"command": "git-graph.view"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "-search.action.copyPath",
+		"when": "fileMatchOrFolderMatchWithResourceFocus"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "-copyFilePath",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "workbench.action.terminal.openNativeConsole",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "-workbench.action.terminal.openNativeConsole",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+q",
+		"command": "workbench.action.focusActiveEditorGroup"
+	},
 ]

@@ -1,7 +1,12 @@
+call plug#begin('~/.local/share/vim-plugins')
+Plug 'tomasr/molokai'
+call plug#end()
+
 set nocompatible
 filetype off
 
 syntax on
+colorscheme molokai
 "set notermguicolors t_Co=16
 
 " bold and italics coloring (great for markdown!)
@@ -11,6 +16,7 @@ syntax on
 
 " because 8 is too much imo
 set tabstop=4
+set shiftwidth=4
 
 " make backspace work normally in insert mode
 set backspace=indent,eol,start
@@ -44,3 +50,4 @@ let g:netrw_liststyle=3 " tree view
 
 " disable auto-commenting on new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+

@@ -2,23 +2,6 @@ set nocompatible
 filetype off
 
 " ~~~~~~~~~~~ Vundle begin ~~~~~~~~~~~
-
-"" set the runtime path to include Vundle and initialize
-"set rtp+=~/.config/vim/bundle/Vundle.vim
-"call vundle#begin()
-"" alternatively, pass a path where Vundle should install plugins
-""call vundle#begin('~/some/path/here')
-"
-"" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
-"
-"" vim glsl
-"Plugin 'tikhomirov/vim-glsl'
-"
-"" All of your Plugins must be added before the following line
-"call vundle#end()
-"filetype plugin indent on
-
 " ~~~~~~~~~~~ Vundle end ~~~~~~~~~~~
 
 set viminfo+=n~/.config/vim/.viminfo
@@ -35,6 +18,9 @@ set tabstop=4
 
 " make backspace work normally in insert mode
 set backspace=indent,eol,start
+
+" show search result count
+set shortmess-=S
 
 " ctrl backspace delete word (same as ctrl + w)
 "inoremap <C-BS> <C-w>

@@ -52,4 +52,20 @@
 		"key": "shift+insert",
 		"command": "-editor.action.clipboardPasteAction"
 	},
+
+	{ "key": "ctrl+tab", "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup" },
+    { "key": "ctrl+shift+tab", "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup" },
+
+    { "key": "ctrl+tab", "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen" },
+    { "key": "ctrl+shift+tab", "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen" },
+
+    { "key": "ctrl+tab", "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor" },
+    { "key": "ctrl+shift+tab", "command": "workbench.action.quickOpenLeastRecentlyUsedEditor" },
+
+    { "key": "ctrl+tab", "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inEditorsPicker && inQuickOpen" },
+    { "key": "ctrl+shift+tab", "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inEditorsPicker && inQuickOpen" },
 ]

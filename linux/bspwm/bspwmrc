@@ -113,9 +113,9 @@ else
 fi
 
 # start dunst desktop notification manager (ctrl + space to dismiss notifications)
-if [[ -z $(pidof dunst) ]]; then
-	dunst &
-fi
+#if [[ -z $(pidof dunst) ]]; then
+#    dunst &
+#fi
 
 # start polkit authentication
 #if ! pgrep 'polkit-dumb' &> /dev/null ; then polkit-dumb-agent &> $HOME/.config/polkit-dumb-agent.pid ; fi

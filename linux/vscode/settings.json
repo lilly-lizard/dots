@@ -72,8 +72,7 @@
     "errorLens.removeLinebreaks": false,
     "git.autofetch": true,
     "cSpell.maxNumberOfProblems": 1000,
-    "cSpell.enabled": false,
-    "workbench.colorTheme": "CRT UI - Default with alt syntax color",
+    "workbench.colorTheme": "Greyout",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

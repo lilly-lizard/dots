@@ -50,5 +50,16 @@ doas rfkill unblock all
 
 xrdb $HOME/.config/X11/.Xresources
 
+
+# start dunst desktop notification manager (ctrl + space to dismiss notifications)
+if [[ -z $(pidof dunst) ]]; then
+    dunst &
+fi
+
+# start parcellite clipboard manager
+if [[ -z $(pidof parcellite) ]]; then
+	parcellite &
+fi
+
 exec echo "---" >>/tmp/sxhkd.log & echo "---" >>/tmp/bspwm.log
 exec bspwm >>/tmp/bspwm.log 2>&1

@@ -69,7 +69,7 @@ alias ds='doas systemctl'
 alias vim='vim -u /home/david/.config/vim/.vimrc'
 alias ddocker='doas docker'
 alias diff='diff --color=auto'
-function ranger() { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
+function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
 # circle gcc11 workaround
 alias circle='circle --nostdinc -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++ -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/x86_64-pc-linux-gnu'
 
@@ -81,8 +81,6 @@ bindkey '^E' kill-word
 bindkey '\e^?' backward-delete-word
 
 # ctrl + left/right
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
 bindkey '^H' backward-word
 bindkey '^L' forward-word
 

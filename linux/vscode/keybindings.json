@@ -35,6 +35,14 @@
 		"when": "editorTextFocus && !editorReadonly"
 	},
 	{
+		"key": "shift+insert",
+		"command": "editor.action.selectionClipboardPaste"
+	},
+	{
+		"key": "shift+insert",
+		"command": "-editor.action.clipboardPasteAction"
+	},
+	{
 		"key": "ctrl+alt+up",
 		"command": "editor.action.copyLinesUpAction",
 		"when": "editorTextFocus && !editorReadonly"
@@ -43,14 +51,6 @@
 		"key": "ctrl+shift+alt+up",
 		"command": "-editor.action.copyLinesUpAction",
 		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "shift+insert",
-		"command": "editor.action.selectionClipboardPaste"
-	},
-	{
-		"key": "shift+insert",
-		"command": "-editor.action.clipboardPasteAction"
 	},
 
 	{ "key": "ctrl+tab", "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup" },

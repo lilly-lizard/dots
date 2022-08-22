@@ -1,0 +1,9 @@
+#compdef set-theme
+
+_set-theme() {
+	local -a theme_names
+	theme_names=('light' 'grass' 'coral' 'yellow' 'flowers' 'dark')
+	_describe 'theme name' theme_names
+}
+
+_set-theme "$@"

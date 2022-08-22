@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# autocompletion list in /usr/share/zsh/site-functions/_set-theme
+
+export THEME="$1"
+. ~/.config/bspwm/bspwmrc
+echo "${THEME}" > ~/.config/theme_system
+
+#if [ "$THEME" = "light" ]; then echo "Yaru-Orange" > ~/.config/theme_gtk;
+#elif [ "$THEME" = "grass" ]; then echo "Yaru-Orange" > ~/.config/theme_gtk;
+#elif [ "$THEME" = "coral" ]; then echo "Yaru-Orange-dark" > ~/.config/theme_gtk;
+#elif [ "$THEME" = "flowers" ]; then echo "Yaru-Orange-dark" > ~/.config/theme_gtk;
+#elif [ "$THEME" = "dark" ]; then echo "Yaru-Orange-dark" > ~/.config/theme_gtk;
+#else echo "Yaru-Orange-dark" > ~/.config/theme_gtk; fi
+echo "Yaru-Orange-dark" > ~/.config/theme_gtk

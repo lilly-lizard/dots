@@ -35,6 +35,7 @@ RWin & Enter::{
 }
 
 ; win + n/m -> switch audio device to headphones/line out
+; https://www.autohotkey.com/boards/viewtopic.php?f=76&t=49980&sid=125851e747395fbb413a10f92c51a1c5&start=20
 
 	#Requires AutoHotkey v2.0-a136-feda41f4
 	; http://www.daveamenta.com/2011-05/programmatically-or-command-line-change-the-default-sound-playback-device-in-windows-7/

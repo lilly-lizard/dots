@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Path
+Target = etc/xdg/autostart/parcellite-startup.desktop
+
+[Action]
+Description = Edit the parcellite autostart entry to run without system tray icon
+When = PostTransaction
+Exec = /usr/bin/sed -i -e 's/Exec\=parcellite/Exec=parcellite --no-icon/g' /etc/xdg/autostart/parcellite-startup.desktop

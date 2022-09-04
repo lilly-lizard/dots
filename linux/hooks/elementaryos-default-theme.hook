@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Path
+Target = usr/share/backgrounds/elementaryos-default
+
+[Action]
+Description = Set the default pantheon background to my background
+When = PostTransaction
+Exec = /usr/bin/ln -f -s /usr/share/backgrounds/8kjxa7ielvb21.jpg /usr/share/backgrounds/elementaryos-default

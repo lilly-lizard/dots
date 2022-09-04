@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Path
+Target = usr/share/applications/ulauncher.desktop
+
+[Action]
+Description = Disable shadows for ulauncher
+When = PostTransaction
+Exec = /usr/bin/sed -i -e 's/--hide-window/--hide-window --no-window-shadow/g' /usr/share/applications/ulauncher.desktop

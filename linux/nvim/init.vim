@@ -14,9 +14,9 @@ colorscheme molokai
 "highlight htmlItalic gui=italic ctermfg=blue
 "highlight htmlTagName gui=italic ctermfg=green
 
-" because 8 is too much imo
-set tabstop=4
-set shiftwidth=4
+" tab size
+set tabstop=8
+set shiftwidth=8
 
 " make backspace work normally in insert mode
 set backspace=indent,eol,start

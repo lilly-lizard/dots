@@ -1,6 +1,6 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'SF Mono', 'monospace', monospace",
+	"editor.fontFamily": "'Fira Mono', 'monospace', monospace", // SF Mono
     "editor.fontSize": 12,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": false,
@@ -66,12 +66,18 @@
     "vim.useCtrlKeys": true,
 
     "todohighlight.keywords": [
+        "todo",
         "TODO",
     ],
     "editor.find.cursorMoveOnType": false,
     "errorLens.removeLinebreaks": false,
     "git.autofetch": true,
     "cSpell.maxNumberOfProblems": 1000,
+    "cSpell.enabled": false,
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.stickyScroll.enabled": true,
     "workbench.colorTheme": "Greyout",
 
     //"files.associations": {

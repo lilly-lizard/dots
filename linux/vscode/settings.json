@@ -1,87 +1,90 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'SF Mono', 'monospace', monospace",
-    "editor.fontSize": 12,
+    "editor.fontFamily": "'Fira Mono', 'SF Mono', monospace", // Sf Mono, Fira Mono
+    "editor.fontSize": 13,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": false,
-    "editor.find.seedSearchStringFromSelection": "selection",
+    "editor.showFoldingControls": "always",
+    // rust fmt on save (requires rust-analyzer extension)
     "[rust]": {
-        "editor.formatOnSave": true, // rust fmt on save (requires rust-analyzer extension)
+        "editor.formatOnSave": true
     },
-
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.editor.untitled.hint": "hidden",
     "workbench.startupEditor": "none",
-    "explorer.confirmDragAndDrop": false,
-
+    "terminal.integrated.fontSize": 13,
     "terminal.external.linuxExec": "alacritty",
-    "terminal.integrated.fontSize": 12,
-    "terminal.integrated.sendKeybindingsToShell": true,
-    "terminal.integrated.allowChords": false,
-    "terminal.integrated.allowMnemonics": true,
-    "terminal.integrated.fontFamily": "'Input', 'monospace', monospace",
-    
-    "security.workspace.trust.enabled": false,
-    "scm.diffDecorations": "gutter",
-
-    "debug.console.fontSize": 12,
-    "markdown.preview.fontSize": 12,
-
     "window.menuBarVisibility": "toggle",
+    "explorer.confirmDelete": false,
+    // X11 custom key bindings fix
+    "keyboard.dispatch": "keyCode",
+    "security.workspace.trust.enabled": false,
+    "debug.console.fontSize": 12,
+    "explorer.confirmDragAndDrop": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
-
-    "keyboard.dispatch": "keyCode", // X11 custom key bindings fix
-    
     "extensions.ignoreRecommendations": true,
-    
-    // EXTENSIONS
-
+    // extensions
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "unessisary"
     ],
     "editor.foldingMaximumRegions": 50000,
-
-    "glsllint.glslangValidatorArgs": "-V",
+    //"glsllint.glslangValidatorArgs": "-V",
     "glsllint.additionalStageAssociations": {
         ".fsh": "frag",
         ".vsh": "vert",
+        ".fs.glsl": "frag",
+        ".vs.glsl": "vert",
+        ".cs.glsl": "comp",
     },
-    
-    "errorLens.enabledDiagnosticLevels": [
-        "error",
-        //"warning",
-        //"info",
-    ],
-    "errorLens.gutterIconsEnabled": true,
-    
-    "vim.disableExtension": true,
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/usr/bin/nvim",
-    "vim.useCtrlKeys": true,
-
+    "glsllint.glslangValidatorPath": "/usr/bin/glslangValidator",
+    "todohighlight.isCaseSensitive": false,
     "todohighlight.keywords": [
         "TODO",
     ],
+    "debug.allowBreakpointsEverywhere": true,
+    "php.validate.enable": false,
+    "markdown.preview.fontSize": 15,
+    "terminal.integrated.allowChords": false,
+    "glsllint.glslangValidatorArgs": "-V",
+    "cmake.toolset": "",
+    "scm.diffDecorations": "gutter",
+    "editor.stickyScroll.enabled": true,
+    "cSpell.enableFiletypes": [
+        "toml"
+    ],
+    "terminal.integrated.fontFamily": "'SF Mono', 'monospace'",
+    "workbench.iconTheme": "file-icons",
+    "debug.terminal.clearBeforeReusing": true,
+    "git.confirmSync": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.terminal.focusTabs",
+        "-workbench.action.quickOpen"
+    ],
     "cSpell.enabled": false,
-    "editor.find.cursorMoveOnType": false,
-    "errorLens.removeLinebreaks": false,
-
+    "workbench.colorTheme": "Greyout",
+    //"workbench.colorCustomizations": {
+    //  "editorBracketHighlight.foreground1": "#5caeef",
+    //  "editorBracketHighlight.foreground2": "#dfb976",
+    //  "editorBracketHighlight.foreground3": "#c172d9",
+    //  "editorBracketHighlight.foreground4": "#4fb1bc",
+    //  "editorBracketHighlight.foreground5": "#97c26c",
+    //  "editorBracketHighlight.foreground6": "#abb2c0",
+    //  "editorBracketHighlight.unexpectedBracket.foreground": "#db6165"
+    //},
+    //"python.defaultInterpreterPath": "C:\\Users\\David.Hamill\\scoop\\shims\\python.exe",
+    //"cmake.configureOnOpen": false,
     //"files.associations": {
     //    "*.fsh": "glsl",
     //    "*.vsh": "glsl"
     //},
-    // light+ mod:
-    //"workbench.colorCustomizations": {
-    	//"editor.background": "#f3f3f3",
-		//"sideBar.background": "#e8e8e8",
-		//"list.hoverBackground": "#dfdfdf",
-		//"notebook.cellBorderColor": "#dfdfdf",
-		//"editor.rangeHighlightBackground": "#caca003a",
-    //},
+    //"vim.disableExtension": true,
+    //"vim.useCtrlKeys": true,
+    //"vim.enableNeovim": true,
+    //"vim.neovimPath": "C:\\Users\\David.Hamill\\scoop\\shims\\nvim.exe"
 }

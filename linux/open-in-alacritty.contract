@@ -1,0 +1,4 @@
+[Contractor Entry]
+Name=Open in alacritty
+MimeType=inode/directory
+Exec=alacritty --working-directory %U

@@ -25,6 +25,14 @@
 		"command": "toggleVim"
 	},
 	{
+		"key": "ctrl+alt+=",
+		"command": "workbench.action.navigateForward"
+	},
+	{
+		"key": "ctrl+shift+-",
+		"command": "-workbench.action.navigateForward"
+	},
+	{
 		"key": "ctrl+alt+down",
 		"command": "editor.action.copyLinesDownAction",
 		"when": "editorTextFocus && !editorReadonly"
@@ -52,20 +60,77 @@
 		"command": "-editor.action.copyLinesUpAction",
 		"when": "editorTextFocus && !editorReadonly"
 	},
-
-	{ "key": "ctrl+tab", "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup" },
-    { "key": "ctrl+shift+tab", "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup" },
-
-    { "key": "ctrl+tab", "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
-        "when": "inEditorsPicker && inQuickOpen" },
-    { "key": "ctrl+shift+tab", "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
-        "when": "inEditorsPicker && inQuickOpen" },
-
-    { "key": "ctrl+tab", "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor" },
-    { "key": "ctrl+shift+tab", "command": "workbench.action.quickOpenLeastRecentlyUsedEditor" },
-
-    { "key": "ctrl+tab", "command": "workbench.action.quickOpenNavigateNext",
-        "when": "inEditorsPicker && inQuickOpen" },
-    { "key": "ctrl+shift+tab", "command": "workbench.action.quickOpenNavigatePrevious",
-        "when": "inEditorsPicker && inQuickOpen" },
+	{
+		"key": "ctrl+k ctrl+g",
+		"command": "git-graph.view"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+		"when": "!activeEditorGroupEmpty"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+		"when": "!activeEditorGroupEmpty"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
+		"when": "!activeEditorGroupEmpty"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+		"when": "!activeEditorGroupEmpty"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+		"when": "inEditorsPicker"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
+		"when": "inEditorsPicker"
+	},
+	{
+		"key": "ctrl+k ctrl+h",
+		"command": "-workbench.action.output.toggleOutput",
+		"when": "workbench.panel.output.active"
+	},
+	{
+		"key": "ctrl+k ctrl+h",
+		"command": "editor.debug.action.showDebugHover",
+		"when": "editorTextFocus && inDebugMode"
+	},
+	{
+		"key": "ctrl+k ctrl+i",
+		"command": "-editor.debug.action.showDebugHover",
+		"when": "editorTextFocus && inDebugMode"
+	},
+	{
+		"key": "ctrl+k ctrl+h",
+		"command": "editor.action.showHover",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+i",
+		"command": "-editor.action.showHover",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+h",
+		"command": "workbench.action.showTreeHover",
+		"when": "customTreeView && listFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+i",
+		"command": "-workbench.action.showTreeHover",
+		"when": "customTreeView && listFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+i",
+		"command": "workbench.action.selectIconTheme"
+	}
 ]

@@ -14,6 +14,9 @@ colorscheme molokai
 "highlight htmlItalic gui=italic ctermfg=blue
 "highlight htmlTagName gui=italic ctermfg=green
 
+" disable mouse
+set mouse=
+
 " because 8 is too much imo
 set tabstop=4
 set shiftwidth=4

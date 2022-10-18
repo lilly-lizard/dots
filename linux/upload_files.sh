@@ -15,8 +15,8 @@ cp ~/.config/sxhkd/sxhkdrc bspwm/
 cp ~/.config/bspwm/bspwmrc bspwm/
 cp -r ~/.config/polybar bspwm/
 
-cp ~/.config/Code\ -\ OSS/User/settings.json vscode/
-cp ~/.config/Code\ -\ OSS/User/keybindings.json vscode/
+cp ~/.config/Code/User/settings.json vscode/
+cp ~/.config/Code/User/keybindings.json vscode/
 
 cp -r ~/.config/rua/wrap_args.d rua/
 

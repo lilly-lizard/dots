@@ -10,11 +10,6 @@ cp ~/.config/zsh/.zshenv zsh/
 cp ~/.config/zsh/.zprofile zsh/
 cp ~/.config/alacritty/alacritty.yml alacritty/
 
-cp ~/.xinitrc bspwm/
-cp ~/.config/sxhkd/sxhkdrc bspwm/
-cp ~/.config/bspwm/bspwmrc bspwm/
-cp -r ~/.config/polybar bspwm/
-
 cp ~/.config/Code/User/settings.json vscode/
 cp ~/.config/Code/User/keybindings.json vscode/
 

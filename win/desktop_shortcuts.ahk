@@ -22,6 +22,16 @@
 	SendInput "#{Right}"
 }
 
+; alt + n/p -> ctrl + super + right/left to switch desktops
+
+!n::{
+	SendInput "^#{Right}"
+}
+
+!p::{
+	SendInput "^#{Left}"
+}
+
 ; super + enter -> terminal
 
 RWin & Enter::{

@@ -1,8 +1,9 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.fontFamily": "'Fira Mono', 'SF Mono', 'Cascadia Mono', monospace", // Sf Mono, Fira Mono
+    "editor.fontFamily": "'Fira Mono', 'SF Mono', 'Cascadia Mono', monospace", // Sf Mono, Fira Mono, Cascadia Mono
     "editor.fontSize": 13,
     "editor.insertSpaces": false,
+    "glsllint.glslangValidatorPath": "/usr/bin/glslangValidator",
     "editor.minimap.enabled": false,
     "editor.showFoldingControls": "always",
     // rust fmt on save (requires rust-analyzer extension)
@@ -42,7 +43,6 @@
         ".vs.glsl": "vert",
         ".cs.glsl": "comp",
     },
-    "glsllint.glslangValidatorPath": "/usr/bin/glslangValidator",
     "todohighlight.isCaseSensitive": false,
     "todohighlight.keywords": [
         "TODO",
@@ -58,7 +58,7 @@
     "cSpell.enableFiletypes": [
         "toml"
     ],
-    "terminal.integrated.fontFamily": "'SF Mono', 'monospace'",
+    "terminal.integrated.fontFamily": "'SF Mono', 'Cascadia Mono', 'monospace'",
     "workbench.iconTheme": "file-icons",
     "debug.terminal.clearBeforeReusing": true,
     "git.confirmSync": false,
@@ -67,7 +67,6 @@
         "-workbench.action.quickOpen"
     ],
     "cSpell.enabled": false,
-    "workbench.colorTheme": "Greyout",
     //"workbench.colorCustomizations": {
     //  "editorBracketHighlight.foreground1": "#5caeef",
     //  "editorBracketHighlight.foreground2": "#dfb976",

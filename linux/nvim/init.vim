@@ -1,5 +1,7 @@
-call plug#begin('~/.local/share/vim-plugins')
+call plug#begin('~/.config/nvim/plugins')
 Plug 'tomasr/molokai'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
 
 set nocompatible
@@ -7,7 +9,6 @@ filetype off
 
 syntax on
 colorscheme molokai
-"set notermguicolors t_Co=16
 
 " bold and italics coloring (great for markdown!)
 "highlight htmlBold gui=bold ctermfg=yellow
@@ -20,6 +21,10 @@ set mouse=
 " because 8 is too much imo
 set tabstop=4
 set shiftwidth=4
+
+" relative line numbers with absolute cursor line
+set nu
+set rnu
 
 " make backspace work normally in insert mode
 set backspace=indent,eol,start
@@ -54,3 +59,5 @@ let g:netrw_liststyle=3 " tree view
 " disable auto-commenting on new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
+source $HOME/.config/nvim/sub_init.lua.vim

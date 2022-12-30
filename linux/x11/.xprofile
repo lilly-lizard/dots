@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
+xkbcomp $HOME/.config/X11/keymap.xkb $DISPLAY &

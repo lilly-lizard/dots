@@ -6,6 +6,7 @@ Icon=Alacritty
 Terminal=false
 Categories=System;TerminalEmulator;
 MimeType=inode/directory
+NoDisplay=true
 
 Name=Alacritty - Open Directory
 GenericName=Terminal

@@ -12,6 +12,7 @@ cp ~/.config/zsh/.zshenv zsh/
 cp ~/.config/alacritty/*(.) alacritty/
 cp -r ~/.config/rua/wrap_args.d rua/
 cp -r ~/.config/ranger/* ranger/
+cp -r ~/.config/ncmpcpp/* ncmpcpp/
 
 cp ~/.config/Code/User/settings.json vscode/
 cp ~/.config/Code/User/keybindings.json vscode/

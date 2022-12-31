@@ -22,6 +22,10 @@ set mouse=
 set tabstop=4
 set shiftwidth=4
 
+" d doesn't cut (sends to black hole reg)
+nnoremap x "_x
+vnoremap x "_x
+
 " relative line numbers with absolute cursor line
 set nu
 set rnu
@@ -60,4 +64,4 @@ let g:netrw_liststyle=3 " tree view
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
-source $HOME/.config/nvim/sub_init.lua.vim
+source /home/david/.config/nvim/sub_init.lua.vim

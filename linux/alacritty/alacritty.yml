@@ -5,8 +5,13 @@
 # These configuration files will be loaded in order, replacing values in files
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
-#import:
-#  - /path/to/alacritty.yml
+import:
+  - /home/david/.config/alacritty/antarc.yml
+  #- /home/david/.config/alacritty/molokai.yml
+  #- /home/david/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  #- /home/david/alacritty/catppuccin/catppuccin-macchiato.yml
+  #- /home/david/alacritty/catppuccin/catppuccin-frappe.yml
+  #- /home/david/alacritty/catppuccin/catppuccin-latte.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -21,7 +26,7 @@
   #TERM: alacritty
 
 window:
-  opacity: 0.75
+  opacity: 0.7
 
   # Window dimensions (changes require restart)
   #
@@ -45,8 +50,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 4
-    y: 4
+    x: 8
+    y: 8
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -110,8 +115,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: SF Mono
-    #family: monospace
+    #family: SF Mono
+    family: Fira Mono
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -122,8 +127,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
-    #family: monospace
+    #family: SF Mono
+    family: Fira Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -134,8 +139,8 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
-    #family: monospace
+    #family: SF Mono
+    family: Fira Mono
 
     # The `style` can be specified to pick a specific face.
     style: Regular Italic
@@ -146,14 +151,14 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
-    #family: monospace
+    #family: SF Mono
+    family: Fira Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 14.0 #11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -178,12 +183,12 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
-colors:
+# Colors
+#colors:
   # Default colors
-  primary:
-    background: '#000000'
-    foreground: '#eeeeee'
+  #primary:
+  #  background: '#000000'
+  #  foreground: '#eeeeee'
 
     # Bright and dim foreground colors
     #
@@ -242,35 +247,26 @@ colors:
     #  foreground: '#1d1f21'
 
   # Normal colors
-  normal:
-    black:   '#bbbbbb'
-    red:     '#ff4120'
-    green:   '#46f079'
-    yellow:  '#ff9e0e'
-    blue:    '#a187ff'
-    magenta: '#f655a6'
-    cyan:    '#00ffe8'
-    white:   '#ffffff'
+  #normal:
+  #  black:   '#bbbbbb'
+  #  red:     '#ff4120'
+  #  green:   '#46f079'
+  #  yellow:  '#ff9e0e'
+  #  blue:    '#a187ff'
+  #  magenta: '#f655a6'
+  #  cyan:    '#00ffe8'
+  #  white:   '#ffffff'
 
   # Bright colors
-  bright:
-    black:   '#aaaaaa'
-    red:     '#c9371d'
-    green:   '#0ac266'
-    yellow:  '#d47500'
-    blue:    '#7855f6'
-    magenta: '#c91d73'
-    cyan:    '#00ccbb'
-    white:   '#eeeeee'
-
-    #black:   '#cccccc'
-    #red:     '#ff1c56'
-    #green:   '#78ffa0'
-    #yellow:  '#ff9c19'
-    #blue:    '#a187ff'
-    #magenta: '#ff309b'
-    #cyan:    '#00ffe8'
-    #white:   '#ffffff'
+  #bright:
+  #  black:   '#aaaaaa'
+  #  red:     '#c9371d'
+  #  green:   '#0ac266'
+  #  yellow:  '#d47500'
+  #  blue:    '#7855f6'
+  #  magenta: '#c91d73'
+  #  cyan:    '#00ccbb'
+  #  white:   '#eeeeee'
 
   # Dim colors
   #

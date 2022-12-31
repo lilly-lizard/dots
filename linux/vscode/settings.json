@@ -1,7 +1,6 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.fontFamily": "'Fira Mono', 'SF Mono', 'Cascadia Mono', monospace", // Sf Mono, Fira Mono, Cascadia Mono
-    "editor.fontSize": 13,
+    "editor.fontFamily": "'Fira Mono', 'SF Mono', 'Cascadia Mono', monospace",
     "editor.insertSpaces": false,
     "glsllint.glslangValidatorPath": "/usr/bin/glslangValidator",
     "editor.minimap.enabled": false,
@@ -15,14 +14,12 @@
     },
     "workbench.editor.untitled.hint": "hidden",
     "workbench.startupEditor": "none",
-    "terminal.integrated.fontSize": 13,
     "terminal.external.linuxExec": "alacritty",
     "window.menuBarVisibility": "toggle",
     "explorer.confirmDelete": false,
     // X11 custom key bindings fix
     "keyboard.dispatch": "keyCode",
     "security.workspace.trust.enabled": false,
-    "debug.console.fontSize": 12,
     "explorer.confirmDragAndDrop": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -49,11 +46,10 @@
     ],
     "debug.allowBreakpointsEverywhere": true,
     "php.validate.enable": false,
-    "markdown.preview.fontSize": 15,
+    "markdown.preview.fontSize": 18,
     "terminal.integrated.allowChords": false,
     "glsllint.glslangValidatorArgs": "-V",
     "cmake.toolset": "",
-    "scm.diffDecorations": "gutter",
     "editor.stickyScroll.enabled": true,
     "cSpell.enableFiletypes": [
         "toml"
@@ -67,6 +63,23 @@
         "-workbench.action.quickOpen"
     ],
     "cSpell.enabled": false,
+    "scm.inputFontSize": 16,
+    "colorize.languages": [
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "postcss",
+        "sss",
+        "stylus",
+        "xml",
+        "svg"
+    ],
+    "window.zoomLevel": 1,
+    "editor.fontSize": 14,
+    "[Log]": {
+        "editor.fontSize": 14
+    }
     //"workbench.colorCustomizations": {
     //  "editorBracketHighlight.foreground1": "#5caeef",
     //  "editorBracketHighlight.foreground2": "#dfb976",

@@ -1,0 +1,158 @@
+{
+    "layer": "top", // on top of windows
+    "position": "bottom",
+
+    "height": 51, // can be removed for auto height
+    "spacing": 5,
+    //"margin-left": 25,
+    //"margin-right": 25,
+    "margin-top": -10,
+    //"margin-bottom": 5,
+
+    "modules-left": ["wlr/workspaces"],
+    "modules-right": ["network", "backlight", "pulseaudio", "battery", "clock"],
+    "modules-center": ["custom/now_playing"],
+
+	// Modules
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": " {icon} ",
+        "on-click": "activate"
+        // "format-icons":{
+        //     "10":"10"
+        // }
+    },
+
+    "custom/now_playing": {
+        "return-type": "json",
+        "exec": "~/Documents/bin/hyprland/tools/waybar-now-playing.sh",
+        "escape": true
+    },
+
+    // "custom/waybar-mpris": {
+    //     "return-type": "json",
+    //     "exec": "echo '   '",
+    //     "on-click": "waybar-mpris --send toggle",
+    //     // This option will switch between players on right click.
+    //         "on-click-right": "waybar-mpris --send player-next",
+    //     // The options below will switch the selected player on scroll
+    //         // "on-scroll-up": "waybar-mpris --send player-next",
+    //         // "on-scroll-down": "waybar-mpris --send player-prev",
+    //     // The options below will go to next/previous track on scroll
+    //         // "on-scroll-up": "waybar-mpris --send next",
+    //         // "on-scroll-down": "waybar-mpris --send prev",
+    //     "escape": true
+    // },
+
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 60,
+        "format": "{:%I:%M %p}",
+        "max-length": 25
+    },
+
+    "cpu": {
+        "interval":1,
+        "format": "{icon0} {icon1} {icon2} {icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "memory": {
+        "format": "{}% "
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C",
+        "format": ""
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " {volume}%",
+        "format-bluetooth": " {format}",
+        "format-bluetooth-muted": " {format_muted}",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 2, // %, can be a float
+		"smooth-scrolling-threshold": 0.5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+		"on-scroll-up": "brightnessctl s +5%",
+		"on-scroll-down": "brightnessctl s 5%-",
+		"smooth-scrolling-threshold": 1.0,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "via {gwaddr} {ifname}",
+        "format-linked": "",
+        "format-disconnected": "wifi",
+        "format-alt": "   "
+    },
+
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}

@@ -1,5 +1,5 @@
 * {
-    font-family: FiraCode , Noto Sans,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Noto Sans", "Font Awesome 6 Free";
     font-size: 13px;
 }
 
@@ -111,6 +111,8 @@ window#waybar {
 }
 
 #custom-now_playing{
+    font-size: 13px;
+    font-family: "Iosevka SS18", "Font Awesome 6 Free";
     padding-left: 15px;
     padding-right: 15px;
 }

@@ -18,5 +18,6 @@ cp ~/.config/Code/User/settings.json vscode/
 cp ~/.config/Code/User/keybindings.json vscode/
 
 cp ~/.config/hypr/*(.) hypr/
+cp -r ~/Documents/bin/hyprland hypr/scripts
 cp -r ~/.config/waybar/* waybar/
 

@@ -85,6 +85,7 @@ alias ds='doas systemctl'
 alias vim='vim -u /home/david/.config/vim/.vimrc'
 alias ddocker='doas docker'
 alias diff='diff --color=auto'
+alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
 # circle gcc11 workaround
 #alias circle='circle --nostdinc -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++ -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/x86_64-pc-linux-gnu'

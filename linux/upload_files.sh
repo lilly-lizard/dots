@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 cp ~/.config/gitignore_global .
 

@@ -6,8 +6,9 @@ pgrep -x sxhkd > /dev/null || sxhkd >>/tmp/sxhkd.log 2>&1 &
 
 # query monitor names:
 # bspc query -M --names
-bspc monitor HDMI-1 -d 1 3 5 7 9
-bspc monitor HDMI-2 -d 2 4 6 8 0
+bspc monitor HDMI-0 -d 1 2 3 4 5
+#bspc monitor HDMI-1 -d 1 3 5 7 9
+#bspc monitor HDMI-2 -d 2 4 6 8 0
 
 bspc config click_to_focus any
 bspc config initial_polarity second_child
@@ -20,7 +21,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 
 # application rules (find name with xprop)
-bspc rule -a 'Steam' desktop=^10
+bspc rule -a 'Steam' desktop=^5
 #bspc rule -a 'rdesktop' desktop=^5
 
 #bspc rule -a 'Nemo' state=floating

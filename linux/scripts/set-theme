@@ -4,7 +4,7 @@
 
 export THEME="$1"
 . ~/.config/bspwm/bspwmrc
-echo "${THEME}" > ~/.config/theme_system
+echo "${THEME}" > ~/.config/archie/theme_system
 
 #if [ "$THEME" = "light" ]; then echo "Yaru-Orange" > ~/.config/theme_gtk;
 #elif [ "$THEME" = "grass" ]; then echo "Yaru-Orange" > ~/.config/theme_gtk;
@@ -12,4 +12,6 @@ echo "${THEME}" > ~/.config/theme_system
 #elif [ "$THEME" = "flowers" ]; then echo "Yaru-Orange-dark" > ~/.config/theme_gtk;
 #elif [ "$THEME" = "dark" ]; then echo "Yaru-Orange-dark" > ~/.config/theme_gtk;
 #else echo "Yaru-Orange-dark" > ~/.config/theme_gtk; fi
-echo "Yaru-Orange-dark" > ~/.config/theme_gtk
+if [ "$THEME" = "grass" ]; then echo "Catppuccin-Latte-Standard-Lavender-Light" > ~/.config/archie/theme_gtk;
+else echo "Catppuccin-Macchiato-Standard-Lavender-Dark" > ~/.config/archie/theme_gtk; fi
+sed -i "/gtk-theme-name/c\gtk-theme-name = $(cat ~/.config/archie/theme_gtk)" ./settings.ini

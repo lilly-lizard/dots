@@ -1,7 +1,7 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'Fira Mono', 'monospace', monospace", // SF Mono
-    "editor.fontSize": 12,
+	"editor.fontFamily": "'SF Mono', 'monospace', monospace", // SF Mono, Fira Mono
+    "editor.fontSize": 13,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": false,
     "editor.find.seedSearchStringFromSelection": "selection",
@@ -29,7 +29,7 @@
     "debug.console.fontSize": 12,
     "markdown.preview.fontSize": 12,
 
-    "window.menuBarVisibility": "toggle",
+    "window.menuBarVisibility": "hidden",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -73,12 +73,14 @@
     "errorLens.removeLinebreaks": false,
     "git.autofetch": true,
     "cSpell.maxNumberOfProblems": 1000,
-    "cSpell.enabled": false,
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.stickyScroll.enabled": true,
-    "workbench.colorTheme": "Greyout",
+    "workbench.iconTheme": "file-icons",
+    "cmake.configureOnOpen": false,
+    "diffEditor.renderSideBySide": false,
+    "cSpell.enabled": false,
 
     //"files.associations": {
     //    "*.fsh": "glsl",

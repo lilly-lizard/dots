@@ -29,8 +29,7 @@ export RUA_SUDO_COMMAND="doas"
 export VK_LAYER_PATH=/usr/share/vulkan/explicit_layer.d
 
 # dark theme for gtk apps
-#export GTK_THEME=Yaru-Orange-dark
-export GTK_THEME="$(cat ~/.config/theme_gtk)"
+#export GTK_THEME="$(cat ~/.config/theme_gtk)"
 
 # less: ascii colors and no bell
 export LESS="$LESS -R -Q"

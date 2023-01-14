@@ -20,3 +20,4 @@ cp ~/.config/Code\ -\ OSS/User/keybindings.json vscode/
 
 cp -r ~/.config/rua/wrap_args.d rua/
 
+cp ~/Documents/bin/set-theme scripts/

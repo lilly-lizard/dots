@@ -1,6 +1,6 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.fontFamily": "'Fira Mono', 'SF Mono', 'Cascadia Mono', monospace",
+    "editor.fontFamily": "'Fira Mono', 'SF Mono', 'Cascadia Mono', 'Symbols Nerd Font', monospace",
     "editor.insertSpaces": false,
     "glsllint.glslangValidatorPath": "/usr/bin/glslangValidator",
     "editor.minimap.enabled": false,
@@ -79,7 +79,9 @@
     "editor.fontSize": 14,
     "[Log]": {
         "editor.fontSize": 14
-    }
+    },
+    "git.autofetch": true,
+    "workbench.colorTheme": "Default Light+"
     //"workbench.colorCustomizations": {
     //  "editorBracketHighlight.foreground1": "#5caeef",
     //  "editorBracketHighlight.foreground2": "#dfb976",

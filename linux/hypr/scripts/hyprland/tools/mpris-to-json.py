@@ -21,7 +21,8 @@ with open("test.log", "wb") as f:
     for line in iter(lambda: process.stdout.readline().decode("utf-8"), b""):
         dat = json.loads(line)
         if "text" in dat:
-            dat["text"] = dat["text"].replace(" ", "").replace("", "")
+            dat["text"] = dat["text"].replace("", "")
+            dat["text"] = dat["text"].replace("▶", " ")
             print(dat)
         else:
            print({"class":"none","text":""})

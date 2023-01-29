@@ -10,7 +10,7 @@
     //"margin-bottom": 5,
 
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["backlight", "pulseaudio", "battery", "clock"],
+    "modules-right": ["backlight", "pulseaudio", "battery", "network", "clock"],
     "modules-center": ["custom/now_playing"],
 
 	// Modules
@@ -19,31 +19,14 @@
         "format": "{icon}",
         "format-active": " {icon} ",
         "on-click": "activate"
-        // "format-icons":{
-        //     "10":"10"
-        // }
     },
 
     "custom/now_playing": {
         "return-type": "json",
         "exec": "~/Documents/bin/hyprland/tools/waybar-now-playing.sh",
-        "escape": true
+        "escape": true,
+		"on-click": "mpris2controller PlayPause",
     },
-
-    // "custom/waybar-mpris": {
-    //     "return-type": "json",
-    //     "exec": "echo '   '",
-    //     "on-click": "waybar-mpris --send toggle",
-    //     // This option will switch between players on right click.
-    //         "on-click-right": "waybar-mpris --send player-next",
-    //     // The options below will switch the selected player on scroll
-    //         // "on-scroll-up": "waybar-mpris --send player-next",
-    //         // "on-scroll-down": "waybar-mpris --send player-prev",
-    //     // The options below will go to next/previous track on scroll
-    //         // "on-scroll-up": "waybar-mpris --send next",
-    //         // "on-scroll-down": "waybar-mpris --send prev",
-    //     "escape": true
-    // },
 
     "keyboard-state": {
         "numlock": false,
@@ -69,21 +52,10 @@
     },
 
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 60,
         "format": "{:%I:%M %p}",
         "max-length": 25
-    },
-
-    "cpu": {
-        "interval":1,
-        "format": "{icon0} {icon1} {icon2} {icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-    },
-
-    "memory": {
-        "format": "{}% "
     },
 
     "temperature": {
@@ -96,20 +68,19 @@
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": " {volume}%",
+        "format-muted": "󰝟 {volume}%",
         "format-bluetooth": " {format}",
-        "format-bluetooth-muted": " {format_muted}",
         "format-icons": {
-            "headphone": "",
+            "headphone": "",
             "default": ["", "", ""]
         },
+        "tooltip": false,
         "scroll-step": 2, // %, can be a float
 		"smooth-scrolling-threshold": 0.5,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{icon} {percent}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
 		"on-scroll-up": "brightnessctl s +5%",
@@ -125,34 +96,20 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        //"format-icons": ["", "", "", "", ""],
+        //"format-icons": ["", "", "", "", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-icons": ["", "", "", "", "󰁾", "󰁿", "󰂀", "󰂂", "󰁹"],
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
 
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "",
-        "format-ethernet": "",
-        "tooltip-format": "via {gwaddr} {ifname}",
-        "format-linked": "",
-        "format-disconnected": "wifi",
-        "format-alt": "   "
+        "format-wifi": "{icon}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-disconnected": "󰤮",
+        "interval": 10,
+        "tooltip": true,
+        "tooltip-format": "{essid}"
     },
-
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
 }

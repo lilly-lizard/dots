@@ -20,4 +20,5 @@ cp ~/.config/Code/User/keybindings.json vscode/
 cp ~/.config/hypr/*(.) hypr/
 cp -r ~/Documents/bin/hyprland hypr/scripts
 cp -r ~/.config/waybar/* waybar/
-
+cp ~/Documents/bin/set-theme ./scripts
+cp /usr/share/zsh/site-functions/_set-theme ./scripts

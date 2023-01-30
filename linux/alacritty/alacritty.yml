@@ -21,7 +21,7 @@
   #TERM: alacritty
 
 window:
-  opacity: 0.75
+  opacity: 0.60
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -186,7 +186,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#31322a'
+    black:   '#6e7160'
     red:     '#ff4120'
     green:   '#98e024'
     yellow:  '#fa8419'
@@ -197,7 +197,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '#292a24'
+    black:   '#5f6151'
     red:     '#c0341d'
     green:   '#70a61b'
     yellow:  '#c06613'

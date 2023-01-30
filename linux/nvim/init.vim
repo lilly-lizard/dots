@@ -14,6 +14,8 @@ colorscheme molokai
 "highlight htmlItalic gui=italic ctermfg=blue
 "highlight htmlTagName gui=italic ctermfg=green
 
+set mouse=
+
 " tab size
 set tabstop=8
 set shiftwidth=8

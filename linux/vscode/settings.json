@@ -81,6 +81,7 @@
     "cmake.configureOnOpen": false,
     "diffEditor.renderSideBySide": false,
     "cSpell.enabled": false,
+    "workbench.colorTheme": "Greyout",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

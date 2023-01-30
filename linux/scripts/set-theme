@@ -14,4 +14,4 @@ echo "${THEME}" > ~/.config/archie/theme_system
 #else echo "Yaru-Orange-dark" > ~/.config/theme_gtk; fi
 if [ "$THEME" = "grass" ]; then echo "Catppuccin-Latte-Standard-Lavender-Light" > ~/.config/archie/theme_gtk;
 else echo "Catppuccin-Macchiato-Standard-Lavender-Dark" > ~/.config/archie/theme_gtk; fi
-sed -i "/gtk-theme-name/c\gtk-theme-name = $(cat ~/.config/archie/theme_gtk)" ./settings.ini
+sed -i "/gtk-theme-name/c\gtk-theme-name = $(cat ~/.config/archie/theme_gtk)" ~/.config/gtk-3.0/settings.ini

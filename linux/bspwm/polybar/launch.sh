@@ -6,15 +6,16 @@ killall -q polybar
 #echo "---" | tee -a /tmp/polybar_bottom1.log /tmp/polybar_bottom_left.log
 #echo "---" | tee -a /tmp/polybar_bottom2.log /tmp/polybar_bottom_right.log
 #echo "---" | tee -a /tmp/polybar_top.log /tmp/polybar_top.log
-echo "---" | tee -a /tmp/polybar_bottom_left.log /tmp/polybar_bottom_left.log
-echo "---" | tee -a /tmp/polybar_bottom_right.log /tmp/polybar_bottom_right.log
+#echo "---" | tee -a /tmp/polybar_bottom_left.log /tmp/polybar_bottom_left.log
+#echo "---" | tee -a /tmp/polybar_bottom_right.log /tmp/polybar_bottom_right.log
+echo "---" | tee -a /tmp/polybar_bottom.log /tmp/polybar_bottom.log
 
 if [ -z "$FOREGROUND_BR"	]; then export FOREGROUND_BR=$FOREGROUND;	fi
 if [ -z "$TRANSPARENT_BR"	]; then export TRANSPARENT_BR=$TRANSPARENT;	fi
 if [ -z "$GREY_BR"			]; then export GREY_BR=$GREY;				fi
 
-FOREGROUND=$FOREGROUND_BR TRANSPARENT=$TRANSPARENT_BR GREY=$GREY_BR polybar --reload bottom-right >>/tmp/polybar_bottom_right.log 2>&1 &
-polybar --reload bottom-left >>/tmp/polybar_bottom_left.log 2>&1 &
+#FOREGROUND=$FOREGROUND_BR TRANSPARENT=$TRANSPARENT_BR GREY=$GREY_BR polybar --reload bottom-right >>/tmp/polybar_bottom_right.log 2>&1 &
+polybar --reload bottom >>/tmp/polybar_bottom.log 2>&1 &
 
 echo "bars launched."
 

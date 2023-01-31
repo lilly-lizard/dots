@@ -22,3 +22,5 @@ cp -r ~/Documents/bin/hyprland hypr/scripts
 cp -r ~/.config/waybar/* waybar/
 cp ~/Documents/bin/set-theme ./scripts
 cp /usr/share/zsh/site-functions/_set-theme ./scripts
+
+cp /etc/pacman.d/hooks/* ./hooks

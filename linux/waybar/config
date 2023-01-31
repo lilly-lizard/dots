@@ -106,7 +106,7 @@
 
     "network": {
         "format-wifi": "{icon}",
-		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
         "format-disconnected": "󰤮",
         "interval": 10,
         "tooltip": true,

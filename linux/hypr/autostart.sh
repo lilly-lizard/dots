@@ -17,8 +17,7 @@ $scripts/tools/mpris-to-json.py &
 /usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit > /tmp/io.elementary.desktop.agent-polkit.log &
 
 # wallpaper
-#$HOME/Documents/bin/wallpaper.sh $HOME/Pictures/wallpapers/4.jpg &
-$HOME/Documents/bin/wallpaper.sh $HOME/Pictures/wallpapers/milad-fakurian-nY14Fs8pxT8-unsplash.jpg &
+~/Documents/bin/set-theme $(cat ~/.config/theme/system_theme)
 
 # key remapper
 doas evremap remap $HOME/.config/evremap/remap-config.toml

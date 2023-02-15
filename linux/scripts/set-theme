@@ -8,6 +8,9 @@ echo "${THEME}" > ~/.config/theme/system_theme
 if [ "$THEME" = "light" ]; then
 	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-light-blue';
 	wallpaper.sh ~/Pictures/wallpapers/4.jpg
+elif [ "$THEME" = "sunset" ]; then
+	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-dark-blue';
+	wallpaper.sh ~/Pictures/wallpapers/luke-chesser-zFaSM1hz02c-unsplash.jpg
 elif [ "$THEME" = "dark" ]; then
 	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-dark-blue';
 	wallpaper.sh ~/Pictures/wallpapers/milad-fakurian-nY14Fs8pxT8-unsplash.jpg

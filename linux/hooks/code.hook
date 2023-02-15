@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Path
+Target = usr/share/applications/code.desktop
+
+[Action]
+Description = Add wayland ozone args to make copy/paste work
+When = PostTransaction
+Exec = /usr/bin/sed -i -e 's/^Exec\=\/usr\/bin\/code/Exec=\/usr\/bin\/code --enable-features=UseOzonePlatform --ozone-platform=wayland/g' /usr/share/applications/code.desktop

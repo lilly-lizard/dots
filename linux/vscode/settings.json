@@ -81,7 +81,9 @@
         "editor.fontSize": 14
     },
     "git.autofetch": true,
-    "editor.find.seedSearchStringFromSelection": "selection"
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "git.ignoreRebaseWarning": true,
+    "workbench.colorTheme": "Greyout"
     //"workbench.colorCustomizations": {
     //  "editorBracketHighlight.foreground1": "#5caeef",
     //  "editorBracketHighlight.foreground2": "#dfb976",

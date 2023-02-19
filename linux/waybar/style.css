@@ -20,6 +20,8 @@
 #custom-cycle_wall,
 #custom-ss,
 #custom-now_playing,
+#custom-power-menu,
+
 #mpd {
     padding: 0 10px;
     border-radius: 15px;
@@ -33,6 +35,17 @@
 
 window#waybar {
     background-color: transparent;
+}
+
+#custom-power-menu label{
+    color:#89dceb;
+}
+
+#custom-power-menu {
+    background: rgb(30,30,46);
+    background: radial-gradient(circle, rgba(30,30,46,1) 30%, rgba(17,17,27,1) 100%); 
+    color: 	#89b4fa;
+    margin-left: 25px;
 }
 
 #workspaces button label{
@@ -50,16 +63,13 @@ window#waybar {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 10px;
-    margin-left: 25px;
+    /* margin-left: 25px; */
 }
 #workspaces button{
     box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
     background-color: #11111b ;
     border-radius: 15px;
     margin-right: 10px;
-    padding: 10px;
-    padding-top: 4px;
-    padding-bottom: 2px;
     font-weight: bolder;
     color: 	#89b4fa ;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68);
@@ -67,9 +77,8 @@ window#waybar {
 
 #workspaces button.active{
     padding-right: 20px;
-    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
     padding-left: 20px;
-    padding-bottom: 3px;
+    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
     background: rgb(203,166,247);
     background: radial-gradient(circle, rgba(177,172,247,1) 10%, rgba(249,226,175,1) 25%,
                                         rgba(177,172,247,1) 35%, rgba(198,255,194,1) 50%);
@@ -202,8 +211,6 @@ window#waybar {
     }
 }
 
-
-
 #battery.critical:not(.charging) {
     background-color:  #f38ba8;
     color:#bf5673;
@@ -212,16 +219,6 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#cpu label{
-    color:#89dceb;
-}
-
-#cpu {
-    background: rgb(30,30,46);
-    background: radial-gradient(circle, rgba(30,30,46,1) 30%, rgba(17,17,27,1) 100%); 
-    color: 	#89b4fa;
 }
 
 #memory {

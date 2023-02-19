@@ -9,11 +9,16 @@
     "margin-top": -10,
     //"margin-bottom": 5,
 
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["custom/power-menu", "wlr/workspaces"],
     "modules-right": ["backlight", "pulseaudio", "battery", "network", "clock"],
     "modules-center": ["custom/now_playing"],
 
 	// Modules
+
+    "custom/power-menu": {
+        "format": "⏻",
+        "on-click": "wlogout"
+    },
 
     "wlr/workspaces": {
         "format": "{icon}",

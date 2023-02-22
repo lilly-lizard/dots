@@ -7,7 +7,7 @@
 	alacritty
 
 # program launcher
-{super, alt} + space
+super + shift + space
 	dmenu_run -fn 'Input-12' -l 5 -m $(($(bspc query -M | grep -n "$(bspc query -M -m focused)" | cut -f1 -d:)-1))
 
 # make sxhkd reload its configuration files:
@@ -61,14 +61,16 @@ alt + {_,shift + }{h,j,k,l}
 # focus or send to the given desktop
 #alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
 #	bspc {desktop -f,node -d} '^{1,6,2,7,3,8,4,9,5,10}'
-alt + {_,shift + }{1,2,3,4,5}
-	bspc {desktop -f,node -d} '^{1,2,3,4,5}'
+alt + {_,shift + }{1,2,3,4,5,6,7,8}
+	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8}'
+super + {_,shift + }{1,2,3,4,5,6,7,8}
+	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8}'
 alt + button{4,5}
 	bspc monitor -f pointed; \
-    bspc desktop -f {next,prev}.local
+	bspc desktop -f {next,prev}.local
 
 # alt tab
-alt + Tab
+{alt, super} + Tab
 	bspc node -f last
 
 # focus the next/previous desktop in the current monitor

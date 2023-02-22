@@ -82,6 +82,7 @@
     "diffEditor.renderSideBySide": false,
     "cSpell.enabled": false,
     "workbench.colorTheme": "Greyout",
+    "git.openRepositoryInParentFolders": "never",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

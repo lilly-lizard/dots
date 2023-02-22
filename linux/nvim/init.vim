@@ -1,5 +1,7 @@
-call plug#begin('~/.local/share/vim-plugins')
+call plug#begin('~/.local/share/nvim/plugins')
 Plug 'tomasr/molokai'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
 
 set nocompatible
@@ -19,6 +21,14 @@ set mouse=
 " tab size
 set tabstop=8
 set shiftwidth=8
+
+" x doesn't cut (sends to black hole reg)
+nnoremap x "_x
+vnoremap x "_x
+
+" relative line numbers with absolute cursor line
+set nu
+set rnu
 
 " make backspace work normally in insert mode
 set backspace=indent,eol,start
@@ -53,3 +63,5 @@ let g:netrw_liststyle=3 " tree view
 " disable auto-commenting on new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
+source /home/david/.config/nvim/sub_init.lua.vim

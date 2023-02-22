@@ -48,17 +48,19 @@ picom -CGb -m 1.0 -i 1.0
 # free wireless devices jic
 doas rfkill unblock all
 
-xrdb $HOME/.config/X11/.Xresources
-
-
 # start dunst desktop notification manager (ctrl + space to dismiss notifications)
 if [[ -z $(pidof dunst) ]]; then
-    dunst &
+	dunst &
 fi
 
 # start parcellite clipboard manager
 if [[ -z $(pidof parcellite) ]]; then
 	parcellite &
+fi
+
+# start parcellite clipboard manager
+if [[ -z $(pidof ulauncher) ]]; then
+	ulauncher --hide-window &
 fi
 
 exec echo "---" >>/tmp/sxhkd.log & echo "---" >>/tmp/bspwm.log

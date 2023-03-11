@@ -1,6 +1,23 @@
 " embed lua in vim script https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/
 lua <<EOF
 
+-- rust-analyzer
+require'lspconfig'.rust_analyzer.setup {
+	on_attach=on_attach,
+	settings = {
+		["rust-analyzer"] = {
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		}
+	}
+}
+
 -- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"

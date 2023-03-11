@@ -4,7 +4,7 @@ config=$HOME/.config/hypr
 scripts=$HOME/Documents/bin/hyprland
 
 # key remapper
-doas evremap remap $HOME/.config/evremap/remap-config.toml > /tmp/evremap.log &
+#doas evremap remap $HOME/.config/evremap/remap-config.toml > /tmp/evremap.log &
 
 # notification daemon
 dunst > /tmp/dunst.log &

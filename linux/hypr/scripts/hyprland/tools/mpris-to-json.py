@@ -12,10 +12,10 @@ def print(ar):
     with open(OUT,"w") as f:
         f.write(json.dumps(ar))
 
-with open("test.log", "wb") as f:
+with open("/tmp/mpris-to-json.log", "wb") as f:
     process = subprocess.Popen(
         "waybar-mpris --autofocus".split(),
-         stdout=subprocess.PIPE
+            stdout=subprocess.PIPE
     )
     print(json.dumps({"class":"none","text":""}))
     for line in iter(lambda: process.stdout.readline().decode("utf-8"), b""):
@@ -25,4 +25,4 @@ with open("test.log", "wb") as f:
             dat["text"] = dat["text"].replace("▶", " ")
             print(dat)
         else:
-           print({"class":"none","text":""})
+            print({"class":"none","text":""})

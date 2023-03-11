@@ -2,7 +2,7 @@
 
 _set-theme() {
 	local -a theme_names
-	theme_names=('light' 'sunset' 'dark')
+	theme_names=('light' 'glass' 'sunset' 'dark')
 	_describe 'theme name' theme_names
 }
 

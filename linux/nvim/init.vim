@@ -1,7 +1,10 @@
+lua require('plugins')
+
 call plug#begin('~/.config/nvim/plugins')
+"Plug 'neovim/nvim-lspconfig'
 Plug 'tomasr/molokai'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-context'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
 
 set nocompatible
@@ -64,4 +67,4 @@ let g:netrw_liststyle=3 " tree view
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
-source /home/david/.config/nvim/sub_init.lua.vim
+"source /home/david/.config/nvim/sub_init.lua.vim

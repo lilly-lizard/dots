@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=wlogout
+Type=Application
+Exec=wlogout
+Icon=system-log-out
+

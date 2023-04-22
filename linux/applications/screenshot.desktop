@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Screenshot
+Exec=env GRIM_DEFAULT_DIR=/home/david/Pictures/Screenshots /home/david/Documents/bin/screenshot.sh
+Icon=accessories-screenshot-symbolic
+Type=Application

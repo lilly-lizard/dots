@@ -6,4 +6,4 @@ Target = usr/share/applications/spotify.desktop
 [Action]
 Description = Edit the spotify desktop entry to include the --force-device-scale-factor argument for dpi scaling
 When = PostTransaction
-Exec = /usr/bin/sed -i -e 's/Exec\=spotify/Exec=spotify --force-device-scale-factor=1.2/g' /usr/share/applications/spotify.desktop
+Exec = /usr/bin/sed -i -e 's/^Exec\=spotify/Exec=spotify --force-device-scale-factor=1.2/g' /usr/share/applications/spotify.desktop

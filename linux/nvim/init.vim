@@ -1,7 +1,10 @@
+lua require('plugins')
+
 call plug#begin('~/.config/nvim/plugins')
+"Plug 'neovim/nvim-lspconfig'
 Plug 'tomasr/molokai'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-context'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
 
 set nocompatible

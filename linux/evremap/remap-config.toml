@@ -1,0 +1,26 @@
+device_name = "AT Translated Set 2 keyboard"
+
+[[dual_role]]
+input = "KEY_CAPSLOCK"
+hold = ["KEY_LEFTMETA"]
+tap = ["KEY_ESC"]
+
+[[remap]]
+input = ["KEY_ESC"]
+output = ["KEY_CAPSLOCK"]
+
+[[remap]]
+input = ["KEY_LEFTMETA", "KEY_H"]
+output = ["KEY_LEFT"]
+
+[[remap]]
+input = ["KEY_LEFTMETA", "KEY_J"]
+output = ["KEY_DOWN"]
+
+[[remap]]
+input = ["KEY_LEFTMETA", "KEY_K"]
+output = ["KEY_UP"]
+
+[[remap]]
+input = ["KEY_LEFTMETA", "KEY_L"]
+output = ["KEY_RIGHT"]

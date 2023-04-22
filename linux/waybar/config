@@ -1,0 +1,121 @@
+{
+    "layer": "top", // on top of windows
+    "position": "bottom",
+
+    "height": 51, // can be removed for auto height
+    "spacing": 5,
+    //"margin-left": 25,
+    //"margin-right": 25,
+    "margin-top": -10,
+    //"margin-bottom": 5,
+
+    "modules-left": ["custom/power-menu", "wlr/workspaces"],
+    "modules-right": ["backlight", "pulseaudio", "battery", "network", "clock"],
+    "modules-center": ["custom/now_playing"],
+
+	// Modules
+
+    "custom/power-menu": {
+        "format": "⏻",
+        "on-click": "wlogout"
+    },
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": " {icon} ",
+        "on-click": "activate"
+    },
+
+    "custom/now_playing": {
+        "return-type": "json",
+        "exec": "~/Documents/bin/hyprland/tools/waybar-now-playing.sh",
+        "escape": true,
+		"on-click": "mpris2controller PlayPause",
+    },
+
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 60,
+        "format": "{:%I:%M %p}",
+        "max-length": 25
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C",
+        "format": ""
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "tooltip": false,
+        "scroll-step": 2, // %, can be a float
+		"smooth-scrolling-threshold": 0.5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+		"on-scroll-up": "brightnessctl s +5%",
+		"on-scroll-down": "brightnessctl s 5%-",
+		"smooth-scrolling-threshold": 1.0,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        //"format-icons": ["", "", "", "", ""],
+        //"format-icons": ["", "", "", "", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-icons": ["", "", "", "", "󰁾", "󰁿", "󰂀", "󰂂", "󰁹"],
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "network": {
+        "format-wifi": "{icon}",
+		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-disconnected": "󰤮",
+        "interval": 10,
+        "tooltip": true,
+        "tooltip-format": "{essid}",
+		"on-click": "iwgtk",
+    },
+}

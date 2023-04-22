@@ -15,6 +15,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 #export MYVIMRC=$HOME/.config/vim/.vimrc
 #export VIMINIT="source ${MYVIMRC}"
 
+# grim screenshot default output dir
+export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots
+
 # application data locations
 export CARGO_HOME=$HOME/.local/share/cargo
 export RUSTUP_HOME=$HOME/.local/share/rustup

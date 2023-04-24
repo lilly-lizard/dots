@@ -21,7 +21,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 export PATH=$PATH:/Users/davidhamill/Library/Python/3.8/bin
 
 # vulkan sdk
-source /Users/davidhamill/VulkanSDK/1.2.176.1/setup-env.sh
+#source /Users/davidhamill/VulkanSDK/1.2.176.1/setup-env.sh
 
 # vim config
 export VIMINIT="source $HOME/.config/vim/.vimrc"
@@ -44,3 +44,4 @@ export LESS_TERMCAP_se=$'\e[m'           # end standout-mode
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
+. "$HOME/.cargo/env"

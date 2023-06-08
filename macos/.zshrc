@@ -55,7 +55,7 @@ typeset -g -A key
 alias ls='ls -G'
 alias grep='grep --color=always'
 function ranger () { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd $(cat $HOME/.config/ranger/.rangerdir); } # echo -e "\x1b[?12;25h";
-alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
+#alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
 
 bindkey "\0330H" beginning-of-line # home
 bindkey "\0330F" end-of-line # end

@@ -36,17 +36,19 @@ xset r rate 200 35
 # gamma adjust
 #xgamma -gamma 0.7
 
+MONITOR="$(cat ~/.config/archie/primary_monitor)"
+
 # set second monitor to portrait
-xrandr --output HDMI-2 --rotate right --right-of HDMI-1
+#xrandr --output HDMI-2 --rotate right --right-of HDMI-1
 
 # set primary monitor position
-xrandr --output HDMI-1 --pos 0x500
+xrandr --output $MONITOR --pos 0x500
 
 # compositor (allows transparency)
 picom -CGb -m 1.0 -i 1.0
 
 # free wireless devices jic
-doas rfkill unblock all
+#doas rfkill unblock all
 
 # start dunst desktop notification manager (ctrl + space to dismiss notifications)
 if [[ -z $(pidof dunst) ]]; then

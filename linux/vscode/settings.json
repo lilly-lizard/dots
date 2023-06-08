@@ -1,9 +1,8 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'SF Mono', 'monospace', monospace", // SF Mono, Fira Mono
+	"editor.fontFamily": "'SF Mono', 'monospace'", // SF Mono, Fira Mono
     "editor.fontSize": 13,
     "editor.insertSpaces": false,
-    "editor.minimap.enabled": false,
     "editor.find.seedSearchStringFromSelection": "selection",
     "[rust]": {
         "editor.formatOnSave": true, // rust fmt on save (requires rust-analyzer extension)
@@ -17,28 +16,25 @@
     "explorer.confirmDragAndDrop": false,
 
     "terminal.external.linuxExec": "alacritty",
-    "terminal.integrated.fontSize": 12,
     "terminal.integrated.sendKeybindingsToShell": true,
     "terminal.integrated.allowChords": false,
     "terminal.integrated.allowMnemonics": true,
-    "terminal.integrated.fontFamily": "'Input', 'monospace', monospace",
-    
+    "terminal.integrated.fontFamily": "'Fira Mono', 'Iosevka SS18', 'monospace'",
+
     "security.workspace.trust.enabled": false,
     "scm.diffDecorations": "gutter",
 
     "debug.console.fontSize": 12,
     "markdown.preview.fontSize": 12,
-
-    "window.menuBarVisibility": "hidden",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
 
     "keyboard.dispatch": "keyCode", // X11 custom key bindings fix
-    
+
     "extensions.ignoreRecommendations": true,
-    
+
     // EXTENSIONS
 
     "cSpell.language": "en-GB",
@@ -52,14 +48,14 @@
         ".fsh": "frag",
         ".vsh": "vert",
     },
-    
+
     "errorLens.enabledDiagnosticLevels": [
         "error",
         //"warning",
         //"info",
     ],
     "errorLens.gutterIconsEnabled": true,
-    
+
     "vim.disableExtension": true,
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/bin/nvim",
@@ -80,9 +76,18 @@
     "workbench.iconTheme": "file-icons",
     "cmake.configureOnOpen": false,
     "diffEditor.renderSideBySide": false,
-    "cSpell.enabled": false,
-    "workbench.colorTheme": "Greyout",
     "git.openRepositoryInParentFolders": "never",
+    "editor.minimap.enabled": false,
+    "git.inputValidation": "off",
+    "window.menuBarVisibility": "hidden",
+    "errorLens.excludeBySource": [
+        "rustc(Click for full compiler diagnostic)"
+    ],
+    "cSpell.enabled": false,
+    "lldb.suppressUpdateNotifications": true,
+    "zig.zls.path": "/usr/bin/zls",
+    "zig.zls.checkForUpdate": false,
+    "workbench.colorTheme": "Default Light+",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

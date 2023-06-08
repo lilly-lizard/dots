@@ -1,7 +1,7 @@
 # history in cache directory
 HISTFILE=~/.config/zsh/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 # unset hell screech
 unsetopt beep
@@ -81,12 +81,13 @@ alias egrep='egrep --color'
 alias pacman='pacman --color always'
 alias dp='doas pacman --color always'
 alias ds='doas systemctl'
+alias paru='paru --color always --sudo doas'
 alias vim='vim -u /home/david/.config/vim/.vimrc'
 alias ddocker='doas docker'
 alias diff='diff --color=auto'
+
 function ranger() { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
-# circle gcc11 workaround
-alias circle='circle --nostdinc -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++ -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/x86_64-pc-linux-gnu'
+source /home/david/.config/lf/lfext.sh
 
 # ctrl + w
 bindkey '^W' backward-kill-word

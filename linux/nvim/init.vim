@@ -63,5 +63,9 @@ let g:netrw_liststyle=3 " tree view
 " disable auto-commenting on new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" set filetype for certain file extensions
+autocmd BufNewFile,BufRead *.frag setfiletype glsl
+autocmd BufNewFile,BufRead *.vert setfiletype glsl
+
 " and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
 source /home/david/.config/nvim/sub_init.lua.vim

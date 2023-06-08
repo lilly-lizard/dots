@@ -70,8 +70,12 @@ alt + button{4,5}
 	bspc desktop -f {next,prev}.local
 
 # alt tab
-{alt, super} + Tab
+alt + Tab
 	bspc node -f last
+
+# super tab to go to last visited workspace
+super + Tab
+	bspc desktop -f last
 
 # focus the next/previous desktop in the current monitor
 alt + {_,shift + }{p,n}

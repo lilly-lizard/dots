@@ -14,10 +14,13 @@ echo "${THEME}" > ~/.config/archie/theme_system
 #else echo "Yaru-Orange-dark" > ~/.config/theme_gtk; fi
 if [ "$THEME" = "grass" ]; then
 	GTK_THEME="Catppuccin-Latte-Standard-Lavender-Light"
+	ICON_THEME="Papirus"
 else
 	GTK_THEME="Catppuccin-Macchiato-Standard-Lavender-Dark"
+	ICON_THEME="Papirus-Dark"
 fi
 
 echo "$GTK_THEME" > ~/.config/archie/theme_gtk
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 sed -i "/gtk-theme-name/c\gtk-theme-name = $GTK_THEME" ~/.config/gtk-3.0/settings.ini
+sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name = $ICON_THEME" ~/.config/gtk-3.0/settings.ini

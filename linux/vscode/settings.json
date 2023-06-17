@@ -83,11 +83,11 @@
     "errorLens.excludeBySource": [
         "rustc(Click for full compiler diagnostic)"
     ],
-    "cSpell.enabled": false,
     "lldb.suppressUpdateNotifications": true,
     "zig.zls.path": "/usr/bin/zls",
     "zig.zls.checkForUpdate": false,
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Greyout",
+    "cSpell.enabled": false,
 
     //"files.associations": {
     //    "*.fsh": "glsl",

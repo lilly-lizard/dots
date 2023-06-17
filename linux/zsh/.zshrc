@@ -87,7 +87,7 @@ alias ddocker='doas docker'
 alias diff='diff --color=auto'
 
 function ranger() { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
-source /home/david/.config/lf/lfext.sh
+source /home/david/.config/lf/lf-ext.sh
 
 # ctrl + w
 bindkey '^W' backward-kill-word

@@ -4,13 +4,13 @@ config=$HOME/.config/hypr
 scripts=$HOME/Documents/bin/hyprland
 
 # key remapper
-#doas evremap remap $HOME/.config/evremap/remap-config.toml > /tmp/evremap.log &
+evremap remap /home/david/.config/evremap/remap-config.toml > /tmp/evremap.log &
 
 # notification daemon
 dunst > /tmp/dunst.log &
 
 # clipboard manager
-parcellite > /tmp/parcellite.log &
+wl-clip-persist -c both > /tmp/wl-clip-persist.log &
 
 # waybar
 waybar > /tmp/waybar.log &

@@ -1,6 +1,6 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.fontFamily": "'Fira Mono', 'SF Mono', 'Cascadia Mono', 'Symbols Nerd Font', monospace",
+    "editor.fontFamily": "'Fira Code', 'Fira Mono', 'SF Mono', 'Mymbols Nerd Font', monospace",
     "editor.insertSpaces": false,
     "glsllint.glslangValidatorPath": "/usr/bin/glslangValidator",
     "editor.minimap.enabled": false,
@@ -54,7 +54,7 @@
     "cSpell.enableFiletypes": [
         "toml"
     ],
-    "terminal.integrated.fontFamily": "'SF Mono', 'Cascadia Mono', 'monospace'",
+    "terminal.integrated.fontFamily": "'Fira Mono', 'Cascadia Mono', 'monospace'",
     "workbench.iconTheme": "file-icons",
     "debug.terminal.clearBeforeReusing": true,
     "git.confirmSync": false,
@@ -62,7 +62,6 @@
         "workbench.action.terminal.focusTabs",
         "-workbench.action.quickOpen"
     ],
-    "cSpell.enabled": false,
     "scm.inputFontSize": 16,
     "colorize.languages": [
         "css",
@@ -76,7 +75,7 @@
         "svg"
     ],
     "window.zoomLevel": 1,
-    "editor.fontSize": 14,
+    "editor.fontSize": 13,
     "[Log]": {
         "editor.fontSize": 14
     },
@@ -84,6 +83,13 @@
     "editor.find.seedSearchStringFromSelection": "selection",
     "git.ignoreRebaseWarning": true,
     "terminal.integrated.gpuAcceleration": "off",
+    "git.inputValidation": "off",
+    "editor.smoothScrolling": true,
+    "lldb.suppressUpdateNotifications": true,
+    "zig.zls.path": "/usr/bin/zls",
+    "zig.zls.checkForUpdate": false,
+    "workbench.colorTheme": "Greyout",
+    "cSpell.enabled": false,
     //"workbench.colorCustomizations": {
     //  "editorBracketHighlight.foreground1": "#5caeef",
     //  "editorBracketHighlight.foreground2": "#dfb976",

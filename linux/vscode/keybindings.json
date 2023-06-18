@@ -212,5 +212,40 @@
 		"key": "ctrl+shift+k",
 		"command": "-editor.action.deleteLines",
 		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "workbench.action.terminal.openNativeConsole",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "-workbench.action.terminal.openNativeConsole",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+c",
+		"command": "-copyRelativeFilePath",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+c",
+		"command": "copyFilePath",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "-copyFilePath",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+c",
+		"command": "search.action.copyPath",
+		"when": "fileMatchOrFolderMatchWithResourceFocus"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "-search.action.copyPath",
+		"when": "fileMatchOrFolderMatchWithResourceFocus"
 	}
 ]

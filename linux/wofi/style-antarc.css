@@ -1,0 +1,67 @@
+
+@define-color clear rgba(0, 0, 0, 0.0);
+@define-color primary rgba(0, 0, 0, 0.75);
+
+window {
+    margin: 2px;
+    border: 3px solid;
+    border-color: #cc99dd;
+    background-color: #1e1e2e;
+    border-radius: 15px;
+    font-family: "Fira Mono";
+    font-size: 16px;
+}
+
+#input {
+    padding: 5px;
+    padding-left: 10px;
+    margin: 2px;
+    margin-bottom: 8px;
+    border: none;
+    color: @foreground;
+    background-color: #313244;
+   	outline: none;
+}
+
+#inner-box {
+    margin: 2px;
+    border: 0px solid;
+    background-color: @clear;
+    border-radius: 8px;
+}
+
+#outer-box {
+    margin: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: @clear;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+	margin: 8px;
+}
+
+#text:selected {
+    color: @foreground;
+    border: none;
+    border-radius: 8px;
+}
+
+#entry {
+    margin: 0px;
+	margin-bottom: 2px;
+	padding: 5px;
+    border: none;
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    border-radius: 8px;
+    background-color: #585b70;
+}

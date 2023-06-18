@@ -5,16 +5,19 @@
 export THEME="$1"
 echo "${THEME}" > ~/.config/theme/system_theme
 
-if [ "$THEME" = "light" ]; then
-	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-light-blue';
-	wallpaper.sh ~/Pictures/wallpapers/4.jpg
+if [ "$THEME" = "cold" ]; then
+	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-blue';
+	wallpaper.sh ~/Pictures/wallpapers/nathan-dumlao-OHzkfrv9Ycw-unsplash-cropped.jpg
 elif [ "$THEME" = "glass" ]; then
-	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-light-blue';
+	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Light-blue';
 	wallpaper.sh ~/Pictures/wallpapers/jakob-owens-zYD_XzNyRyo-unsplash.jpg
 elif [ "$THEME" = "sunset" ]; then
-	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-dark-blue';
-	wallpaper.sh ~/Pictures/wallpapers/luke-chesser-zFaSM1hz02c-unsplash.jpg
+	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-blue';
+	wallpaper.sh ~/Pictures/wallpapers/dave-hoefler-HT_tLT8mGLA-unsplash.jpg
 elif [ "$THEME" = "dark" ]; then
-	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-dark-blue';
+	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-blue';
 	wallpaper.sh ~/Pictures/wallpapers/milad-fakurian-nY14Fs8pxT8-unsplash.jpg
+elif [ "$THEME" = "lake" ]; then
+	gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-blue';
+	wallpaper.sh ~/Pictures/wallpapers/dave-hoefler-u6TgnLDKgl4-unsplash.jpg
 fi

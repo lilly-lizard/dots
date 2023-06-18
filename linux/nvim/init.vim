@@ -67,4 +67,4 @@ let g:netrw_liststyle=3 " tree view
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
-source /home/david/.config/nvim/sub_init.lua.vim
+"source /home/david/.config/nvim/sub_init.lua.vim

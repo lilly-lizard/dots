@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# autocompletion list in /usr/share/zsh/site-functions/_set-theme
+
+export THEME="$1"
+echo "${THEME}" > ~/.config/theme/system_theme
+
+if [ "$THEME" = "farm" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/farm.png&
+    export GTK_THEME="oomox-gruvbox-dark-soft-gtk-wFix"
+	export ICON_THEME="Obsidian-Teal"
+	riverctl border-color-focused 0x66e1b4
+elif [ "$THEME" = "road" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/road.jpg&
+	export GTK_THEME="Desert-Teal-light-40"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x66e1b4
+elif [ "$THEME" = "green" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/matthew-smith-Rfflri94rs8-unsplash.jpg&
+	export GTK_THEME="Desert-Teal-Dark-40"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x67AC68
+elif [ "$THEME" = "shodan" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/shodan.png&
+    export GTK_THEME="GreenCodded-theme"
+	export ICON_THEME="Obsidian-Teal"
+	riverctl border-color-focused 0x67AC68
+fi
+
+echo "$GTK_THEME" > ~/.config/theme/theme_gtk
+gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
+gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
+sed -i "/gtk-theme-name/c\gtk-theme-name = $GTK_THEME" ~/.config/gtk-3.0/settings.ini
+sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name = $ICON_THEME" ~/.config/gtk-3.0/settings.ini

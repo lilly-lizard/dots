@@ -1,0 +1,10 @@
+[Unit]
+Description=Disable Auto Mute
+
+[Service]
+Type=oneshot
+RemainAfterExit=false
+ExecStart=/home/david/Documents/bin/disable-auto-mute-root.sh
+
+[Install]
+WantedBy=multi-user.target

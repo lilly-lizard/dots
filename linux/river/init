@@ -184,7 +184,8 @@ riverctl float-filter-add title "popup title with spaces"
 # Set app-ids and titles of views which should use client side decorations
 riverctl csd-filter-add app-id "gedit"
 
-riverctl focus-follows-cursor normal
+# normal, disabled
+riverctl focus-follows-cursor disabled
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
@@ -203,6 +204,9 @@ riverctl attach-mode bottom
 /usr/bin/pipewire > /tmp/pipewire.log &
 /usr/bin/pipewire-pulse > /tmp/pipewire-pulse.log &
 /usr/bin/wireplumber > /tmp/wireplumber.log &
+
+# start libinput-gestures
+libinput-gestures-setup start > /tmp/libinput-gestures.log &
 
 # start waybar
 waybar > /tmp/waybar.log &

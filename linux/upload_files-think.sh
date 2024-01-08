@@ -3,6 +3,7 @@
 cp ~/.config/gitignore_global .
 
 cp ~/.config/nvim/init.vim nvim/
+cp ~/.config/nvim/sub_init.lua.vim nvim/
 
 cp ~/.config/zsh/.zshrc zsh/
 cp ~/.config/zsh/.zshenv zsh/

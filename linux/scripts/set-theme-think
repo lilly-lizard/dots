@@ -17,9 +17,27 @@ elif [ "$THEME" = "road" ]; then
 	export GTK_THEME="Desert-Teal-light-40"
 	export ICON_THEME="Obsidenza-Sand"
 	riverctl border-color-focused 0x66e1b4
-elif [ "$THEME" = "green" ]; then
+elif [ "$THEME" = "clouds" ]; then
 	killall swaybg
-	swaybg -m fill -i /home/david/Pictures/bg/matthew-smith-Rfflri94rs8-unsplash.jpg&
+	swaybg -m fill -i /home/david/Pictures/bg/clouds-tom-barrett--bSucp2nUdQ-unsplash.jpg&
+	export GTK_THEME="Desert-Teal-Dark-40"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x66e1b4
+elif [ "$THEME" = "garden" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/ghibli-japanese-walled-garden.png&
+    export GTK_THEME="oomox-gruvbox-dark-soft-gtk-wFix"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x67AC68
+elif [ "$THEME" = "bush" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/leaves-wall.png&
+	export GTK_THEME="Desert-Teal-Dark-40"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x67AC68
+elif [ "$THEME" = "dock" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/dock.jpg&
 	export GTK_THEME="Desert-Teal-Dark-40"
 	export ICON_THEME="Obsidenza-Sand"
 	riverctl border-color-focused 0x67AC68

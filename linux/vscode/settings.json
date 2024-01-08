@@ -1,7 +1,7 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'SF Mono', 'monospace'", // SF Mono, Fira Mono
-    "editor.fontSize": 13,
+	"editor.fontFamily": "'Fira Mono', 'monospace'", // SF Mono, Fira Mono
+    "editor.fontSize": 14,
     "editor.insertSpaces": false,
     "editor.find.seedSearchStringFromSelection": "selection",
     "[rust]": {
@@ -11,7 +11,6 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.editor.untitled.hint": "hidden",
     "workbench.startupEditor": "none",
     "explorer.confirmDragAndDrop": false,
 
@@ -22,7 +21,6 @@
     "terminal.integrated.fontFamily": "'Fira Mono', 'Iosevka SS18', 'monospace'",
 
     "security.workspace.trust.enabled": false,
-    "scm.diffDecorations": "gutter",
 
     "debug.console.fontSize": 12,
     "markdown.preview.fontSize": 12,
@@ -73,7 +71,6 @@
     "git.confirmSync": false,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.stickyScroll.enabled": true,
-    "workbench.iconTheme": "file-icons",
     "cmake.configureOnOpen": false,
     "diffEditor.renderSideBySide": false,
     "git.openRepositoryInParentFolders": "never",
@@ -84,10 +81,16 @@
         "rustc(Click for full compiler diagnostic)"
     ],
     "lldb.suppressUpdateNotifications": true,
-    "zig.zls.path": "/usr/bin/zls",
+    "zig.zls.path": "",
     "zig.zls.checkForUpdate": false,
-    "workbench.colorTheme": "Greyout",
     "cSpell.enabled": false,
+    "zig.zigPath": "/usr/bin/zig",
+    "workbench.iconTheme": "file-icons",
+    "workbench.editor.empty.hint": "hidden",
+    "zig.path": "",
+    "mesonbuild.downloadLanguageServer": true,
+    "zig.initialSetupDone": true,
+    "workbench.colorTheme": "Yet Another Solarized Theme (Light)",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

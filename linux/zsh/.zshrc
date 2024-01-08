@@ -80,14 +80,12 @@ alias grep='grep --color=always'
 alias egrep='egrep --color'
 alias pacman='pacman --color always'
 alias dp='doas pacman --color always'
-alias ds='doas systemctl'
-alias paru='paru --color always --sudo doas'
-alias vim='vim -u /home/david/.config/vim/.vimrc'
-alias ddocker='doas docker'
 alias diff='diff --color=auto'
-
+alias paru='paru --color always --sudo doas'
+alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias btm='btm --mem_as_value'
 function ranger() { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
-source /home/david/.config/lf/lf-ext.sh
+source /home/david/.config/lf/lfcd.sh
 
 # ctrl + w
 bindkey '^W' backward-kill-word
@@ -101,11 +99,6 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^H' backward-word
 bindkey '^L' forward-word
-
-# set repeat speed for X11 (because it sometimes get reset)
-xset r rate 200 35
-
-#ln -fs /home/david/mnt/data/android ~/.android
 
 # Load zsh-syntax-highlighting (should be last)
 typeset -A ZSH_HIGHLIGHT_STYLES

@@ -185,7 +185,7 @@ riverctl float-filter-add title "popup title with spaces"
 riverctl csd-filter-add app-id "gedit"
 
 # normal, disabled
-riverctl focus-follows-cursor disabled
+riverctl focus-follows-cursor normal
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.

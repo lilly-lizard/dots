@@ -1,7 +1,10 @@
-call plug#begin('~/.local/share/nvim/plugins')
+"lua require('plugins')
+
+call plug#begin('~/.config/nvim/plugins')
+"Plug 'neovim/nvim-lspconfig'
 Plug 'tomasr/molokai'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/nvim-treesitter-context'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
 
 set nocompatible
@@ -9,20 +12,20 @@ filetype off
 
 syntax on
 colorscheme molokai
-"set notermguicolors t_Co=16
 
 " bold and italics coloring (great for markdown!)
 "highlight htmlBold gui=bold ctermfg=yellow
 "highlight htmlItalic gui=italic ctermfg=blue
 "highlight htmlTagName gui=italic ctermfg=green
 
+" disable mouse
 set mouse=
 
-" tab size
-set tabstop=8
-set shiftwidth=8
+" because 8 is too much imo
+set tabstop=4
+set shiftwidth=4
 
-" x doesn't cut (sends to black hole reg)
+" d doesn't cut (sends to black hole reg)
 nnoremap x "_x
 vnoremap x "_x
 
@@ -63,9 +66,5 @@ let g:netrw_liststyle=3 " tree view
 " disable auto-commenting on new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" set filetype for certain file extensions
-autocmd BufNewFile,BufRead *.frag setfiletype glsl
-autocmd BufNewFile,BufRead *.vert setfiletype glsl
-
 " and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
-source /home/david/.config/nvim/sub_init.lua.vim
+" source /home/david/.config/nvim/sub_init.lua.vim

@@ -1,4 +1,5 @@
-* { all: initial; }
+/* remove gtk styling */
+* { all: unset; }
 
 * {
 	border: none;
@@ -46,6 +47,14 @@ window#waybar.hidden {
     border-bottom: 2px solid #B5E8E0;
 }
 /*
+button
+	color: #F28FAD;
+occupied
+	color: #ABE9B3;
+focused
+	color: #B5E8E0;
+    border-top: 2px solid #B5E8E0;
+    border-bottom: 2px solid #B5E8E0;
 #tags button:hover {
 	transition: none;
 	box-shadow: inherit;

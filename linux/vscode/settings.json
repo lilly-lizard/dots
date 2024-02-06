@@ -90,7 +90,7 @@
     "zig.path": "",
     "mesonbuild.downloadLanguageServer": true,
     "zig.initialSetupDone": true,
-    "workbench.colorTheme": "Yet Another Solarized Theme (Light)",
+    "workbench.colorTheme": "Default Dark+",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

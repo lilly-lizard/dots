@@ -82,8 +82,8 @@ alias pacman='pacman --color always'
 alias dp='doas pacman --color always'
 alias diff='diff --color=auto'
 alias paru='paru --color always --sudo doas'
-alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias btm='btm --mem_as_value'
+alias vim='VIMINIT="source ~/.config/vim/.vimrc" vim'
 function ranger() { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
 source /home/david/.config/lf/lfcd.sh
 

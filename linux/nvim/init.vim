@@ -2,7 +2,7 @@
 
 call plug#begin('~/.config/nvim/plugins')
 "Plug 'neovim/nvim-lspconfig'
-Plug 'tomasr/molokai'
+"Plug 'tomasr/molokai'
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
@@ -11,7 +11,8 @@ set nocompatible
 filetype off
 
 syntax on
-colorscheme molokai
+"colorscheme molokai
+set viminfo+=n~/.config/nvim/.viminfo
 
 " bold and italics coloring (great for markdown!)
 "highlight htmlBold gui=bold ctermfg=yellow

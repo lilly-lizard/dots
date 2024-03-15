@@ -1,7 +1,7 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'SF Mono', 'monospace'", // SF Mono, Fira Mono
-    "editor.fontSize": 13,
+	"editor.fontFamily": "'Fira Mono', 'monospace'", // SF Mono, Fira Mono
+    "editor.fontSize": 14,
     "editor.insertSpaces": false,
     "editor.find.seedSearchStringFromSelection": "selection",
     "[rust]": {
@@ -62,7 +62,6 @@
     "todohighlight.keywords": [
         "todo",
         "TODO",
-        "DEBUGGING",
     ],
     "editor.find.cursorMoveOnType": false,
     "errorLens.removeLinebreaks": false,
@@ -72,7 +71,6 @@
     "git.confirmSync": false,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.stickyScroll.enabled": true,
-    "workbench.iconTheme": "file-icons",
     "cmake.configureOnOpen": false,
     "diffEditor.renderSideBySide": false,
     "git.openRepositoryInParentFolders": "never",
@@ -83,15 +81,20 @@
         "rustc(Click for full compiler diagnostic)"
     ],
     "lldb.suppressUpdateNotifications": true,
-    "zig.zls.path": "/usr/bin/zls",
+    "zig.zls.path": "",
     "zig.zls.checkForUpdate": false,
     "cSpell.enabled": false,
     "zig.zigPath": "/usr/bin/zig",
+    "workbench.iconTheme": "file-icons",
     "workbench.editor.empty.hint": "hidden",
+    "zig.path": "",
+    "mesonbuild.downloadLanguageServer": true,
     "zig.initialSetupDone": true,
-    "cmake.showOptionsMovedNotification": false,
-    "zig.path": "/usr/bin/zig",
-
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Default Dark+"
+      
     //"files.associations": {
     //    "*.fsh": "glsl",
     //    "*.vsh": "glsl"

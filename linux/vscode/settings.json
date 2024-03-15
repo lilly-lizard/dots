@@ -1,7 +1,7 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'Fira Mono', 'monospace'", // SF Mono, Fira Mono
-    "editor.fontSize": 14,
+	"editor.fontFamily": "'SF Mono', 'monospace'", // SF Mono, Fira Mono
+    "editor.fontSize": 13,
     "editor.insertSpaces": false,
     "editor.find.seedSearchStringFromSelection": "selection",
     "[rust]": {
@@ -62,6 +62,7 @@
     "todohighlight.keywords": [
         "todo",
         "TODO",
+        "DEBUGGING",
     ],
     "editor.find.cursorMoveOnType": false,
     "errorLens.removeLinebreaks": false,
@@ -71,26 +72,25 @@
     "git.confirmSync": false,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.stickyScroll.enabled": true,
+    "workbench.iconTheme": "file-icons",
     "cmake.configureOnOpen": false,
     "diffEditor.renderSideBySide": false,
     "git.openRepositoryInParentFolders": "never",
     "editor.minimap.enabled": false,
-    "git.inputValidation": "off",
+    "git.inputValidation": true,
     "window.menuBarVisibility": "hidden",
     "errorLens.excludeBySource": [
         "rustc(Click for full compiler diagnostic)"
     ],
     "lldb.suppressUpdateNotifications": true,
-    "zig.zls.path": "",
+    "zig.zls.path": "/usr/bin/zls",
     "zig.zls.checkForUpdate": false,
     "cSpell.enabled": false,
     "zig.zigPath": "/usr/bin/zig",
-    "workbench.iconTheme": "file-icons",
     "workbench.editor.empty.hint": "hidden",
-    "zig.path": "",
-    "mesonbuild.downloadLanguageServer": true,
     "zig.initialSetupDone": true,
-    "workbench.colorTheme": "Default Dark+",
+    "cmake.showOptionsMovedNotification": false,
+    "zig.path": "/usr/bin/zig",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

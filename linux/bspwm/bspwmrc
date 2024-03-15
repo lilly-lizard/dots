@@ -26,7 +26,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 
 # application rules (find name with xprop)
-bspc rule -a 'Steam' desktop=^7
+bspc rule -a 'steam' desktop=^7
 #bspc rule -a 'rdesktop' desktop=^5
 
 #bspc rule -a 'Nemo' state=floating
@@ -37,11 +37,11 @@ bspc rule -a 'Ulauncher' border=off
 # stop x shaped cursor from apprearing outside windows
 xsetroot -cursor_name left_ptr &
 
-if [ "$THEME" = "sahara" ]
+if [ "$THEME" = "desert" ]
 then
-	# sahaha theme
-	feh --bg-fill ~/Pictures/bg/houssam-korichi-L2BqGjfX-Yw-unsplash-cropped.jpg
-	#feh --bg-fill ~/Pictures/bg/ruben-begues-desert.jpg --bg-fill ~/Pictures/bg/laura-vinck-Hyu76loQLdk-unsplash.jpg
+	# desert theme
+	#feh --bg-fill ~/Pictures/bg/houssam-korichi-L2BqGjfX-Yw-unsplash-cropped.jpg
+	feh --bg-fill ~/Pictures/bg/ruben-begues-desert.jpg --bg-fill ~/Pictures/bg/laura-vinck-Hyu76loQLdk-unsplash.jpg
 	bspc config normal_border_color		\#4b5e56
 	bspc config active_border_color		\#4b5e56
 	bspc config presel_feedback_color	\#888888
@@ -51,6 +51,30 @@ then
 	# grass theme
 	#feh --bg-fill ~/Pictures/bg/bruno-martins-k1_UO1MGszs-unsplash.jpg --bg-fill ~/Pictures/bg/maddy-baker-chvHxKFpoUA-unsplash.jpg
 	feh --bg-fill ~/Pictures/bg/guido-hofmann-DUiRJVNG_Tg-unsplash.jpg 
+	bspc config normal_border_color		\#444444
+	bspc config active_border_color		\#444444
+	bspc config presel_feedback_color	\#888888
+	bspc config focused_border_color	\#b46b18
+elif [ "$THEME" = "plains" ]
+then
+	# plains theme
+	feh --bg-fill ~/Pictures/bg/bruno-martins-k1_UO1MGszs-unsplash.jpg
+	bspc config normal_border_color		\#444444
+	bspc config active_border_color		\#444444
+	bspc config presel_feedback_color	\#888888
+	bspc config focused_border_color	\#b46b18
+elif [ "$THEME" = "mountain" ]
+then
+	# mountain theme
+	feh --bg-fill ~/Pictures/bg/tobias-keller-73F4pKoUkM0-unsplash.jpg
+	bspc config normal_border_color		\#444444
+	bspc config active_border_color		\#444444
+	bspc config presel_feedback_color	\#888888
+	bspc config focused_border_color	\#b46b18
+elif [ "$THEME" = "forest" ]
+then
+	# forest theme
+	feh --bg-fill ~/Pictures/bg/forest.jpg
 	bspc config normal_border_color		\#444444
 	bspc config active_border_color		\#444444
 	bspc config presel_feedback_color	\#888888
@@ -67,6 +91,14 @@ elif [ "$THEME" = "coral" ]
 then
 	# coral theme
 	feh --bg-fill ~/Pictures/bg/david-clode-nv5wWuPH-Go-unsplash.jpg --bg-fill ~/Pictures/bg/david-clode-5pXwpRw6O8c-unsplash.jpg
+	bspc config normal_border_color		\#444444
+	bspc config active_border_color		\#444444
+	bspc config presel_feedback_color	\#888888
+	bspc config focused_border_color	\#00aa33
+elif [ "$THEME" = "shodan" ]
+then
+	# shodan theme
+	feh --bg-fill ~/Pictures/bg/shodan.png
 	bspc config normal_border_color		\#444444
 	bspc config active_border_color		\#444444
 	bspc config presel_feedback_color	\#888888
@@ -89,7 +121,7 @@ then
 	bspc config focused_border_color    \#88bb00
 else
 	# dark theme default
-	export THEME="dark"
+	export THEME="night"
 	feh --bg-fill ~/Pictures/bg/david-troeger-iLeIDlfNgpo-unsplash.jpg --bg-fill ~/Pictures/bg/andre-iv-cQXKmQAQy3w-unsplash.jpg
 	bspc config normal_border_color		\#444444
 	bspc config active_border_color		\#444444
@@ -105,22 +137,38 @@ bspc wm --record-history on;
 #bspc config external_rules_command "$HOME/.config/bspwm/spotify-rules";
 
 # start polybar
-if [ "$THEME" = "sahara" ]
+if [ "$THEME" = "desert" ]
 then
-	# sunet theme
-	FOREGROUND="#ccffffff" UNDERLINE="#ff7affc6" TRANSPARENT="#11bfffe4" RED="#66e64949" GREY="#44dddddd" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
-	#FOREGROUND="#cc000000" FOREGROUND_BR="#ccffffff" UNDERLINE="#ff7affc6" TRANSPARENT="#33bfffe4" RED="#66e64949" GREY="#55000000" GREY_BR="#55ffffff" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
+	# desert theme
+	#FOREGROUND="#ccffffff" UNDERLINE="#ff7affc6" TRANSPARENT="#11bfffe4" RED="#66e64949" GREY="#44dddddd" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
+	FOREGROUND="#cc000000" FOREGROUND_BR="#ccffffff" UNDERLINE="#ff7affc6" TRANSPARENT="#33bfffe4" RED="#66e64949" GREY="#55000000" GREY_BR="#55ffffff" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
 elif [ "$THEME" = "coral" ]
 then
 	# coral theme
+	FOREGROUND="#ccffffff" UNDERLINE="#ff54ff80" TRANSPARENT="#44404f4f" RED="#66e64949" GREY="#55dddddd" CPU_RAMP="#4ed96a" $HOME/.config/polybar/launch.sh
+elif [ "$THEME" = "shodan" ]
+then
+	# shodan theme
 	FOREGROUND="#ccffffff" UNDERLINE="#ff54ff80" TRANSPARENT="#44404f4f" RED="#66e64949" GREY="#55dddddd" CPU_RAMP="#4ed96a" $HOME/.config/polybar/launch.sh
 elif [ "$THEME" = "grass" ]
 then
 	# grass theme
 	FOREGROUND="#cc000000" FOREGROUND_BR="#ccffffff" UNDERLINE="#ff784810" TRANSPARENT="#44594c3e" RED="#66e64949" GREY="#66000000" GREY_BR="#55ffffff" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
+elif [ "$THEME" = "plains" ]
+then
+	# plains theme
+	FOREGROUND="#cc000000" FOREGROUND_BR="#ccffffff" UNDERLINE="#ff784810" TRANSPARENT="#44594c3e" RED="#66e64949" GREY="#66000000" GREY_BR="#55ffffff" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
+elif [ "$THEME" = "mountain" ]
+then
+	# mountain theme
+	FOREGROUND="#ccffffff" UNDERLINE="#ccb46b18" TRANSPARENT="#44594c3e" RED="#66e64949" GREY="#55ffffff" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
+elif [ "$THEME" = "forest" ]
+then
+	# forest theme
+	FOREGROUND="#ccffffff" UNDERLINE="#ccb46b18" TRANSPARENT="#44594c3e" RED="#66e64949" GREY="#55ffffff" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
 elif [ "$THEME" = "lake" ]
 then
-	# grass theme
+	# lake theme
 	FOREGROUND="#cc000000" FOREGROUND_BR="#ccffffff" UNDERLINE="#ff784810" TRANSPARENT="#44594c3e" RED="#66e64949" GREY="#66000000" GREY_BR="#55ffffff" CPU_RAMP="#ddbf3c28" $HOME/.config/polybar/launch.sh
 elif [ "$THEME" = "flowers" ]
 then

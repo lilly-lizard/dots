@@ -45,7 +45,7 @@ MONITOR="$(cat ~/.config/archie/primary_monitor)"
 xrandr --output $MONITOR --pos 0x500
 
 # compositor (allows transparency)
-picom -CGb -m 1.0 -i 1.0
+picom -CGb -m 1.0 -i 1.0 2>&1 | tee /tmp/picom.log
 
 # free wireless devices jic
 #doas rfkill unblock all
@@ -55,14 +55,19 @@ if [[ -z $(pidof dunst) ]]; then
 	dunst &
 fi
 
-# start parcellite clipboard manager
+# start clipboard manager
 if [[ -z $(pidof parcellite) ]]; then
-	parcellite &
+	parcellite > /tmp/parcellite.log &
 fi
 
-# start parcellite clipboard manager
+# start app launcher
 if [[ -z $(pidof ulauncher) ]]; then
-	ulauncher --hide-window &
+	ulauncher --hide-window > /tmp/ulauncher.log &
+fi
+
+# start theme update daemon
+if [[ -z $(pidof xsettingsd) ]]; then
+	xsettingsd > /tmp/xsettingsd.log &
 fi
 
 exec echo "---" >>/tmp/sxhkd.log & echo "---" >>/tmp/bspwm.log

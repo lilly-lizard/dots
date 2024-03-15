@@ -57,6 +57,9 @@ bindkey '^N' down-history
 bindkey "^K" history-beginning-search-backward
 bindkey "^J" history-beginning-search-forward
 
+# clear screen (but not scrollback)
+#bindkey "^L" clear-screen
+
 typeset -g -A key
 
 # allow ^ glob operator for match excludes
@@ -80,12 +83,14 @@ alias grep='grep --color=always'
 alias egrep='egrep --color'
 alias pacman='pacman --color always'
 alias dp='doas pacman --color always'
-alias diff='diff --color=auto'
+alias ds='doas systemctl'
 alias paru='paru --color always --sudo doas'
-alias btm='btm --mem_as_value'
-alias vim='VIMINIT="source ~/.config/vim/.vimrc" vim'
-function ranger() { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
-source /home/david/.config/lf/lfcd.sh
+alias vim='vim -u /home/david/.config/vim/.vimrc'
+alias ddocker='doas docker'
+alias diff='diff --color=auto'
+
+#function ranger() { command ranger --choosedir=$HOME/.config/ranger/.rangerdir "$@"; cd "$(cat $HOME/.config/ranger/.rangerdir)"; } #echo -e "\x1b[?12;25h";
+source /home/david/.config/lf/lf-ext.sh
 
 # ctrl + w
 bindkey '^W' backward-kill-word
@@ -99,6 +104,11 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^H' backward-word
 bindkey '^L' forward-word
+
+# set repeat speed for X11 (because it sometimes get reset)
+xset r rate 200 35
+
+#ln -fs /home/david/mnt/data/android ~/.android
 
 # Load zsh-syntax-highlighting (should be last)
 typeset -A ZSH_HIGHLIGHT_STYLES

@@ -82,8 +82,8 @@ alt + {_,shift + }{p,n}
 	bspc {desktop -f,node -d} {prev,next}.local
 
 # focus the node for the given path jump
-super + ctrl + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + ctrl + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 #super + {period,comma}
@@ -137,26 +137,26 @@ super + !button{1-3}
 #
 
 # increase/decrease
-super + {minus,shift + equal}
-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 4 ))
+#super + {minus,shift + equal}
+#	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 4 ))
 
 # reset gap size
-super + equal
-	bspc config -d focused window_gap 12
+#super + equal
+#	bspc config -d focused window_gap 12
 
 # edge specific padding
-super + {ctrl,alt} + w
-	bspc config -d focused top_padding {$((`bspc config -d focused top_padding` + 10 )), 0}
-super + {ctrl,alt} + a
-	bspc config -d focused left_padding {$((`bspc config -d focused left_padding` + 10 )), 0}
-super + {ctrl,alt} + s
-	bspc config -d focused bottom_padding {$((`bspc config -d focused bottom_padding` + 10 )), 0}
-super + {ctrl,alt} + d
-	bspc config -d focused right_padding {$((`bspc config -d focused right_padding` + 10 )), 0}
+#super + {ctrl,alt} + w
+#	bspc config -d focused top_padding {$((`bspc config -d focused top_padding` + 10 )), 0}
+#super + {ctrl,alt} + a
+#	bspc config -d focused left_padding {$((`bspc config -d focused left_padding` + 10 )), 0}
+#super + {ctrl,alt} + s
+#	bspc config -d focused bottom_padding {$((`bspc config -d focused bottom_padding` + 10 )), 0}
+#super + {ctrl,alt} + d
+#	bspc config -d focused right_padding {$((`bspc config -d focused right_padding` + 10 )), 0}
 
 # reset padding
-super + alt + backslash
-	bspc config -d focused top_padding 0; bspc config -d focused left_padding 0; bspc config -d focused bottom_padding 0; bspc config -d focused right_padding 0
+#super + alt + backslash
+#	bspc config -d focused top_padding 0; bspc config -d focused left_padding 0; bspc config -d focused bottom_padding 0; bspc config -d focused right_padding 0
 
 #
 # media keys

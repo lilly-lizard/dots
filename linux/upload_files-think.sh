@@ -10,7 +10,7 @@ cp ~/.config/zsh/.zshenv zsh/
 cp ~/.config/alacritty/alacritty.yml alacritty/
 
 cp ~/.config/river/init river
-cp -r ~/.config/waybar waybar
+cp -r ~/.config/waybar .
 
 cp ~/.config/Code\ -\ OSS/User/settings.json vscode/
 cp ~/.config/Code\ -\ OSS/User/keybindings.json vscode/

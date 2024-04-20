@@ -93,7 +93,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "Default Dark+"
+    "workbench.colorTheme": "Gruvbox Material P Dark"
       
     //"files.associations": {
     //    "*.fsh": "glsl",

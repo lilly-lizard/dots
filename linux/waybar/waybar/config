@@ -58,12 +58,12 @@
 	},
 
     "clock#time": {
-        "format": "{: %H:%M}",
+        "format": " {:%H:%M}",
 		"interval":1,
     },
 
     "clock#calendar": {
-        "format": "{: %d/%m/%y}"
+        "format": " {:%d/%m/%y}"
     },
 
     "cpu": {

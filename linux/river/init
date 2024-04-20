@@ -200,15 +200,15 @@ riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag-lock enabled
 riverctl attach-mode bottom
 
 # start pipewire
-/usr/bin/pipewire > /tmp/pipewire.log &
-/usr/bin/pipewire-pulse > /tmp/pipewire-pulse.log &
-/usr/bin/wireplumber > /tmp/wireplumber.log &
+/usr/bin/pipewire > /tmp/pipewire.log 2>&1 &
+/usr/bin/pipewire-pulse > /tmp/pipewire-pulse.log 2>&1 &
+/usr/bin/wireplumber > /tmp/wireplumber.log 2>&1 &
 
 # start libinput-gestures
-libinput-gestures-setup start > /tmp/libinput-gestures.log &
+libinput-gestures-setup start > /tmp/libinput-gestures.log 2>&1 &
 
 # notification daemon
-dunst > /tmp/dunst.log &
+dunst > /tmp/dunst.log 2>&1 &
 
 # start waybar
-waybar > /tmp/waybar.log &
+waybar > /tmp/waybar.log 2>&1 &

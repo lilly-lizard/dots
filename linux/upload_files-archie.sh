@@ -19,5 +19,7 @@ cp ~/.config/Code\ -\ OSS/User/settings.json vscode/
 cp ~/.config/Code\ -\ OSS/User/keybindings.json vscode/
 
 cp -r ~/.config/rua/wrap_args.d rua/
+cp ~/.config/ncmpcpp/config config/
 
 cp ~/Documents/bin/set-theme scripts/
+

@@ -45,7 +45,7 @@ MONITOR="$(cat ~/.config/archie/primary_monitor)"
 xrandr --output $MONITOR --pos 0x500
 
 # compositor (allows transparency)
-picom -CGb -m 1.0 -i 1.0 2>&1 | tee /tmp/picom.log
+picom -m 1.0 -i 1.0 2>&1 | tee /tmp/picom.log &
 
 # free wireless devices jic
 #doas rfkill unblock all

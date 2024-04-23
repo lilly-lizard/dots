@@ -2,7 +2,8 @@
 	"layer": "bottom",
 	"position": "bottom",
 	"modules-left": ["river/tags"],
-	"modules-right": ["network", "backlight", "pulseaudio", "battery", "clock#calendar", "clock#time"],
+	"modules-center": ["river/window"],
+	"modules-right": ["network", "pulseaudio", "clock#calendar", "clock#time"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -16,55 +17,40 @@
 		"smooth-scrolling-threshold": 1.0,
 	},
 
-    "river/tags": {
+	"river/tags": {
 		"num-tags": 8,
 		"max-length": 1,
-    },
+	},
+
+	"river/window": {
+		"max-length": 90
+	},
 
 	"network": {
-		"interface": "wlan0",
+		"interface": "enp9s0",
 		"format-wifi": " {essid}",
 		"format-ethernet": "",
+		"format-disconnected": "",
 		"tooltip": true,
 		"tooltip-format": "{essid}",
 	},
-
-	"backlight": {
-		"tooltip": false,
-		"format": " {}%",
-        "on-scroll-up": "light -A 5",
-		"on-scroll-down": "light -U 5",
-		"smooth-scrolling-threshold": 2.0,
-	},
-
-    "battery": {
-		"bat": "BAT1",
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""],
-		"interval": "10",
-    },
 
 	"tray":{
 		"icon-size":18,
 		"spacing": 10
 	},
 
-    "clock#time": {
-        "format": "{: %H:%M}",
+	"clock#time": {
+		"format": " {:%H:%M}",
 		"interval":1,
-    },
+	},
 
-    "clock#calendar": {
-        "format": "{: %d/%m/%y}"
-    },
+	"clock#calendar": {
+		"format": " {:%d/%m/%y}"
+	},
+
+
+
 
     "cpu": {
         "interval": 15,

@@ -12,8 +12,8 @@
 
 # APPS
 
-riverctl map normal Alt Return spawn alacritty
-riverctl map normal Super Space spawn wofi
+riverctl map normal Super Return spawn alacritty
+riverctl map normal Super Space spawn ulauncher-toggle
 riverctl map normal Super F spawn firefox
 riverctl map normal Super E spawn nemo
 
@@ -85,6 +85,11 @@ riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 # increment/decrement tags
+riverctl map normal Super N increment-min-focused-tag 8
+riverctl map normal Super P decrement-min-focused-tag 8
+riverctl map normal Super+Shift N increment-min-view-tag 8
+riverctl map normal Super+Shift P decrement-min-view-tag 8
+
 riverctl map normal Alt N increment-min-focused-tag 8
 riverctl map normal Alt P decrement-min-focused-tag 8
 riverctl map normal Alt+Shift N increment-min-view-tag 8
@@ -120,10 +125,7 @@ all_tags=$(((1 << 32) - 1))
 riverctl map normal Alt 0 set-focused-tags $all_tags
 riverctl map normal Alt+Shift 0 set-view-tags $all_tags
 
-# Super+Space to toggle float
 riverctl map normal Super T toggle-float
-
-# Super+G to toggle fullscreen
 riverctl map normal Super G toggle-fullscreen
 
 # Super+{Up,Right,Down,Left} to change layout orientation
@@ -165,14 +167,15 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
 done
 
-# Set background and border color
+# Set default background and border color
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x67AC68
 riverctl border-color-unfocused 0x586e75
 
 # set theme
 export THEME=$(cat ~/.config/theme/system_theme)
-set-theme $THEME
+swaybg -m fill -i /home/david/Pictures/bg/bruno-martins-k1_UO1MGszs-unsplash.jpg &
+#set-theme-river $THEME
 
 # Set keyboard repeat rate
 riverctl set-repeat 35 200
@@ -190,23 +193,31 @@ riverctl focus-follows-cursor normal
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -main-ratio 0.5 -view-padding 4 -outer-padding 4 -main-location left > /tmp/rivertile.log 2>&1 &
+rivertile -main-ratio 0.5 -view-padding 8 -outer-padding 8 -main-location left > /tmp/rivertile.log 2>&1 &
+
+# riverctl send-layout-cmd rivertile "main-location left"
 
 riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad natural-scroll enabled
 riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad tap enabled
 riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag enabled
 riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag-lock enabled
 
+# rules
+riverctl rule-add -app-id firefox ssd
+riverctl rule-add -app-id nemo ssd
+riverctl rule-add -app-id dconf-editor ssd
+riverctl rule-add -app-id gthumb ssd
+
 # new windows at bottom of stack
 riverctl attach-mode bottom
 
-# start pipewire
-/usr/bin/pipewire > /tmp/pipewire.log &
-/usr/bin/pipewire-pulse > /tmp/pipewire-pulse.log &
-/usr/bin/wireplumber > /tmp/wireplumber.log &
+# launcher
+if [[ -z $(pidof ulauncher) ]]; then
+	ulauncher --hide-window > /tmp/ulauncher.log 2>&1 &
+fi
 
-# start libinput-gestures
-libinput-gestures-setup start > /tmp/libinput-gestures.log &
+# notification daemon
+dunst > /tmp/dunst.log 2>&1 &
 
 # start waybar
-waybar > /tmp/waybar.log &
+waybar > /tmp/waybar.log 2>&1 &

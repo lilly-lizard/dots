@@ -57,6 +57,8 @@ super + ctrl + {m,x,y,z}
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
 
 # focus or send to the given desktop
 #alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
@@ -80,6 +82,8 @@ super + Tab
 # focus the next/previous desktop in the current monitor
 alt + {_,shift + }{p,n}
 	bspc {desktop -f,node -d} {prev,next}.local
+super + {_,shift + }{p,n}
+	bspc {desktop -f,node -d} {prev,next}.local
 
 # focus the node for the given path jump
 #super + ctrl + {p,b,comma,period}
@@ -94,7 +98,6 @@ alt + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
-
 
 #
 # preselect
@@ -196,15 +199,22 @@ super + tab
 #
 # audio sink selection
 # possible devices:
+# pactl list
 # pacmd list-sinks
 # - alsa_output.usb-Logitech_G533_Gaming_Headset-00.analog-stereo
 # - alsa_output.pci-0000_0c_00.3.analog-stereo
 #
 
-super + n
-	pactl set-sink-port alsa_output.pci-0000_0c_00.3.analog-stereo analog-output-headphones & polybar-msg action "#sound-sink-status.hook.1"
+#super + n
+#	pactl set-sink-port alsa_output.pci-0000_0c_00.3.3.analog-stereo analog-output-headphones & polybar-msg action "#sound-sink-status.hook.1"
+#
+#super + m
+#	pactl set-sink-port alsa_output.pci-0000_0c_00.3.3.analog-stereo analog-output-lineout & polybar-msg action "#sound-sink-status.hook.2"
 
-super + m
+# 'Analogue Stereo Ouput' configuration
+super + shift + n
+	pactl set-sink-port alsa_output.pci-0000_0c_00.3.analog-stereo analog-output-headphones & polybar-msg action "#sound-sink-status.hook.1"
+super + shift + m
 	pactl set-sink-port alsa_output.pci-0000_0c_00.3.analog-stereo analog-output-lineout & polybar-msg action "#sound-sink-status.hook.2"
 
 #alt + n

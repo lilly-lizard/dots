@@ -149,7 +149,7 @@ then
 elif [ "$THEME" = "shodan" ]
 then
 	# shodan theme
-	FOREGROUND="#ccffffff" UNDERLINE="#ff54ff80" TRANSPARENT="#44404f4f" RED="#66e64949" GREY="#55dddddd" CPU_RAMP="#4ed96a" $HOME/.config/polybar/launch.sh
+	FOREGROUND="#ff9effa5" UNDERLINE="#ff54ff80" TRANSPARENT="#44404f4f" RED="#66e64949" GREY="#55dddddd" CPU_RAMP="#4ed96a" $HOME/.config/polybar/launch.sh
 elif [ "$THEME" = "grass" ]
 then
 	# grass theme

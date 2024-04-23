@@ -1,0 +1,9 @@
+#compdef set-theme-river
+
+_set-theme-river() {
+	local -a theme_names
+	theme_names=('plains' 'forest' 'flowers' 'mountain' 'shodan' 'dark')
+	_describe 'theme name' theme_names
+}
+
+_set-theme-river "$@"

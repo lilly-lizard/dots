@@ -20,14 +20,17 @@
 	"river/tags": {
 		"num-tags": 8,
 		"max-length": 1,
+		"on-scroll-up": "riverctl increment-min-focused-tag 8",
+		"on-scroll-down": "riverctl decrement-min-focused-tag 8",
 	},
 
 	"river/window": {
-		"max-length": 90
+		"max-length": 90,
+		"tooltip": false,
 	},
 
 	"network": {
-		"interface": "enp9s0",
+		"interface": "enp8s0",
 		"format-wifi": " {essid}",
 		"format-ethernet": "",
 		"format-disconnected": "",

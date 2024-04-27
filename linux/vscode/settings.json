@@ -91,7 +91,6 @@
     "zig.initialSetupDone": true,
     "cmake.showOptionsMovedNotification": false,
     "zig.path": "/usr/bin/zig",
-    "workbench.colorTheme": "Default Dark+",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

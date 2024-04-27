@@ -105,8 +105,11 @@ bindkey "^[[1;5D" backward-word
 bindkey '^H' backward-word
 bindkey '^L' forward-word
 
+# script completion
+compdef _set-theme-river set-theme-river
+
 # set repeat speed for X11 (because it sometimes get reset)
-xset r rate 200 35
+#xset r rate 200 35
 
 #ln -fs /home/david/mnt/data/android ~/.android
 

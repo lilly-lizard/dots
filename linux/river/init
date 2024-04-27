@@ -85,15 +85,15 @@ riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 # increment/decrement tags
-riverctl map normal Super N increment-min-focused-tag 8
-riverctl map normal Super P decrement-min-focused-tag 8
-riverctl map normal Super+Shift N increment-min-view-tag 8
-riverctl map normal Super+Shift P decrement-min-view-tag 8
+riverctl map normal Super N increment-focused-tags 8
+riverctl map normal Super P decrement-focused-tags 8
+riverctl map normal Super+Shift N increment-view-tags 8
+riverctl map normal Super+Shift P decrement-view-tags 8
 
-riverctl map normal Alt N increment-min-focused-tag 8
-riverctl map normal Alt P decrement-min-focused-tag 8
-riverctl map normal Alt+Shift N increment-min-view-tag 8
-riverctl map normal Alt+Shift P decrement-min-view-tag 8
+riverctl map normal Alt N increment-focused-tags 8
+riverctl map normal Alt P decrement-focused-tags 8
+riverctl map normal Alt+Shift N increment-view-tags 8
+riverctl map normal Alt+Shift P decrement-view-tags 8
 
 # previous tags
 riverctl map normal Super TAB focus-previous-tags
@@ -122,8 +122,8 @@ riverctl map normal Super+Shift O send-to-output next
 # Super+0 to focus all tags
 # Super+Shift+0 to tag focused view with all tags
 all_tags=$(((1 << 32) - 1))
-riverctl map normal Alt 0 set-focused-tags $all_tags
-riverctl map normal Alt+Shift 0 set-view-tags $all_tags
+riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
 riverctl map normal Super T toggle-float
 riverctl map normal Super G toggle-fullscreen
@@ -167,15 +167,14 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
 done
 
+# volume with mouse
+riverctl map normal Alt+Shift+BTN_GEAR_DOWN spawn 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
+riverctl map normal Alt+Shift+BTN_GEAR_UP   spawn 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
+
 # Set default background and border color
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x67AC68
 riverctl border-color-unfocused 0x586e75
-
-# set theme
-export THEME=$(cat ~/.config/theme/system_theme)
-swaybg -m fill -i /home/david/Pictures/bg/bruno-martins-k1_UO1MGszs-unsplash.jpg &
-#set-theme-river $THEME
 
 # Set keyboard repeat rate
 riverctl set-repeat 35 200
@@ -207,6 +206,9 @@ riverctl rule-add -app-id firefox ssd
 riverctl rule-add -app-id nemo ssd
 riverctl rule-add -app-id dconf-editor ssd
 riverctl rule-add -app-id gthumb ssd
+riverctl rule-add -app-id deluge-gtk ssd
+riverctl rule-add -app-id steam tags 7
+riverctl rule-add -app-id ulauncher position 660 250
 
 # new windows at bottom of stack
 riverctl attach-mode bottom
@@ -219,5 +221,6 @@ fi
 # notification daemon
 dunst > /tmp/dunst.log 2>&1 &
 
-# start waybar
-waybar > /tmp/waybar.log 2>&1 &
+# set theme and start waybar
+export THEME=$(cat ~/.config/archie/theme_system)
+set-theme-river $THEME &

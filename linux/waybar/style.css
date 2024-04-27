@@ -42,6 +42,7 @@ window#waybar.hidden {
 	color: @foreground;
 	background: @shaded;
 	border-bottom: 2px solid @underline;
+	border-top: 2px solid transparent;
 }
 
 #network {

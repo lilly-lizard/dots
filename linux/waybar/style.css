@@ -1,0 +1,92 @@
+/* color variables */
+@import url("theme-colors.css");
+
+/* remove gtk styling */
+* { all: unset; }
+
+* {
+	font-family: "Iosevka SS18", "Font Awesome 6 Free Solid";
+	font-size: 14px;
+	background: transparent;
+
+	border: none;
+	font-weight: normal;
+	text-shadow: unset;
+	min-height: 24px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#window {
+	color: @foreground;
+}
+
+#tags button {
+	color: @grey;
+	transition: none;
+	border-radius: 0px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#tags button.occupied {
+	color: @foreground;
+	transition: none;
+}
+#tags button.focused {
+	color: @foreground;
+	background: @shaded;
+	border-bottom: 2px solid @underline;
+	border-top: 2px solid transparent;
+}
+
+#network {
+	color: @foreground;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#pulseaudio {
+	color: @foreground;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#pulseaudio.muted {
+	color: @grey;
+}
+
+#clock.calendar {
+	color: @foreground;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#clock.time {
+	color: @foreground;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#tray {
+	color: @foreground;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#custom-launcher {
+	font-size: 24px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	transition: none;
+	color: #89DCEB;
+	background: #161320;
+}

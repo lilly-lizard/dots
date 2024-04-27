@@ -7,5 +7,5 @@ if [[ "$(tty)" == "/dev/tty1" ]] then
 	# disable auto-mute for line-out while headphones are plugged in
 	#~/Documents/bin/disable-auto-mute-user.sh
 	# start X11
-	startx &> ~/.config/X11/startx_log
+	#startx &> ~/.config/X11/startx_log
 fi

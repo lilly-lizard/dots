@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# autocompletion list in /usr/share/zsh/site-functions/_set-theme
+# autocompletion list in /usr/share/zsh/site-functions/_set-theme-bspwm
 
 export THEME="$1"
 . ~/.config/bspwm/bspwmrc

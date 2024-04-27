@@ -22,4 +22,10 @@ cp -r ~/.config/rua/wrap_args.d rua/
 cp ~/.config/ncmpcpp/config config/
 
 cp ~/Documents/bin/set-theme scripts/
+cp ~/Documents/bin/set-theme-bspwm scripts/
+cp ~/Documents/bin/set-theme-river scripts/
+cp /usr/share/zsh/site-functions/_set-theme-river scripts/
+
+cp ~/.config/river/init river
+cp -r ~/.config/waybar .
 

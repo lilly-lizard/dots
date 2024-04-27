@@ -16,6 +16,9 @@ colorscheme molokai
 "highlight htmlItalic gui=italic ctermfg=blue
 "highlight htmlTagName gui=italic ctermfg=green
 
+" yank to system clipboard with "+y
+set clipboard+=unnamedplus
+
 set mouse=
 
 " word wrap

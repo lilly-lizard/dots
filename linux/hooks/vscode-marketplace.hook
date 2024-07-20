@@ -1,0 +1,10 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/code/product.json
+
+[Action]
+Description = Add official marketplace urls to product.json
+When = PostTransaction
+Exec = /usr/bin/perl -i -p0e 's/"extensionsGallery": {\n.*\n.*\n.*}/"extensionsGallery": {\n\t\t"serviceUrl": "https:\/\/marketplace.visualstudio.com\/_apis\/public\/gallery",\n\t\t"cacheUrl": "https:\/\/vscode.blob.core.windows.net\/gallery\/index",\n\t\t"itemUrl": "https:\/\/marketplace.visualstudio.com\/items"\n\t}/g' /usr/lib/code/product.json

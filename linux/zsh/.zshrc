@@ -107,6 +107,7 @@ bindkey '^L' forward-word
 
 # script completion
 compdef _set-theme-river set-theme-river
+compdef _set-theme set-theme
 
 # set repeat speed for X11 (because it sometimes get reset)
 #xset r rate 200 35

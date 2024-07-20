@@ -16,6 +16,7 @@ riverctl map normal Super Return spawn alacritty
 riverctl map normal Super Space spawn ulauncher-toggle
 riverctl map normal Super F spawn firefox
 riverctl map normal Super E spawn nemo
+riverctl map normal Super C spawn code
 
 # SYSTEM
 
@@ -39,12 +40,12 @@ riverctl map normal Alt+Shift K swap up
 riverctl map normal Alt+Shift L swap right
 
 # Super+Period and Super+Comma to focus the next/previous output
-riverctl map normal Super Period focus-output next
-riverctl map normal Super Comma focus-output previous
+riverctl map normal Alt Period focus-output next
+riverctl map normal Alt Comma focus-output previous
 
 # Super+Shift+{Period,Comma} to send the focused view to the next/previous output
-riverctl map normal Super+Shift Period send-to-output next
-riverctl map normal Super+Shift Comma send-to-output previous
+riverctl map normal Alt+Shift Period send-to-output -current-tags next
+riverctl map normal Alt+Shift Comma send-to-output -current-tags previous
 
 # Super+Return to bump the focused view to the top of the layout stack
 #riverctl map normal Super Return zoom
@@ -157,10 +158,10 @@ do
     riverctl map $mode None XF86AudioMute         spawn 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
-    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
-    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
-    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
-    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
+    riverctl map $mode None XF86AudioMedia spawn 'mpris2controller PlayPause'
+    riverctl map $mode None XF86AudioPlay  spawn 'mpris2controller PlayPause'
+    riverctl map $mode None XF86AudioPrev  spawn 'mpris2controller Previous'
+    riverctl map $mode None XF86AudioNext  spawn 'mpris2controller Next'
 
     # Control screen backlight brightness with light (https://github.com/haikarainen/light)
     riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
@@ -192,7 +193,7 @@ riverctl focus-follows-cursor normal
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -main-ratio 0.5 -view-padding 8 -outer-padding 8 -main-location left > /tmp/rivertile.log 2>&1 &
+rivertile -main-ratio 0.5 -view-padding 8 -outer-padding 8 -main-location left &> /tmp/rivertile.log &
 
 # riverctl send-layout-cmd rivertile "main-location left"
 
@@ -202,24 +203,29 @@ riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag enabled
 riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag-lock enabled
 
 # rules
-riverctl rule-add -app-id firefox ssd
-riverctl rule-add -app-id nemo ssd
-riverctl rule-add -app-id dconf-editor ssd
-riverctl rule-add -app-id gthumb ssd
-riverctl rule-add -app-id deluge-gtk ssd
-riverctl rule-add -app-id steam tags 7
-riverctl rule-add -app-id ulauncher position 660 250
+riverctl rule-add ssd
+riverctl rule-add -app-id ulauncher csd
+riverctl rule-add -app-id steam tags 64 # ws7
+#riverctl rule-add -app-id ulauncher position 660 250
 
 # new windows at bottom of stack
 riverctl attach-mode bottom
 
+# monitor arrangement
+wlr-randr --output DP-1 --pos 0,250 --adaptive-sync disabled
+wlr-randr --output DP-2 --transform 270 --pos 2560,0 --adaptive-sync disabled
+
 # launcher
 if [[ -z $(pidof ulauncher) ]]; then
-	ulauncher --hide-window > /tmp/ulauncher.log 2>&1 &
+	ulauncher --hide-window &> /tmp/ulauncher.log &
+fi
+
+if [[ -z $(pidof ulauncher) ]]; then
+	mpd-mpris &> /tmp/mpd-mpris.log &
 fi
 
 # notification daemon
-dunst > /tmp/dunst.log 2>&1 &
+dunst &> /tmp/dunst.log &
 
 # set theme and start waybar
 export THEME=$(cat ~/.config/archie/theme_system)

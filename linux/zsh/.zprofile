@@ -2,10 +2,14 @@
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+# vscode wayland
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
 # if tty1
 if [[ "$(tty)" == "/dev/tty1" ]] then
 	# disable auto-mute for line-out while headphones are plugged in
 	#~/Documents/bin/disable-auto-mute-user.sh
 	# start X11
 	#startx &> ~/.config/X11/startx_log
+	launch-river.sh
 fi

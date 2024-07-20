@@ -193,9 +193,6 @@ XF86AudioNext
 	mpris2controller Next
 	#playerctl next
 
-super + tab
-	mpris2controller PlayPause
-
 #
 # audio sink selection
 # possible devices:

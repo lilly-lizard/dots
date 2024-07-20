@@ -83,7 +83,6 @@
         "rustc(Click for full compiler diagnostic)"
     ],
     "lldb.suppressUpdateNotifications": true,
-    "zig.zls.path": "/usr/bin/zls",
     "zig.zls.checkForUpdate": false,
     "cSpell.enabled": false,
     "zig.zigPath": "/usr/bin/zig",
@@ -91,6 +90,13 @@
     "zig.initialSetupDone": true,
     "cmake.showOptionsMovedNotification": false,
     "zig.path": "/usr/bin/zig",
+    "zig.zls.path": "/home/david/Downloads/zls-x86_64-linux/zls",
+    "mesonbuild.downloadLanguageServer": true,
+    "mesonbuild.buildFolder": "build",
+    "zig.buildOnSave": true,
+    "zig.zls.buildOnSaveStep": "build",
+    "zig.zls.enableBuildOnSave": true,
+    "workbench.colorTheme": "Greyout",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

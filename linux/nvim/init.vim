@@ -1,13 +1,14 @@
-call plug#begin('~/.local/share/nvim/plugins')
-Plug 'tomasr/molokai'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/nvim-treesitter-context'
+call plug#begin('/home/david/.local/share/nvim/plugins')
+"Plug 'tomasr/molokai'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
 
 set nocompatible
 filetype off
 
 syntax on
+"colorscheme desert
 colorscheme molokai
 "set notermguicolors t_Co=16
 
@@ -74,4 +75,4 @@ autocmd BufNewFile,BufRead *.frag setfiletype glsl
 autocmd BufNewFile,BufRead *.vert setfiletype glsl
 
 " and misc lua config (https://herrbischoff.com/2022/07/neovim-using-init-vim-and-init-lua-concurrently/)
-source /home/david/.config/nvim/sub_init.lua.vim
+"source /home/david/.config/nvim/sub_init.lua.vim

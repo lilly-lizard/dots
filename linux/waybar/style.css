@@ -18,13 +18,25 @@
 window#waybar {
 	background: transparent;
 }
-
 window#waybar.hidden {
 	opacity: 0.2;
 }
 
 #window {
 	color: @foreground;
+	padding-left: 10px;
+	padding-right: 10px;
+	opacity: 0.5;
+}
+#window.focused {
+	opacity: 1.0;
+}
+
+#mpris {
+	color: @foreground;
+}
+#mpris.paused {
+	opacity: 0.5;
 }
 
 #tags button {
@@ -39,10 +51,11 @@ window#waybar.hidden {
 	transition: none;
 }
 #tags button.focused {
-	color: @foreground;
-	background: @shaded;
 	border-bottom: 2px solid @underline;
 	border-top: 2px solid transparent;
+}
+#tags button.output.focused {
+	background: @shaded;
 }
 
 #network {

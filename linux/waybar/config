@@ -1,9 +1,21 @@
-{
+[{
 	"layer": "bottom",
+	"output": "DP-1",
 	"position": "bottom",
 	"modules-left": ["river/tags"],
-	"modules-center": ["river/window"],
-	"modules-right": ["network", "pulseaudio", "clock#calendar", "clock#time"],
+	"modules-center": ["mpris"],
+	"modules-right": ["river/window", "network", "pulseaudio", "clock#calendar", "clock#time"],
+
+	"mpris": {
+		"format": "{status_icon} {dynamic}",
+		"status-icons": {
+			"playing": "▶",
+			"paused": "⏸",
+		},
+		"max-length": 80,
+		"on-click": "mpris2controller PlayPause",
+		"tooltip-format": "{player}",
+	},
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -20,8 +32,8 @@
 	"river/tags": {
 		"num-tags": 8,
 		"max-length": 1,
-		"on-scroll-up": "riverctl increment-min-focused-tag 8",
-		"on-scroll-down": "riverctl decrement-min-focused-tag 8",
+		"on-scroll-up": "riverctl increment-focused-tags 8",
+		"on-scroll-down": "riverctl decrement-focused-tags 8",
 	},
 
 	"river/window": {
@@ -49,53 +61,42 @@
 	},
 
 	"clock#calendar": {
-		"format": " {:%d/%m/%y}"
+		"format": " {:%a %d/%m/%y}"
+	},
+},
+{
+	"layer": "bottom",
+	"output": "DP-2",
+	"position": "bottom",
+	"modules-left": ["river/tags"],
+	"modules-right": ["river/window", "pulseaudio", "clock#time"],
+	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 2,
+		"format": "{icon} {volume}%",
+		"format-muted": " {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"smooth-scrolling-threshold": 1.0,
 	},
 
+	"clock#time": {
+		"format": " {:%H:%M}",
+		"interval":1,
+	},
 
+	"river/tags": {
+		"num-tags": 8,
+		"max-length": 1,
+		"on-scroll-up": "riverctl increment-focused-tags 8",
+		"on-scroll-down": "riverctl decrement-focused-tags 8",
+	},
 
-
-    "cpu": {
-        "interval": 15,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "custom/media": {
-        "interval": 30,
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 20,
-        "format-icons": {
-            "spotify": " ",
-            "default": " "
-        },
-        "escape": true,
-        "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
-        "on-click": "playerctl play-pause"
-    },
-    "custom/launcher":{
-        "format": " ",
-        "on-click": "rofi -show drun",
-        "on-click-right": "killall rofi"
-    },
-    "custom/power":{
-        "format": " ",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh",
-    },
-    "custom/updates":{
-        "format": "{} Update(s)",
-        "exec": "checkupdates | wc -l",
-        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-        "interval": 15,
-        "on-click": "alacritty -e paru -Syu && notify-send 'The system has been updated' "
-    },
-    "custom/wallpaper":{
-        "format":" ",
-        "on-click": "bash ~/.config/system_scripts/pkill_bc"
-    }
-}
+	"river/window": {
+		"max-length": 90,
+		"tooltip": false,
+	},
+}]

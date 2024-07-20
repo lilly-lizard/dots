@@ -15,6 +15,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 #export MYVIMRC=$HOME/.config/vim/.vimrc
 #export VIMINIT="source ${MYVIMRC}"
 
+export WINEPREFIX=~/.local/share/wine
+
 # data locations
 export CARGO_HOME=$HOME/.local/share/cargo
 export RUSTUP_HOME=$HOME/.local/share/rustup
@@ -27,9 +29,6 @@ export RUA_SUDO_COMMAND="doas"
 
 # defines installed vulkan layers (enabled by the application)
 export VK_LAYER_PATH=/usr/share/vulkan/explicit_layer.d
-
-# dark theme for gtk apps
-#export GTK_THEME="$(cat ~/.config/theme_gtk)"
 
 # less: ascii colors and no bell
 export LESS="$LESS -R -Q"

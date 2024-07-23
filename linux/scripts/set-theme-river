@@ -52,7 +52,7 @@ else
 fi
 
 killall waybar
-waybar > /tmp/waybar.log 2>&1 &
+waybar &> /tmp/waybar.log &
 
 ICON_THEME="Obsidenza-Sand"
 CURSOR_THEME="Breeze_Hacked_Green"

@@ -8,7 +8,8 @@ export WORDCHARS="*?_-.[]~&;\!#$%^(){}<>"
 # default programs
 export VISUAL=nvim
 export TERMINAL=alacritty
-export BROWSER=brave
+export BROWSER=firefox
+export GRIM_DEFAULT_DIR=/home/david/Pictures/Screenshots
 
 # config locations
 export XDG_CONFIG_HOME=$HOME/.config
@@ -45,6 +46,8 @@ export LESS_TERMCAP_so=$'\e[35m'		# begin standout-mode - info box
 export LESS_TERMCAP_me=$'\e[0m'			# end mode
 export LESS_TERMCAP_ue=$'\e[0m'			# end underline
 export LESS_TERMCAP_se=$'\e[0m'			# end standout-mode
+
+#export ELECTRON_OZONE_PLATFORM_HINT=auto
 
 #export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 #export ANDROID_SDK_ROOT=/home/david/software/android-sdk

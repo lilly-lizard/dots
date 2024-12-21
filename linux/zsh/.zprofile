@@ -2,9 +2,6 @@
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# vscode wayland
-export ELECTRON_OZONE_PLATFORM_HINT=auto
-
 # if tty1
 if [[ "$(tty)" == "/dev/tty1" ]] then
 	# disable auto-mute for line-out while headphones are plugged in

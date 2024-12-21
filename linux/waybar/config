@@ -37,7 +37,7 @@
 	},
 
 	"river/window": {
-		"max-length": 90,
+		"max-length": 80,
 		"tooltip": false,
 	},
 
@@ -48,6 +48,17 @@
 		"format-disconnected": "",
 		"tooltip": true,
 		"tooltip-format": "{essid}",
+	},
+
+	"custom/backlight": {
+		"exec": "ddcutil getvcp 10 -t | perl -nE 'if (/ C (\\d+) /) { say $1; }'",
+		"exec-if": "sleep 1", // Give enough time for `sway output` command changes to propagate so we can read them in the next `exec`
+		"format": "{icon} {0}%",
+		"format-icons": [""],
+		"interval": "once",
+		"on-scroll-up": "ddcutil setvcp 10 + 10",
+		"on-scroll-down": "ddcutil setvcp 10 - 10",
+		"tooltip": false,
 	},
 
 	"tray":{
@@ -96,7 +107,7 @@
 	},
 
 	"river/window": {
-		"max-length": 90,
+		"max-length": 70,
 		"tooltip": false,
 	},
 }]

@@ -8,7 +8,8 @@ echo "${THEME}" > ~/.config/archie/theme_system
 
 killall swaybg
 
-ICON_THEME="Obsidenza-Sand"
+#ICON_THEME="Obsidenza-Sand"
+ICON_THEME="Obsidian-Sand"
 CURSOR_THEME="Breeze_Hacked_Green"
 FONT_NAME="Iosevka SS18, 11"
 
@@ -28,21 +29,37 @@ elif [ "$THEME" = "flowers" ]; then
 	swaybg -m fill -i ~/Pictures/bg/flowers_yousef-espanioly-0iOOw41DZ28-unsplash.jpg > /tmp/swaybg.tmp 2>&1 &
         GTK_THEME="Skeuos-Violet-Dark"
 	ICON_THEME="Obsidian-Purple"
-	# TODO
 	ln -fs ~/.config/waybar/theme-colors/flowers.css ~/.config/waybar/theme-colors.css
 	riverctl border-color-focused 0x4f589c
 	riverctl border-color-unfocused 0x444444
 elif [ "$THEME" = "mountain" ]; then
 	swaybg -m fill -i ~/Pictures/bg/tobias-keller-73F4pKoUkM0-unsplash.jpg > /tmp/swaybg.tmp 2>&1 &
         GTK_THEME="Desert-Teal-Dark-40"
-	# TODO
+	ln -fs ~/.config/waybar/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
+	riverctl border-color-focused 0xb46b18
+	riverctl border-color-unfocused 0x444444
+elif [ "$THEME" = "lake" ]; then
+	swaybg -m fill -i ~/Pictures/bg/danny-postma-rdxj6E_v7l0-unsplash.jpg > /tmp/swaybg.tmp 2>&1 &
+        GTK_THEME="Desert-Teal-light-40"
+	ln -fs ~/.config/waybar/theme-colors/flowers.css ~/.config/waybar/theme-colors.css
+	riverctl border-color-focused 0x4f589c
+	riverctl border-color-unfocused 0x444444
+elif [ "$THEME" = "church" ]; then
+	swaybg -m fill -i ~/Pictures/bg/zane-muir-P_PPnp-ai1Q-unsplash.jpg > /tmp/swaybg.tmp 2>&1 &
+        GTK_THEME="oomox-gruvbox-dark-soft"
+	ln -fs ~/.config/waybar/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
+	riverctl border-color-focused 0xb46b18
+	riverctl border-color-unfocused 0x444444
+elif [ "$THEME" = "bush" ]; then
+	swaybg -m fill -i ~/Pictures/bg/yvon-hoogers-lJINays-OpA-unsplash.jpg > /tmp/swaybg.tmp 2>&1 &
+        GTK_THEME="Desert-Teal-Dark-40"
 	ln -fs ~/.config/waybar/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
 	riverctl border-color-focused 0xb46b18
 	riverctl border-color-unfocused 0x444444
 elif [ "$THEME" = "shodan" ]; then
 	swaybg -m fill -i ~/Pictures/bg/shodan.png > /tmp/swaybg.tmp 2>&1 &
         GTK_THEME="GreenCodded-theme"
-	# TODO
+	ICON_THEME="Obsidian-Green"
 	ln -fs ~/.config/waybar/theme-colors/shodan.css ~/.config/waybar/theme-colors.css
 	riverctl border-color-focused 0x00aa33
 	riverctl border-color-unfocused 0x444444
@@ -59,13 +76,18 @@ fi
 killall waybar
 waybar > /tmp/waybar.log 2>&1 &
 
-echo "$GTK_THEME" > ~/.config/archie/theme_gtk
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
-gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
-gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_THEME"
-gsettings set org.gnome.desktop.interface font-name "$FONT_NAME"
 sed -i "/gtk-theme-name/c\gtk-theme-name=$GTK_THEME" ~/.config/gtk-3.0/settings.ini
+echo "$GTK_THEME" > ~/.config/archie/theme_gtk
+
+gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-3.0/settings.ini
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-4.0/settings.ini
+
+gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_THEME"
 sed -i "/gtk-cursor-theme-name/c\gtk-cursor-theme-name=$CURSOR_THEME" ~/.config/gtk-3.0/settings.ini
 sed -i "/gtk-cursor-theme-name/c\gtk-cursor-theme-name=$CURSOR_THEME" ~/.config/gtk-4.0/settings.ini
+sed -i "/Inherits =/c\Inherits = $CURSOR_THEME" ~/.local/share/icons/default/index.theme
+riverctl xcursor-theme "$CURSOR_THEME"
+
+gsettings set org.gnome.desktop.interface font-name "$FONT_NAME"

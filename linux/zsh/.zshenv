@@ -1,5 +1,6 @@
 # path
 export PATH=$HOME/Documents/bin:$HOME/.local/bin:$PATH
+export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 
 # zsh word commands skip these characters
 # by default this includes / and =

@@ -64,6 +64,17 @@ window#waybar.hidden {
 	padding-right: 10px;
 }
 
+#custom-ddc_brightness_primary {
+	color: @foreground;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#custom-ddc_brightness_secondary {
+	color: @foreground;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 #pulseaudio {
 	color: @foreground;
 	padding-left: 10px;

@@ -150,4 +150,8 @@
 		"command": "-workbench.action.terminal.new",
 		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
 	},
+	{
+		"key": "ctrl+v",
+		"command": "-editor.action.clipboardPasteAction"
+	},
 ]

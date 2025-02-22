@@ -89,7 +89,6 @@
     "cSpell.enabled": false,
     "zig.zigPath": "/usr/bin/zig",
     "workbench.editor.empty.hint": "hidden",
-    "zig.initialSetupDone": true,
     "cmake.showOptionsMovedNotification": false,
     "zig.path": "/usr/bin/zig",
     "zig.zls.path": "/home/david/Downloads/zls-x86_64-linux/zls",
@@ -99,7 +98,8 @@
     "zig.zls.buildOnSaveStep": "build",
     "zig.zls.enableBuildOnSave": true,
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
-    "workbench.colorTheme": "Yet Another Solarized Theme (Light)",
+    "json.validate.enable": false,
+    "workbench.colorTheme": "Default Dark+",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

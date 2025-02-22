@@ -27,7 +27,7 @@ riverctl map normal Super S spawn /home/david/Documents/bin/screenshot.sh
 riverctl map normal Super Q close
 
 # Super+\ to exit river
-riverctl map normal Super \ exit
+riverctl map normal Super Backslash exit
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 riverctl map normal Alt H focus-view left
@@ -53,16 +53,20 @@ riverctl map normal Super+Shift K swap up
 riverctl map normal Super+Shift L swap right
 
 # Super+Period and Super+Comma to focus the next/previous output
-riverctl map normal Alt Period focus-output next
-riverctl map normal Super Period focus-output next
-riverctl map normal Alt Comma focus-output previous
-riverctl map normal Super Comma focus-output next
+riverctl map normal Alt Slash focus-output next
+riverctl map normal Super Slash focus-output next
+#riverctl map normal Alt Comma focus-output next
+#riverctl map normal Super Comma focus-output next
+#riverctl map normal Alt Period focus-output next
+#riverctl map normal Super Period focus-output next
 
 # Super+Shift+{Period,Comma} to send the focused view to the next/previous output
-riverctl map normal Alt+Shift Period send-to-output -current-tags next
-riverctl map normal Super+Shift Period send-to-output -current-tags next
-riverctl map normal Alt+Shift Comma send-to-output -current-tags previous
-riverctl map normal Super+Shift Comma send-to-output -current-tags previous
+riverctl map normal Alt+Shift Slash send-to-output -current-tags previous
+riverctl map normal Super+Shift Slash send-to-output -current-tags previous
+#riverctl map normal Alt+Shift Comma send-to-output -current-tags previous
+#riverctl map normal Super+Shift Comma send-to-output -current-tags previous
+#riverctl map normal Alt+Shift Period send-to-output -current-tags next
+#riverctl map normal Super+Shift Period send-to-output -current-tags next
 
 # Super+Return to bump the focused view to the top of the layout stack
 #riverctl map normal Super Return zoom

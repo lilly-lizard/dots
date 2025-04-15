@@ -12,33 +12,28 @@
 
 # APPS
 
-#riverctl map normal Super Return spawn kitty
-riverctl map normal Super Return spawn alacritty
-riverctl map normal Super Space spawn ulauncher-toggle
+riverctl map normal Alt Return spawn alacritty
+riverctl map normal Super Space spawn wofi
 riverctl map normal Super F spawn firefox
-#riverctl map normal Super E spawn 'io.elementary.files -n'
 riverctl map normal Super E spawn nemo
-riverctl map normal Super C spawn code
-riverctl map normal Super S spawn /home/david/Documents/bin/screenshot.sh
+riverctl map normal Super S spawn ~/Documents/bin/screenshot.sh
 
 # SYSTEM
+
+# Super+End to lock screen
+riverctl map normal Super End spawn swaylock
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
 
 # Super+\ to exit river
-riverctl map normal Super Backslash exit
+riverctl map normal Super \ exit
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 riverctl map normal Alt H focus-view left
 riverctl map normal Alt J focus-view down
 riverctl map normal Alt K focus-view up
 riverctl map normal Alt L focus-view right
-
-riverctl map normal Super H focus-view left
-riverctl map normal Super J focus-view down
-riverctl map normal Super K focus-view up
-riverctl map normal Super L focus-view right
 
 # Super+Shift+J and Super+Shift+K to swap the focused view with the next/previous
 # view in the layout stack
@@ -47,26 +42,19 @@ riverctl map normal Alt+Shift J swap down
 riverctl map normal Alt+Shift K swap up
 riverctl map normal Alt+Shift L swap right
 
-riverctl map normal Super+Shift H swap left
-riverctl map normal Super+Shift J swap down
-riverctl map normal Super+Shift K swap up
-riverctl map normal Super+Shift L swap right
-
 # Super+Period and Super+Comma to focus the next/previous output
-riverctl map normal Alt Slash focus-output next
-riverctl map normal Super Slash focus-output next
-#riverctl map normal Alt Comma focus-output next
-#riverctl map normal Super Comma focus-output next
 #riverctl map normal Alt Period focus-output next
+#riverctl map normal Alt Comma focus-output previous
 #riverctl map normal Super Period focus-output next
+#riverctl map normal Super Comma focus-output previous
+riverctl map normal Super Slash focus-output next
 
 # Super+Shift+{Period,Comma} to send the focused view to the next/previous output
-riverctl map normal Alt+Shift Slash send-to-output -current-tags previous
-riverctl map normal Super+Shift Slash send-to-output -current-tags previous
-#riverctl map normal Alt+Shift Comma send-to-output -current-tags previous
-#riverctl map normal Super+Shift Comma send-to-output -current-tags previous
 #riverctl map normal Alt+Shift Period send-to-output -current-tags next
+#riverctl map normal Alt+Shift Comma send-to-output -current-tags previous
 #riverctl map normal Super+Shift Period send-to-output -current-tags next
+#riverctl map normal Super+Shift Comma send-to-output -current-tags previous
+riverctl map normal Super+Shift Slash send-to-output -current-tags next
 
 # Super+Return to bump the focused view to the top of the layout stack
 #riverctl map normal Super Return zoom
@@ -117,9 +105,6 @@ riverctl map normal Alt P decrement-focused-tags 8
 riverctl map normal Alt+Shift N increment-view-tags 8
 riverctl map normal Alt+Shift P decrement-view-tags 8
 
-#riverctl map-pointer normal Alt BTN_EXTRA increment-focused-tags 8
-#riverctl map-pointer normal Alt BTN_SIDE decrement-focused-tags 8
-
 # previous tags
 riverctl map normal Super TAB focus-previous-tags
 
@@ -139,6 +124,10 @@ do
     # Super+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
     riverctl map normal Super+Shift $i toggle-view-tags $tags
 done
+
+# toggle outputs
+riverctl map normal Super O focus-output next
+riverctl map normal Super+Shift O send-to-output -current-tags next
 
 # Super+0 to focus all tags
 # Super+Shift+0 to tag focused view with all tags
@@ -178,9 +167,8 @@ do
     riverctl map $mode None XF86AudioMute         spawn 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
-    riverctl map $mode None XF86AudioPlay  spawn 'mpris2controller PlayPause'
-    #riverctl map $mode None XF86AudioPrev  spawn 'mpris2controller Previous'
-    #riverctl map $mode None XF86AudioNext  spawn 'mpris2controller Next'
+    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
     riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
     riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
 
@@ -189,14 +177,14 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
 done
 
-# volume with mouse
-riverctl map-pointer normal Alt+Shift+BTN_GEAR_DOWN spawn 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
-riverctl map-pointer normal Alt+Shift+BTN_GEAR_UP   spawn 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
-
-# Set default background and border color
+# Set background and border color
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x67AC68
 riverctl border-color-unfocused 0x586e75
+
+# set theme
+export THEME=$(cat ~/.config/theme/system_theme)
+set-theme $THEME
 
 # Set keyboard repeat rate
 riverctl set-repeat 35 200
@@ -214,7 +202,7 @@ riverctl focus-follows-cursor normal
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -main-ratio 0.5 -view-padding 8 -outer-padding 8 -main-location left &> /tmp/rivertile.log &
+rivertile -main-ratio 0.5 -view-padding 4 -outer-padding 4 -main-location left > /tmp/rivertile.log 2>&1 &
 
 # riverctl send-layout-cmd rivertile "main-location left"
 
@@ -225,29 +213,19 @@ riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag-lock enabled
 
 # rules
 riverctl rule-add ssd
-riverctl rule-add -app-id ulauncher csd
 riverctl rule-add -app-id steam tags 64 # ws7
-#riverctl rule-add -app-id ulauncher position 660 250
 
 # new windows at bottom of stack
 riverctl attach-mode bottom
 
-# monitor arrangement
-wlr-randr --output DP-1 --pos 0,250 --adaptive-sync disabled
-wlr-randr --output DP-2 --transform 270 --pos 2560,0 --adaptive-sync disabled
+# start pipewire
+/usr/bin/pipewire > /tmp/pipewire.log 2>&1 &
+/usr/bin/pipewire-pulse > /tmp/pipewire-pulse.log 2>&1 &
+sleep 0.05
+/usr/bin/wireplumber > /tmp/wireplumber.log 2>&1 &
 
-# launcher
-if [[ -z $(pidof ulauncher) ]]; then
-	ulauncher --hide-window &> /tmp/ulauncher.log &
-fi
-
-if [[ -z $(pidof ulauncher) ]]; then
-	mpd-mpris &> /tmp/mpd-mpris.log &
-fi
+# start libinput-gestures
+libinput-gestures-setup start > /tmp/libinput-gestures.log 2>&1 &
 
 # notification daemon
-dunst &> /tmp/dunst.log &
-
-# set theme and start waybar
-export THEME=$(cat ~/.config/archie/theme_system)
-set-theme $THEME &
+dunst > /tmp/dunst.log 2>&1 &

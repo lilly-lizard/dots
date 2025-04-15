@@ -5,24 +5,21 @@
 export THEME="$1"
 echo "${THEME}" > ~/.config/theme/system_theme
 
-if [ "$THEME" = "farm" ]; then
+riverctl border-color-unfocused 0x586e75
+if [ "$THEME" = "tree" ]; then
 	killall swaybg
-	swaybg -m fill -i /home/david/Pictures/bg/farm.png&
-    export GTK_THEME="oomox-gruvbox-dark-soft-gtk-wFix"
-	export ICON_THEME="Obsidian-Teal"
-	riverctl border-color-focused 0x66e1b4
-elif [ "$THEME" = "road" ]; then
-	killall swaybg
-	swaybg -m fill -i /home/david/Pictures/bg/road.jpg&
+	#swaybg -m fill -i /home/david/Pictures/bg/road.jpg&
+	swaybg -m fill -i /home/david/Pictures/bg/995147.jpg&
 	export GTK_THEME="Desert-Teal-light-40"
 	export ICON_THEME="Obsidenza-Sand"
 	riverctl border-color-focused 0x66e1b4
-elif [ "$THEME" = "clouds" ]; then
+elif [ "$THEME" = "night" ]; then
 	killall swaybg
-	swaybg -m fill -i /home/david/Pictures/bg/clouds-tom-barrett--bSucp2nUdQ-unsplash.jpg&
-	export GTK_THEME="Desert-Teal-Dark-40"
-	export ICON_THEME="Obsidenza-Sand"
-	riverctl border-color-focused 0x66e1b4
+	swaybg -m fill -i /home/david/Pictures/bg/1027689.png&
+	export GTK_THEME="Skeuos-Violet-Dark"
+	export ICON_THEME="Obsidian-Purple"
+	riverctl border-color-unfocused 0x323f43
+	riverctl border-color-focused 0x576694
 elif [ "$THEME" = "garden" ]; then
 	killall swaybg
 	swaybg -m fill -i /home/david/Pictures/bg/ghibli-japanese-walled-garden.png&
@@ -35,6 +32,13 @@ elif [ "$THEME" = "bush" ]; then
 	export GTK_THEME="Desert-Teal-Dark-40"
 	export ICON_THEME="Obsidenza-Sand"
 	riverctl border-color-focused 0x67AC68
+elif [ "$THEME" = "city" ]; then
+	killall swaybg
+	swaybg -m fill -i /home/david/Pictures/bg/1128787.png&
+	export GTK_THEME="Skeuos-Violet-Dark"
+	export ICON_THEME="Obsidian-Purple"
+	riverctl border-color-unfocused 0x323f43
+	riverctl border-color-focused 0x7b70f5
 elif [ "$THEME" = "dock" ]; then
 	killall swaybg
 	swaybg -m fill -i /home/david/Pictures/bg/dock.jpg&
@@ -49,8 +53,12 @@ elif [ "$THEME" = "shodan" ]; then
 	riverctl border-color-focused 0x67AC68
 fi
 
+killall waybar
+waybar &> /tmp/waybar.log &
+
 echo "$GTK_THEME" > ~/.config/theme/theme_gtk
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
-sed -i "/gtk-theme-name/c\gtk-theme-name = $GTK_THEME" ~/.config/gtk-3.0/settings.ini
-sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name = $ICON_THEME" ~/.config/gtk-3.0/settings.ini
+sed -i "/gtk-theme-name/c\gtk-theme-name=$GTK_THEME" ~/.config/gtk-3.0/settings.ini
+sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-3.0/settings.ini
+sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-4.0/settings.ini

@@ -1,0 +1,137 @@
+/* remove gtk styling */
+* { all: unset; }
+
+* {
+	border: none;
+    font-family: "Iosevka SS18";
+	font-size: 11px;
+	font-weight: normal;
+	text-shadow: unset;
+	min-height: 20px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#window {
+	transition: none;
+    color: transparent;
+	background: transparent;
+}
+
+#tags {
+	margin-left: 8px;
+	background: #161320;
+}
+#tags button {
+	transition: none;
+	color: #F28FAD;
+	background: transparent;
+	border-radius: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#tags button.occupied {
+	transition: none;
+	color: #ABE9B3;
+	background: transparent;
+}
+#tags button.focused {
+	color: #B5E8E0;
+    border-top: 2px solid #161320;
+    border-bottom: 2px solid #161320;
+}
+#tags button.output.focused {
+    border-top: 2px solid #B5E8E0;
+    border-bottom: 2px solid #B5E8E0;
+}
+
+#custom-lock {
+	margin-left: 8px;
+	margin-right: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #161320;
+	background: #c3a0d7;
+}
+
+#clock.time {
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #161320;
+	background: #c7c2ff;
+}
+
+#clock.calendar {
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #161320;
+	background: #b9e3e4;
+}
+
+#battery {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 8px;
+	color: #161320;
+	background: #cfeab8;
+}
+#battery.charging, #battery.plugged {
+}
+#battery.critical:not(.charging) {
+    background-color: #B5E8E0;
+    color: #161320;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes blink {
+}
+
+#pulseaudio {
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #1A1826;
+	background: #f6ecba;
+}
+#pulseaudio.muted {
+	color: #7e645d;
+}
+
+#backlight {
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #161320;
+	background: #f6cc9d;
+}
+
+#network {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 8px;
+	color: #161320;
+	background: #f9b9b9;
+}
+
+#tray {
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #B5E8E0;
+	background: #161320;
+}
+#tray menu {
+	color: #B5E8E0;
+	background: #161320;
+}

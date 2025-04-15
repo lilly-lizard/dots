@@ -1,7 +1,7 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'SF Mono', 'monospace'", // SF Mono, Fira Mono
-    "editor.fontSize": 13,
+	"editor.fontFamily": "'Fira Mono', 'Font Awesome 6 Free', 'monospace'", // SF Mono, Fira Mono
+    "editor.fontSize": 14,
     "editor.insertSpaces": false,
     "editor.find.seedSearchStringFromSelection": "selection",
     "[rust]": {
@@ -41,9 +41,7 @@
     ],
     "editor.foldingMaximumRegions": 50000,
 
-    "glsllint.glslangValidatorArgs": [
-        "-G"
-    ],
+    "glsllint.glslangValidatorArgs": "-V",
     "glsllint.additionalStageAssociations": {
         ".fsh": "frag",
         ".vsh": "vert",
@@ -64,7 +62,6 @@
     "todohighlight.keywords": [
         "todo",
         "TODO",
-        "DEBUGGING",
     ],
     "editor.find.cursorMoveOnType": false,
     "errorLens.removeLinebreaks": false,
@@ -74,33 +71,28 @@
     "git.confirmSync": false,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.stickyScroll.enabled": true,
-    "workbench.iconTheme": "file-icons",
     "cmake.configureOnOpen": false,
     "diffEditor.renderSideBySide": false,
     "git.openRepositoryInParentFolders": "never",
     "editor.minimap.enabled": false,
     "git.inputValidation": true,
-    "window.menuBarVisibility": "hidden",
     "errorLens.excludeBySource": [
         "rustc(Click for full compiler diagnostic)"
     ],
     "lldb.suppressUpdateNotifications": true,
+    "zig.zls.path": "zls",
     "zig.zls.checkForUpdate": false,
     "cSpell.enabled": false,
     "zig.zigPath": "/usr/bin/zig",
+    "workbench.iconTheme": "file-icons",
     "workbench.editor.empty.hint": "hidden",
-    "cmake.showOptionsMovedNotification": false,
-    "zig.path": "/usr/bin/zig",
-    "zig.zls.path": "/home/david/Downloads/zls-x86_64-linux/zls",
+    "zig.path": "zig",
     "mesonbuild.downloadLanguageServer": true,
-    "mesonbuild.buildFolder": "build",
-    "zig.buildOnSave": true,
-    "zig.zls.buildOnSaveStep": "build",
-    "zig.zls.enableBuildOnSave": true,
-    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
-    "json.validate.enable": false,
-    "workbench.colorTheme": "Default Dark+",
-
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Yet Another Solarized Theme (Light)"
+      
     //"files.associations": {
     //    "*.fsh": "glsl",
     //    "*.vsh": "glsl"

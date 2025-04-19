@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# autocompletion list in /usr/share/zsh/site-functions/_set-theme
+
+export THEME="$1"
+echo "${THEME}" > ~/.config/theme/system_theme
+
+riverctl border-color-unfocused 0x586e75
+if [ "$THEME" = "tree" ]; then
+	export BG=/home/david/Pictures/bg/995147.jpg
+	export GTK_THEME="Desert-Teal-light-40"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x66e1b4
+	export BORDER1="66e1b4"
+	export BORDER2="66e1b4"
+elif [ "$THEME" = "night" ]; then
+	export BG=/home/david/Pictures/bg/1027689.png
+	export GTK_THEME="Skeuos-Violet-Dark"
+	export ICON_THEME="Obsidian-Purple"
+	riverctl border-color-focused 0x576694
+	riverctl border-color-unfocused 0x323f43
+	export BORDER1="576694"
+	export BORDER2="576694"
+elif [ "$THEME" = "garden" ]; then
+	export BG=/home/david/Pictures/bg/ghibli-japanese-walled-garden.png
+    export GTK_THEME="oomox-gruvbox-dark-soft-gtk-wFix"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x67AC68
+	export BORDER1="90b172"
+	export BORDER2="55aa69"
+elif [ "$THEME" = "bush" ]; then
+	export BG=/home/david/Pictures/bg/leaves-wall.png
+	export GTK_THEME="Desert-Teal-Dark-40"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x67AC68
+	export BORDER1="90b172"
+	export BORDER2="55aa69"
+elif [ "$THEME" = "city" ]; then
+	export BG=/home/david/Pictures/bg/1128787.png
+	export GTK_THEME="Skeuos-Violet-Dark"
+	export ICON_THEME="Obsidian-Purple"
+	riverctl border-color-focused 0x7b70f5
+	riverctl border-color-unfocused 0x323f43
+	export BORDER1="7b70f5"
+	export BORDER2="8f70f5"
+elif [ "$THEME" = "dock" ]; then
+	export BG=/home/david/Pictures/bg/dock.jpg
+	export GTK_THEME="Desert-Teal-Dark-40"
+	export ICON_THEME="Obsidenza-Sand"
+	riverctl border-color-focused 0x67AC68
+	export BORDER1="90b172"
+	export BORDER2="55aa69"
+elif [ "$THEME" = "shodan" ]; then
+	export BG=/home/david/Pictures/bg/shodan.png
+    export GTK_THEME="GreenCodded-theme"
+	export ICON_THEME="Obsidian-Teal"
+	riverctl border-color-focused 0x67AC68
+	export BORDER1="90b172"
+	export BORDER2="55aa69"
+fi
+
+wal -nest -i $BG
+
+echo "$GTK_THEME" > ~/.config/theme/theme_gtk
+gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
+sed -i "/gtk-theme-name/c\gtk-theme-name=$GTK_THEME" ~/.config/gtk-3.0/settings.ini
+
+gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
+sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-3.0/settings.ini
+sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-4.0/settings.ini
+
+killall swaybg
+swaybg -m fill -i $BG&
+
+killall waybar
+waybar &> /tmp/waybar.log &
+
+sed -i "/\$border1 = rgb/c\$border1 = rgb($BORDER1)" ~/.config/hypr/hyprland.conf
+sed -i "/\$border2 = rgb/c\$border2 = rgb($BORDER2)" ~/.config/hypr/hyprland.conf

@@ -1,0 +1,100 @@
+* { all: unset; }
+
+@import "../../.cache/wal/colors-waybar.css";
+@define-color main-color @color5;
+@define-color secondary-color @color6;
+@define-color accent-color @color4;
+@define-color muted-color @color1;
+
+* {
+    border: none;
+    font-family: "Iosevka SS18";
+    font-size: 13px;
+}
+
+#backlight,
+#battery,
+#bluetooth,
+#clock,
+#custom-lock,
+#pulseaudio,
+#network,
+#tray,
+#workspaces {
+    color: @foreground;
+    padding: 0px 11px 0px 11px;
+    transition-duration: .5s;
+}
+
+window#waybar {
+    border-radius: 40px;
+    background: alpha(@background, 0.7);
+}
+
+#custom-lock {
+    padding-left: 16px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+#pulseaudio {
+    padding-right: 16px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+#backlight:hover,
+#battery:hover,
+#bluetooth:hover,
+#clock:hover,
+#custom-lock:hover,
+#pulseaudio:hover,
+#network:hover,
+#tray:hover {
+    color: @accent-color;
+    background: alpha(@background, 0.5);
+}
+
+#workspaces {
+    background: alpha(@background, 0.4);
+    border-radius: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+#workspaces button {
+    color: alpha(@foreground, 1.0);
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+#workspaces button.active {
+    background: alpha(@background, 0.7);
+    color: lighter(@main-color);
+    border-radius: 20px;
+    transition: color 0.5s;
+    margin-left: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 2px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.8s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+#workspaces button.urgent {
+    color: @color5;
+    background: transparent;
+}
+#workspaces button:hover {
+    background: transparent;
+    color: @color5;
+}
+
+tooltip {
+    background: alpha(@background, 1.0);
+    border-radius: 10px;
+    border: 2px solid alpha(lighter(@main-color), 0.5);
+}
+tooltip label {
+    color: @foreground;
+}

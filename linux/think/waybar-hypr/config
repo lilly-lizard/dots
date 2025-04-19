@@ -1,0 +1,82 @@
+{
+	"layer": "top", // underneigh windows
+	"position": "bottom",
+	"modules-left": ["custom/lock", "clock#time", "clock#calendar"],
+    "modules-center": ["hyprland/workspaces"],
+	"modules-right": ["tray", "network", "battery", "backlight", "pulseaudio"],
+    "width": 900,
+    "margin-bottom": 6,
+
+	"custom/lock": {
+		"format": "",
+		"on-click": "swaylock",
+		"tooltip": false,
+	},
+	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 2,
+		"format": "{icon} {volume}%",
+		"format-muted": " {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"smooth-scrolling-threshold": 1.0,
+	},
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": " {icon} ",
+        "on-click": "activate"
+    },
+
+    "river/tags": {
+		"num-tags": 8,
+		"max-length": 1,
+    },
+
+	"network": {
+		"interface": "wlp3s0",
+		"format-wifi": "",
+		"format-ethernet": "",
+		"tooltip": true,
+		"tooltip-format": "{essid}",
+	},
+
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+        "on-scroll-up": "brightnessctl s 5%+",
+		"on-scroll-down": "brightnessctl s 5%-",
+		"smooth-scrolling-threshold": 2.0,
+	},
+
+    "battery": {
+		"bat": "BAT1",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+		"interval": "5",
+    },
+
+	"tray":{
+		"spacing": 10
+	},
+
+    "clock#time": {
+        "format": " {:%H:%M}",
+		"interval":1,
+    },
+
+    "clock#calendar": {
+        "format": " {:%a %d/%m}"
+    },
+}

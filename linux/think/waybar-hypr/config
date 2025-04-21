@@ -1,5 +1,5 @@
 {
-	"layer": "top", // underneigh windows
+	"layer": "top", // on top of windows
 	"position": "bottom",
 	"modules-left": ["custom/lock", "clock#time", "clock#calendar"],
     "modules-center": ["hyprland/workspaces"],
@@ -17,7 +17,7 @@
 		"tooltip": false,
 		"scroll-step": 2,
 		"format": "{icon} {volume}%",
-		"format-muted": " {volume}%",
+		"format-muted": " {volume}%",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
@@ -25,11 +25,16 @@
 		"smooth-scrolling-threshold": 1.0,
 	},
 
-    "wlr/workspaces": {
-        "format": "{icon}",
-        "format-active": " {icon} ",
-        "on-click": "activate"
-    },
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"smooth-scrolling-threshold": 2.0,
+		"format-icons": {
+			"9": "",
+			"10": "",
+		},
+	},
 
     "river/tags": {
 		"num-tags": 8,
@@ -37,11 +42,15 @@
     },
 
 	"network": {
-		"interface": "wlp3s0",
-		"format-wifi": "",
-		"format-ethernet": "",
+		//"interface": "wlp3s0",
+		"format-wifi": "{icon}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-disconnected": "󰤮",
+		"format-ethernet": "",
 		"tooltip": true,
-		"tooltip-format": "{essid}",
+		"tooltip-format-wifi": "{essid} - {ipaddr}",
+		"tooltip-disconnected": "{ifname}",
+		"on-click": "rfkill unblock wlan",
 	},
 
 	"backlight": {
@@ -74,9 +83,30 @@
     "clock#time": {
         "format": " {:%H:%M}",
 		"interval":1,
+		"tooltip": false,
     },
 
     "clock#calendar": {
-        "format": " {:%a %d/%m}"
+        "format": " {:%a %d/%m}",
+		"tooltip-format": "<tt>{calendar}</tt>",
+		"smooth-scrolling-threshold": 3,
+		"calendar": {
+			"mode"          : "month",
+			"on-scroll"     : 1,
+			"format": {
+				"months":     "<span color='#ffead3'><b>{}</b></span>",
+				"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+				"today":      "<span color='#ff6699'><b><u>{}</u></b></span>",
+			},
+		},
+        "actions": {
+			"on-click": "shift_up",
+			"on-click-middle": "shift_reset",
+			"on-click-right": "shift_down",
+			"on-scroll-up": "shift_down",
+			"on-scroll-down": "shift_up",
+		},
     },
 }

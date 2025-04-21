@@ -1,6 +1,6 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
-	"editor.fontFamily": "'Fira Mono', 'Font Awesome 6 Free', 'monospace'", // SF Mono, Fira Mono
+	"editor.fontFamily": "'Fira Mono', 'Symbols Nerd Font Mono', 'monospace'", // SF Mono, Fira Mono
     "editor.fontSize": 14,
     "editor.insertSpaces": false,
     "editor.find.seedSearchStringFromSelection": "selection",

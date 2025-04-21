@@ -1,8 +1,8 @@
 [{
-	"layer": "bottom",
+	"layer": "top",
 	"output": "DP-1",
 	"position": "bottom",
-	"modules-left": ["river/tags"],
+	"modules-left": ["river/tags#primary"],
 	"modules-center": ["mpris"],
 	"modules-right": ["river/window", "tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time"],
 
@@ -29,14 +29,10 @@
 		"smooth-scrolling-threshold": 1.0,
 	},
 
-	"river/tags": {
+	"river/tags#primary": {
 		"num-tags": 8,
-		"max-length": 1,
 		"on-scroll-up": "riverctl increment-focused-tags 8",
 		"on-scroll-down": "riverctl decrement-focused-tags 8",
-		// todo icons
-		// https://github.com/Alexays/Waybar/wiki/Module:-River
-		// https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
 	},
 
 	"river/window": {
@@ -84,17 +80,17 @@
 	},
 },
 {
-	"layer": "bottom",
+	"layer": "top",
 	"output": "DP-2",
 	"position": "bottom",
-	"modules-left": ["river/tags"],
+	"modules-left": ["river/tags#secondary"],
 	"modules-right": ["river/window", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"],
 	
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 2,
 		"format": "{icon} {volume}%",
-		"format-muted": " {volume}%",
+		"format-muted": " {volume}%",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
@@ -119,11 +115,11 @@
 		"tooltip": false,
 	},
 
-	"river/tags": {
+	"river/tags#secondary": {
 		"num-tags": 8,
-		"max-length": 1,
 		"on-scroll-up": "riverctl increment-focused-tags 8",
 		"on-scroll-down": "riverctl decrement-focused-tags 8",
+		"tag-labels": ["1", "2", "3", "4", "5", "", "", "󰝚"],
 	},
 
 	"river/window": {

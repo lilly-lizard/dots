@@ -43,8 +43,12 @@ window#waybar.hidden {
 	color: @grey;
 	transition: none;
 	border-radius: 0px;
-	padding-left: 30px;
-	padding-right: 30px;
+}
+#tags.primary button {
+	min-width: 70px;
+}
+#tags.secondary button {
+	min-width: 60px;
 }
 #tags button.occupied {
 	color: @foreground;

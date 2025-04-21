@@ -95,7 +95,7 @@
     "zig.zls.enableBuildOnSave": true,
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
     "json.validate.enable": false,
-    "workbench.colorTheme": "Greyout",
+    "workbench.colorTheme": "Gruvbox Material P Dark",
 
     //"files.associations": {
     //    "*.fsh": "glsl",

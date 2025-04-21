@@ -1,0 +1,112 @@
+{
+    "editor.acceptSuggestionOnEnter": "off",
+	"editor.fontFamily": "'SF Mono', 'Symbols Nerd Font Mono', 'monospace'", // SF Mono, Fira Mono
+    "editor.fontSize": 13,
+    "editor.insertSpaces": false,
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "[rust]": {
+        "editor.formatOnSave": true, // rust fmt on save (requires rust-analyzer extension)
+    },
+
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.startupEditor": "none",
+    "explorer.confirmDragAndDrop": false,
+
+    "terminal.external.linuxExec": "alacritty",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.fontFamily": "'Fira Mono', 'Iosevka SS18', 'monospace'",
+
+    "security.workspace.trust.enabled": false,
+
+    "debug.console.fontSize": 12,
+    "markdown.preview.fontSize": 12,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+
+    "keyboard.dispatch": "keyCode", // X11 custom key bindings fix
+
+    "extensions.ignoreRecommendations": true,
+
+    // EXTENSIONS
+
+    "cSpell.language": "en-GB",
+    "cSpell.userWords": [
+        "unessisary"
+    ],
+    "editor.foldingMaximumRegions": 50000,
+
+    "glsllint.glslangValidatorArgs": [
+        "-G"
+    ],
+    "glsllint.additionalStageAssociations": {
+        ".fsh": "frag",
+        ".vsh": "vert",
+    },
+
+    "errorLens.enabledDiagnosticLevels": [],
+    "errorLens.gutterIconsEnabled": true,
+
+    "vim.disableExtension": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.useCtrlKeys": true,
+
+    "todohighlight.keywords": [
+        "todo",
+        "TODO",
+        "DEBUGGING",
+    ],
+    "editor.find.cursorMoveOnType": false,
+    "errorLens.removeLinebreaks": false,
+    "git.autofetch": true,
+    "cSpell.maxNumberOfProblems": 1000,
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.stickyScroll.enabled": true,
+    "workbench.iconTheme": "file-icons",
+    "cmake.configureOnOpen": false,
+    "diffEditor.renderSideBySide": false,
+    "git.openRepositoryInParentFolders": "never",
+    "editor.minimap.enabled": false,
+    "git.inputValidation": true,
+    "window.menuBarVisibility": "hidden",
+    "errorLens.excludeBySource": [
+        "rustc(Click for full compiler diagnostic)"
+    ],
+    "lldb.suppressUpdateNotifications": true,
+    "zig.zls.checkForUpdate": false,
+    "cSpell.enabled": false,
+    "zig.zigPath": "/usr/bin/zig",
+    "workbench.editor.empty.hint": "hidden",
+    "cmake.showOptionsMovedNotification": false,
+    "zig.path": "/usr/bin/zig",
+    "zig.zls.path": "/usr/bin/zls",
+    "mesonbuild.downloadLanguageServer": true,
+    "mesonbuild.buildFolder": "build",
+    "zig.buildOnSave": true,
+    "zig.zls.buildOnSaveStep": "build",
+    "zig.zls.enableBuildOnSave": true,
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+    "json.validate.enable": false,
+    "workbench.colorTheme": "Greyout",
+
+    //"files.associations": {
+    //    "*.fsh": "glsl",
+    //    "*.vsh": "glsl"
+    //},
+    // light+ mod:
+    //"workbench.colorCustomizations": {
+    	//"editor.background": "#f3f3f3",
+		//"sideBar.background": "#e8e8e8",
+		//"list.hoverBackground": "#dfdfdf",
+		//"notebook.cellBorderColor": "#dfdfdf",
+		//"editor.rangeHighlightBackground": "#caca003a",
+    //},
+}

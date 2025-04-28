@@ -25,6 +25,9 @@ export GPG_TTY=$(tty)
 # defines installed vulkan layers (enabled by the application)
 export VK_LAYER_PATH=/usr/share/vulkan/explicit_layer.d
 
+# theme
+export THEME=$(cat ~/.config/theme/system_theme)
+
 # less: ascii colors and no bell
 export LESS="$LESS -R -Q"
 # termcap color customisation (e.g. affects less and man):

@@ -28,18 +28,18 @@
 
 window#waybar {
     border-radius: 40px;
-    background: alpha(@background, 0.7);
+    background: linear-gradient(alpha(@background, 0.5), alpha(@background, 0.9));
 }
 
 #custom-lock {
-    padding-left: 16px;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-}
-#pulseaudio {
     padding-right: 16px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
+}
+#network {
+    padding-left: 16px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 #backlight:hover,
@@ -51,13 +51,14 @@ window#waybar {
 #network:hover,
 #tray:hover {
     color: @accent-color;
-    background: alpha(@background, 0.5);
+    background: linear-gradient(alpha(lighter(@background), 0.3), alpha(darker(@background), 1.0));
 }
 
 #workspaces {
-    background: alpha(@background, 0.5);
     font-size: 12px;
     font-weight: bold;
+    /*border: 1px solid alpha(@background, 0.5);*/
+    background: linear-gradient(alpha(darker(@background), 1.0), alpha(lighter(@background), 0.5));
     border-radius: 20px;
     margin-top: 4px;
     margin-bottom: 4px;
@@ -73,7 +74,7 @@ window#waybar {
 }
 #workspaces button.active {
     color: @background;
-    background: alpha(@foreground, 0.8);
+    background: linear-gradient(alpha(@foreground, 0.9), alpha(@foreground, 0.4));
     border-radius: 20px;
     transition: color 0.5s;
     margin-left: 2px;
@@ -86,6 +87,7 @@ window#waybar {
 #workspaces button.urgent {
     color: @accent-color;
     background: transparent;
+    transition: none;
 }
 #workspaces button:hover {
     color: lighter(@accent-color);
@@ -93,6 +95,7 @@ window#waybar {
 }
 #workspaces button.active:hover {
     color: darker(@secondary-color);
+    transition: none;
 }
 
 tooltip {

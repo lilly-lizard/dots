@@ -1,9 +1,11 @@
 {
 	"layer": "top", // on top of windows
 	"position": "bottom",
-	"modules-left": ["custom/lock", "clock#time", "clock#calendar"],
+	//"modules-left": ["custom/lock", "clock#time", "clock#calendar"],
+	"modules-left": ["network", "battery", "pulseaudio", "backlight", "tray"],
     "modules-center": ["hyprland/workspaces"],
-	"modules-right": ["tray", "network", "battery", "backlight", "pulseaudio"],
+	//"modules-right": ["tray", "network", "battery", "backlight", "pulseaudio"],
+	"modules-right": ["clock#calendar", "clock#time", "custom/lock"],
     "width": 900,
     "margin-bottom": 6,
 
@@ -31,15 +33,10 @@
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
 		"smooth-scrolling-threshold": 2.0,
 		"format-icons": {
-			"9": "",
-			"10": "",
+			"7": "",
+			"8": "",
 		},
 	},
-
-    "river/tags": {
-		"num-tags": 8,
-		"max-length": 1,
-    },
 
 	"network": {
 		//"interface": "wlp3s0",

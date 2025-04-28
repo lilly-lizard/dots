@@ -91,7 +91,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "Greyout"
+    "workbench.colorTheme": "Default Dark+"
       
     //"files.associations": {
     //    "*.fsh": "glsl",

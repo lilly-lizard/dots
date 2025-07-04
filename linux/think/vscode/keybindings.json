@@ -181,8 +181,8 @@
 		"key": "alt+right",
 		"command": "workbench.action.navigateForward"
 	},
-	{
-		"key": "ctrl+v",
-		"command": "-editor.action.clipboardPasteAction"
-	},
+	//{
+	//	"key": "ctrl+v",
+	//	"command": "-editor.action.clipboardPasteAction"
+	//},
 ]

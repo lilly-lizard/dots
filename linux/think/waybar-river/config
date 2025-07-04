@@ -14,7 +14,7 @@
 		"tooltip": false,
 		"scroll-step": 2,
 		"format": "{icon} {volume}%",
-		"format-muted": " {volume}%",
+		"format-muted": " {volume}%",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
@@ -25,6 +25,8 @@
     "river/tags": {
 		"num-tags": 8,
 		"max-length": 1,
+        "on-scroll-up": "riverctl increment-focused-tags 8",
+        "on-scroll-down": "riverctl decrement-focused-tags 8",
     },
 
 	"network": {

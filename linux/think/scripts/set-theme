@@ -61,6 +61,7 @@ fi
 
 wal -nest -i $BG
 
+echo "$THEME" > ~/.config/theme/theme
 echo "$GTK_THEME" > ~/.config/theme/theme_gtk
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 sed -i "/gtk-theme-name/c\gtk-theme-name=$GTK_THEME" ~/.config/gtk-3.0/settings.ini
@@ -70,7 +71,7 @@ sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-3.
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-4.0/settings.ini
 
 killall swaybg
-ln -snf $BG_IMG ~/.config/theme/bg-img
+ln -snf $BG ~/.config/theme/bg-img
 swaybg -m fill -i $BG > /tmp/swaybg.tmp 2>&1 &
 
 killall waybar

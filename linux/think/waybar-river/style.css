@@ -53,12 +53,11 @@ window#waybar.hidden {
 	background: transparent;
 }
 #tags button.focused {
-	color: #B5E8E0;
     border-top: 2px solid #161320;
-    border-bottom: 2px solid #161320;
+    border-bottom: 2px solid #B5E8E0;
 }
 #tags button.output.focused {
-    border-top: 2px solid #B5E8E0;
+	border-top: 2px solid #B5E8E0;
     border-bottom: 2px solid #B5E8E0;
 }
 

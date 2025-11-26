@@ -2,7 +2,7 @@
 	"layer": "top", // on top of windows
 	"position": "bottom",
 	//"modules-left": ["custom/lock", "clock#time", "clock#calendar"],
-	"modules-left": ["network", "battery", "pulseaudio", "backlight", "tray"],
+	"modules-left": ["network", "battery", "backlight", "pulseaudio", "tray"],
     "modules-center": ["hyprland/workspaces"],
 	//"modules-right": ["tray", "network", "battery", "backlight", "pulseaudio"],
 	"modules-right": ["clock#calendar", "clock#time", "custom/lock"],
@@ -34,6 +34,7 @@
 		"format-icons": {
 			"7": "",
 			"8": "",
+			"9": "",
 		},
 	},
 

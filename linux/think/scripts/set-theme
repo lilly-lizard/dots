@@ -1,8 +1,14 @@
 #!/bin/bash
 
+if [ -z ${1+x} ]; then
+	# default
+	export THEME=night
+else
+	export THEME="$1"
+fi
+
 # autocompletion list in /usr/share/zsh/site-functions/_set-theme
 # compdef _set-theme set-theme
-export THEME="$1"
 echo "${THEME}" > ~/.config/theme/system_theme
 
 riverctl border-color-unfocused 0x586e75

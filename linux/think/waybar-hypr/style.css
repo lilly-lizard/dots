@@ -25,6 +25,9 @@
     padding: 0px 11px 0px 11px;
     transition-duration: .5s;
 }
+#pulseaudio.muted {
+	color: @muted-color;
+}
 
 window#waybar {
     border-radius: 40px;

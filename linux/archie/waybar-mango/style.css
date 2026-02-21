@@ -16,7 +16,7 @@
 }
 
 window#waybar {
-	background: transparent;
+	background: @bg;
 }
 window#waybar.hidden {
 	opacity: 0.2;
@@ -97,9 +97,15 @@ window#waybar.hidden {
 
 #clock.time {
 	color: @foreground;
-	margin-right: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+#custom-power {
+	color: @foreground;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 10px;
 }
 
 #tray {

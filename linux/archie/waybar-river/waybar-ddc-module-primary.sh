@@ -2,17 +2,17 @@
 
 receive_pipe="/tmp/waybar-ddc-module-rx-primary"
 step=10
-bus=4
+display=1
 brightness_command=_
 
 ddcutil_fast() {
     # adjust the bus number and the multiplier for your display
     # multiplier should be chosen so that it both works reliably and fast enough
-    ddcutil --noverify --bus "$bus" --sleep-multiplier .03 "$@"
+    ddcutil --noverify --display="$display" --sleep-multiplier .03 "$@"
 }
 
 ddcutil_slow() {
-    ddcutil --maxtries 15,15,15 --bus "$bus" "$@"
+    ddcutil --maxtries 15,15,15 --display="$display" "$@"
 }
 
 # takes ddcutil commandline as arguments

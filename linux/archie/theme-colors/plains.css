@@ -1,5 +1,6 @@
 @define-color foreground        rgba(0, 0, 0, 0.8);
 @define-color underline         rgba(120, 72, 16, 1);
-@define-color shaded            rgba(89, 76, 62, 0.27);
+@define-color shaded            rgba(89, 76, 62, 0.3);
 @define-color red               rgba(230, 73, 73, 0.4);
+@define-color bg                rgba(0, 0, 0, 0.0);
 @define-color grey              rgba(0, 0, 0, 0.4);

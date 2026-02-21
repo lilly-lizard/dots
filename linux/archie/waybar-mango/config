@@ -2,9 +2,10 @@
 	"layer": "top",
 	"output": "DP-1",
 	"position": "bottom",
-	"modules-left": ["river/tags#primary"],
+	"modules-left": ["dwl/tags#primary"],
+	//"modules-left": ["river/tags#primary"],
 	"modules-center": ["mpris"],
-	"modules-right": ["river/window", "tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time"],
+	"modules-right": ["tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time", "custom/power"],
 
 	"mpris": {
 		"format": "{status_icon} {dynamic}",
@@ -29,10 +30,14 @@
 		"smooth-scrolling-threshold": 1.0,
 	},
 
+	"dwl/tags#primary": {
+		"num-tags": 9,
+	},
 	"river/tags#primary": {
 		"num-tags": 8,
 		"on-scroll-up": "riverctl increment-focused-tags 8",
 		"on-scroll-down": "riverctl decrement-focused-tags 8",
+		"tag-labels": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
 	},
 
 	"river/window": {
@@ -45,7 +50,7 @@
 		"format-wifi": "{icon} {essid}",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
 		"format-ethernet": "",
-		"format-disconnected": "󰌙",
+		"format-disconnected": "󰈂",
 		"tooltip": true,
 		"tooltip-format": "{ifname} - {ipaddr}",
 		"tooltip-disconnected": "{ifname}",
@@ -78,13 +83,21 @@
 	"clock#calendar": {
 		"format": " {:%a %d/%m/%y}"
 	},
+
+	"custom/power": {
+		"format": "󰐥",
+		"on-click": "systemctl suspend",
+		"tooltip": true,
+		"tooltip-format": "suspend",
+	},
 },
 {
 	"layer": "top",
 	"output": "DP-2",
 	"position": "bottom",
-	"modules-left": ["river/tags#secondary"],
-	"modules-right": ["river/window", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"],
+	//"modules-left": ["river/tags#secondary"],
+	"modules-left": ["dwl/tags#secondary"],
+	"modules-right": ["network", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -115,6 +128,10 @@
 		"tooltip": false,
 	},
 
+
+	"dwl/tags#secondary": {
+		"num-tags": 9,
+	},
 	"river/tags#secondary": {
 		"num-tags": 8,
 		"on-scroll-up": "riverctl increment-focused-tags 8",
@@ -126,4 +143,17 @@
 		"max-length": 70,
 		"tooltip": false,
 	},
+
+	"network": {
+		//"interface": "enp8s0",
+		"format-wifi": "{icon} {essid}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-ethernet": "",
+		"format-disconnected": "󰈂",
+		"tooltip": true,
+		"tooltip-format": "{ifname} - {ipaddr}",
+		"tooltip-disconnected": "{ifname}",
+		"on-click": "rfkill unblock wlan",
+	},
+	
 }]

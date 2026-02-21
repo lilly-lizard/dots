@@ -2,7 +2,7 @@
 
 _set-theme-river() {
 	local -a theme_names
-	theme_names=('plains' 'forest' 'flowers' 'mountain' 'church' 'bush' 'shodan' 'dark')
+	theme_names=('plains' 'flowers' 'mountain' 'church' 'bush' 'forest' 'shodan' 'dark')
 	_describe 'theme name' theme_names
 }
 

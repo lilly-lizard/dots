@@ -1,0 +1,150 @@
+[{
+	"layer": "top",
+	"output": "DP-1",
+	"position": "bottom",
+	"modules-left": ["river/tags#primary"],
+	"modules-center": ["mpris"],
+	"modules-right": ["river/window", "tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time", "custom/power"],
+
+	"mpris": {
+		"format": "{status_icon} {dynamic}",
+		"status-icons": {
+			"playing": "▶",
+			"paused": "⏸",
+		},
+		"max-length": 70,
+		"on-click": "mpris2controller PlayPause",
+		//"tooltip-format": "{player}",
+	},
+	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 2,
+		"format": "{icon} {volume}%",
+		"format-muted": " {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"smooth-scrolling-threshold": 1.0,
+	},
+
+	"river/tags#primary": {
+		"num-tags": 8,
+		"on-scroll-up": "riverctl increment-focused-tags 8",
+		"on-scroll-down": "riverctl decrement-focused-tags 8",
+		"tag-labels": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
+	},
+
+	"river/window": {
+		"max-length": 50,
+		"tooltip": true,
+	},
+
+	"network": {
+		//"interface": "enp8s0",
+		"format-wifi": "{icon} {essid}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-ethernet": "",
+		"format-disconnected": "󰈂",
+		"tooltip": true,
+		"tooltip-format": "{ifname} - {ipaddr}",
+		"tooltip-disconnected": "{ifname}",
+		"on-click": "rfkill unblock wlan",
+	},
+
+	"custom/ddc_brightness_primary": {
+		"format": "{icon} {percentage}%",
+		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+		"exec": "~/.config/waybar/waybar-ddc-module-primary.sh",
+		"return-type": "json",
+		"on-scroll-up":   "echo '+'   > /tmp/waybar-ddc-module-rx-primary",
+		"on-scroll-down": "echo '-'   > /tmp/waybar-ddc-module-rx-primary",
+		"on-click":       "echo 'max' > /tmp/waybar-ddc-module-rx-primary",
+		"on-click-right": "echo 'min' > /tmp/waybar-ddc-module-rx-primary",
+		"tooltip": false,
+	},
+
+	"tray":{
+		//"icon-size":18,
+		"spacing": 10,
+		"tooltip": false,
+	},
+
+	"clock#time": {
+		"format": "󰥔 {:%H:%M}",
+		"interval":1,
+	},
+
+	"clock#calendar": {
+		"format": " {:%a %d/%m/%y}"
+	},
+
+	"custom/power": {
+		"format": "󰐥",
+		"on-click": "systemctl suspend",
+		"tooltip": true,
+		"tooltip-format": "suspend",
+	},
+},
+{
+	"layer": "top",
+	"output": "DP-2",
+	"position": "bottom",
+	"modules-left": ["river/tags#secondary"],
+	"modules-right": ["river/window", "network", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"],
+	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 2,
+		"format": "{icon} {volume}%",
+		"format-muted": " {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"smooth-scrolling-threshold": 1.0,
+	},
+
+	"clock#time": {
+		"format": "󰥔 {:%H:%M}",
+		"interval":1,
+	},
+
+	"custom/ddc_brightness_secondary": {
+		"format": "{icon} {percentage}%",
+		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+		"exec": "~/.config/waybar/waybar-ddc-module-secondary.sh",
+		"return-type": "json",
+		"on-scroll-up":   "echo '+'   > /tmp/waybar-ddc-module-rx-secondary",
+		"on-scroll-down": "echo '-'   > /tmp/waybar-ddc-module-rx-secondary",
+		"on-click":       "echo 'max' > /tmp/waybar-ddc-module-rx-secondary",
+		"on-click-right": "echo 'min' > /tmp/waybar-ddc-module-rx-secondary",
+		"tooltip": false,
+	},
+
+	"river/tags#secondary": {
+		"num-tags": 8,
+		"on-scroll-up": "riverctl increment-focused-tags 8",
+		"on-scroll-down": "riverctl decrement-focused-tags 8",
+		"tag-labels": ["1", "2", "3", "4", "5", "", "", "󰝚"],
+	},
+
+	"river/window": {
+		"max-length": 70,
+		"tooltip": false,
+	},
+
+	"network": {
+		//"interface": "enp8s0",
+		"format-wifi": "{icon} {essid}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-ethernet": "",
+		"format-disconnected": "󰈂",
+		"tooltip": true,
+		"tooltip-format": "{ifname} - {ipaddr}",
+		"tooltip-disconnected": "{ifname}",
+		"on-click": "rfkill unblock wlan",
+	},
+	
+}]

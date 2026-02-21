@@ -1,6 +1,8 @@
 # path
 export PATH=$HOME/Documents/bin:$HOME/.local/bin:$PATH
 export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
+export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig
+export LD_LIBRARY_PATH=$HOME/.local/lib
 
 # zsh word commands skip these characters
 # by default this includes / and =
@@ -31,6 +33,9 @@ export RUA_SUDO_COMMAND="doas"
 
 # defines installed vulkan layers (enabled by the application)
 export VK_LAYER_PATH=/usr/share/vulkan/explicit_layer.d
+
+# vivado white window fix https://adaptivesupport.amd.com/s/question/0D52E00006iHs04SAC/vivado-hangs-forever-with-white-window-during-startup-linux?language=en_US
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # less: ascii colors and no bell
 export LESS="$LESS -R -Q"

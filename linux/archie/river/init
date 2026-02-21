@@ -24,10 +24,11 @@ riverctl map normal Super S spawn /home/david/Documents/bin/screenshot.sh
 # SYSTEM
 
 # Super+Q to close the focused view
+riverctl map normal Alt Q close
 riverctl map normal Super Q close
 
-# Super+\ to exit river
-riverctl map normal Super Backslash exit
+# Super+End to exit river
+riverctl map normal Super End exit
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 riverctl map normal Alt H focus-view left
@@ -39,6 +40,9 @@ riverctl map normal Super H focus-view left
 riverctl map normal Super J focus-view down
 riverctl map normal Super K focus-view up
 riverctl map normal Super L focus-view right
+
+riverctl map normal Super X focus-view next
+riverctl map normal Super Z focus-view previous
 
 # Super+Shift+J and Super+Shift+K to swap the focused view with the next/previous
 # view in the layout stack
@@ -228,8 +232,10 @@ riverctl rule-add ssd
 riverctl rule-add -app-id ulauncher csd
 riverctl rule-add -app-id steam tags 64 # ws7
 riverctl rule-add -app-id steam output DP-2
-riverctl rule-add -app-id Spotify tags 128 # ws8
-riverctl rule-add -app-id Spotify output DP-2
+riverctl rule-add -app-id spotify tags 128 # ws8
+riverctl rule-add -app-id spotify output DP-2
+riverctl rule-add -app-id org.mozilla.Thunderbird tags 64 # ws7
+riverctl rule-add -app-id org.mozilla.Thunderbird output DP-1
 #riverctl rule-add -app-id ulauncher position 660 250
 
 # new windows at bottom of stack
@@ -252,5 +258,5 @@ fi
 dunst &> /tmp/dunst.log &
 
 # set theme and start waybar
-export THEME=$(cat ~/.config/archie/theme_system)
+export THEME=$(cat ~/.config/theme/theme_system)
 set-theme $THEME &

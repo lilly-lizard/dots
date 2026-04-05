@@ -19,6 +19,7 @@ cp -r ~/.config/waybar-mango ./
 cp -r ~/.config/fontconfig ./
 cp -r ~/.config/lf ./
 cp -r ~/.config/swaylock ./
+cp -r ~/.config/fastfetch ./
 
 cp ~/.config/Code\ -\ OSS/User/settings.json vscode/
 cp ~/.config/Code\ -\ OSS/User/keybindings.json vscode/

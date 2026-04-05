@@ -11,8 +11,10 @@ cp ~/.config/alacritty/alacritty.yml alacritty/
 
 cp ~/.config/river/init river/
 cp -r ~/.config/hypr ./
+cp -r ~/.config/mango ./
 cp -r ~/.config/waybar-hypr ./
 cp -r ~/.config/waybar-river ./
+cp -r ~/.config/waybar-mango ./
 
 cp -r ~/.config/fontconfig ./
 cp -r ~/.config/lf ./

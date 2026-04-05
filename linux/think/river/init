@@ -16,6 +16,7 @@ riverctl map normal Alt Return spawn alacritty
 riverctl map normal Super Space spawn wofi
 riverctl map normal Super F spawn firefox
 riverctl map normal Super E spawn nemo
+riverctl map normal Super+Shift C spawn code
 riverctl map normal Super+Shift E spawn emote
 riverctl map normal Super S spawn ~/Documents/bin/screenshot.sh
 riverctl map normal Super+Shift S spawn 'grim ~/Pictures/Screenshots/fullscreen.png'
@@ -31,6 +32,7 @@ riverctl map normal Super Backslash spawn swaylock
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
+riverctl map normal Alt Q close
 
 # Super+End to exit river
 riverctl map normal Super End exit
@@ -222,6 +224,8 @@ riverctl rule-add -app-id steam tags 64 # ws7
 # new windows at bottom of stack
 riverctl attach-mode bottom
 
+# START APPS #
+
 # start pipewire
 #/usr/bin/pipewire > /tmp/pipewire.log 2>&1 &
 #/usr/bin/pipewire-pulse > /tmp/pipewire-pulse.log 2>&1 &
@@ -233,3 +237,5 @@ libinput-gestures-setup start > /tmp/libinput-gestures.log 2>&1 &
 
 # notification daemon
 dunst > /tmp/dunst.log 2>&1 &
+
+emote > /tmp/emote.log 2>&1 &

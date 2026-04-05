@@ -18,6 +18,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 # data locations
 export CARGO_HOME=$HOME/.local/share/cargo
 export RUSTUP_HOME=$HOME/.local/share/rustup
+export GOPATH=/home/david/.local
 
 # enable gpg command line
 export GPG_TTY=$(tty)

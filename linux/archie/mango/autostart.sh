@@ -8,7 +8,7 @@ if [[ -z $(pidof ulauncher) ]]; then
         ulauncher --hide-window &> /tmp/ulauncher.log &
 fi
 
-if [[ -z $(pidof ulauncher) ]]; then
+if [[ -z $(pidof mpd-mpris) ]]; then
         mpd-mpris &> /tmp/mpd-mpris.log &
 fi
 

@@ -86,7 +86,7 @@
   },
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "chat.disableAIFeatures": true,
-  "workbench.colorTheme": "Greyout",
+  "workbench.colorTheme": "Dark Modern",
 
   //"files.associations": {
   //    "*.fsh": "glsl",

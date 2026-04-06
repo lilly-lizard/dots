@@ -7,7 +7,7 @@ cp ~/.config/nvim/sub_init.lua.vim nvim/
 
 cp ~/.config/zsh/.zshrc zsh/
 cp ~/.config/zsh/.zshenv zsh/
-cp ~/.config/alacritty/alacritty.yml alacritty/
+cp ~/.config/alacritty/alacritty.toml alacritty/
 
 cp ~/.config/river/init river/
 cp -r ~/.config/hypr ./

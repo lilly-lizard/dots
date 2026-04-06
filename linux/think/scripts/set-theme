@@ -11,58 +11,70 @@ fi
 # compdef _set-theme set-theme
 echo "${THEME}" > ~/.config/theme/system_theme
 
-riverctl border-color-unfocused 0x586e75
+UNFOCUSED_COLOR=0x586e75ff
+FOCUSED_COLOR=0x66e1b4
 if [ "$THEME" = "tree" ]; then
 	export BG=/home/david/Pictures/bg/995147.jpg
 	export GTK_THEME="Desert-Teal-light-40"
 	export ICON_THEME="Obsidenza-Sand"
-	riverctl border-color-focused 0x66e1b4
+	FOCUSED_COLOR=0x66e1b4ff
 	export BORDER1="66e1b4"
 	export BORDER2="66e1b4"
 elif [ "$THEME" = "night" ]; then
 	export BG=/home/david/Pictures/bg/1027689.png
 	export GTK_THEME="Skeuos-Violet-Dark"
 	export ICON_THEME="Obsidian-Purple"
-	riverctl border-color-focused 0x576694
-	riverctl border-color-unfocused 0x323f43
+	FOCUSED_COLOR=0x576694ff
+	UNFOCUSED_COLOR=0x323f43ff
 	export BORDER1="576694"
 	export BORDER2="576694"
 elif [ "$THEME" = "garden" ]; then
 	export BG=/home/david/Pictures/bg/ghibli-japanese-walled-garden.png
     export GTK_THEME="oomox-gruvbox-dark-soft-gtk-wFix"
 	export ICON_THEME="Obsidenza-Sand"
-	riverctl border-color-focused 0x67AC68
+	FOCUSED_COLOR=0x67AC68ff
 	export BORDER1="90b172"
 	export BORDER2="55aa69"
 elif [ "$THEME" = "bush" ]; then
 	export BG=/home/david/Pictures/bg/bench_hollow_Queens_Gardens.png
 	export GTK_THEME="Skeuos-Violet-Dark"
 	export ICON_THEME="Obsidian-Mint"
-	riverctl border-color-focused 0x67AC68
+	FOCUSED_COLOR=0x67AC68ff
 	export BORDER1="67AC68"
 	export BORDER2="67AC68"
 elif [ "$THEME" = "city" ]; then
 	export BG=/home/david/Pictures/bg/1128787.png
 	export GTK_THEME="Skeuos-Violet-Dark"
 	export ICON_THEME="Obsidian-Purple"
-	riverctl border-color-focused 0x7b70f5
-	riverctl border-color-unfocused 0x323f43
+	FOCUSED_COLOR=0x7b70f5ff
+	UNFOCUSED_COLOR=0x323f43ff
 	export BORDER1="7b70f5"
 	export BORDER2="8f70f5"
 elif [ "$THEME" = "dock" ]; then
 	export BG=/home/david/Pictures/bg/dock.jpg
 	export GTK_THEME="Desert-Teal-Dark-40"
 	export ICON_THEME="Obsidenza-Sand"
-	riverctl border-color-focused 0x67AC68
+	FOCUSED_COLOR=0x67AC68ff
 	export BORDER1="F6A738"
 	export BORDER2="CE7737"
 elif [ "$THEME" = "shodan" ]; then
 	export BG=/home/david/Pictures/bg/shodan.png
     export GTK_THEME="GreenCodded-theme"
 	export ICON_THEME="Obsidian-Teal"
-	riverctl border-color-focused 0x67AC68
+	FOCUSED_COLOR=0x67AC68ff
 	export BORDER1="90b172"
 	export BORDER2="55aa69"
+fi
+
+if pgrep -x "river" > /dev/null; then
+	riverctl border-color-focused $FOCUSED_COLOR
+	riverctl border-color-unfocused $UNFOCUSED_COLOR
+fi
+
+if pgrep -x "mango" > /dev/null; then
+	sed -i "/focuscolor/c\focuscolor=$FOCUSED_COLOR" ~/.config/mango/config.conf
+	sed -i "/bordercolor/c\bordercolor=$UNFOCUSED_COLOR" ~/.config/mango/config.conf
+	mmsg -d reload_config
 fi
 
 wal -nest -i $BG

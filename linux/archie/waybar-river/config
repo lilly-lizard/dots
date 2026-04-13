@@ -2,7 +2,7 @@
 	"layer": "top",
 	"output": "DP-1",
 	"position": "bottom",
-	"modules-left": ["river/tags#primary"],
+	"modules-left": ["river/tags#primary", "hyprland/workspaces"],
 	"modules-center": ["mpris"],
 	"modules-right": ["river/window", "tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time", "custom/power"],
 
@@ -91,7 +91,7 @@
 	"layer": "top",
 	"output": "DP-2",
 	"position": "bottom",
-	"modules-left": ["river/tags#secondary"],
+	"modules-left": ["river/tags#secondary", "hyprland/workspaces"],
 	"modules-right": ["river/window", "network", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"],
 	
 	"pulseaudio": {

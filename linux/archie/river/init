@@ -18,7 +18,8 @@ riverctl map normal Super Space spawn ulauncher-toggle
 riverctl map normal Super F spawn firefox
 #riverctl map normal Super E spawn 'io.elementary.files -n'
 riverctl map normal Super E spawn nemo
-riverctl map normal Super C spawn code
+riverctl map normal Super+Shift E spawn emote
+riverctl map normal Super+Shift C spawn code
 riverctl map normal Super S spawn /home/david/Documents/bin/screenshot.sh
 
 # SYSTEM
@@ -232,8 +233,10 @@ riverctl rule-add ssd
 riverctl rule-add -app-id ulauncher csd
 riverctl rule-add -app-id steam tags 64 # ws7
 riverctl rule-add -app-id steam output DP-2
-riverctl rule-add -app-id spotify tags 128 # ws8
-riverctl rule-add -app-id spotify output DP-2
+riverctl rule-add -app-id Spotify tags 128 # ws8
+riverctl rule-add -app-id Spotify output DP-2
+riverctl rule-add -app-id BambuStudio tags 128 # ws8
+riverctl rule-add -app-id BambuStudio output DP-1
 riverctl rule-add -app-id org.mozilla.Thunderbird tags 64 # ws7
 riverctl rule-add -app-id org.mozilla.Thunderbird output DP-1
 #riverctl rule-add -app-id ulauncher position 660 250
@@ -250,7 +253,7 @@ if [[ -z $(pidof ulauncher) ]]; then
 	ulauncher --hide-window &> /tmp/ulauncher.log &
 fi
 
-if [[ -z $(pidof ulauncher) ]]; then
+if [[ -z $(pidof mpd-mpris) ]]; then
 	mpd-mpris &> /tmp/mpd-mpris.log &
 fi
 

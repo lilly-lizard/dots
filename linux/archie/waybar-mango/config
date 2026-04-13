@@ -2,8 +2,8 @@
 	"layer": "top",
 	"output": "DP-1",
 	"position": "bottom",
+	//"modules-left": ["dwl/tags#primary"],
 	"modules-left": ["dwl/tags#primary"],
-	//"modules-left": ["river/tags#primary"],
 	"modules-center": ["mpris"],
 	"modules-right": ["tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time", "custom/power"],
 
@@ -30,8 +30,26 @@
 		"smooth-scrolling-threshold": 1.0,
 	},
 
+	"ext/workspaces#primary": {
+		"on-scroll-up": "mmsg -d viewtoright,0",
+		"on-scroll-down": "mmsg -d viewtoleft,0",
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+		},
+		"format-icons": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
+	},
 	"dwl/tags#primary": {
-		"num-tags": 9,
+		"num-tags": 8,
+		"on-scroll-up": "mmsg -d viewtoright,0",
+		"on-scroll-down": "mmsg -d viewtoleft,0",
+		"tag-labels": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
 	},
 	"river/tags#primary": {
 		"num-tags": 8,
@@ -95,8 +113,8 @@
 	"layer": "top",
 	"output": "DP-2",
 	"position": "bottom",
-	//"modules-left": ["river/tags#secondary"],
 	"modules-left": ["dwl/tags#secondary"],
+	//"modules-left": ["dwl/tags#secondary"],
 	"modules-right": ["network", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"],
 	
 	"pulseaudio": {
@@ -128,9 +146,26 @@
 		"tooltip": false,
 	},
 
-
+	"ext/workspaces#secondary": {
+		"on-scroll-up": "mmsg -d viewtoright,0",
+		"on-scroll-down": "mmsg -d viewtoleft,0",
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+		},
+		"format-icons": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
+	},
 	"dwl/tags#secondary": {
-		"num-tags": 9,
+		"num-tags": 8,
+		"on-scroll-up": "mmsg -d viewtoright,0",
+		"on-scroll-down": "mmsg -d viewtoleft,0",
+		"tag-labels": ["1", "2", "3", "4", "5", "", "", "󰝚"],
 	},
 	"river/tags#secondary": {
 		"num-tags": 8,

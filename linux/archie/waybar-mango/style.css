@@ -39,27 +39,51 @@ window#waybar.hidden {
 	opacity: 0.5;
 }
 
+#workspaces button {
+	transition: none;
+	border-radius: 0px;
+}
+#workspaces button.empty {
+	color: @grey;
+}
+#workspaces button.visible {
+	color: @foreground;
+}
+#workspaces button.active {
+	background: @shaded;
+
+	border-bottom: 2px solid @underline;
+	border-top: 2px solid transparent;
+}
+#workspaces.primary button {
+	min-width: 70px;
+}
+#workspaces.secondary button {
+	min-width: 60px;
+}
+
 #tags button {
 	color: @grey;
 	transition: none;
 	border-radius: 0px;
+}
+#tags button.occupied {
+	color: @foreground;
+}
+#tags button.focused {
+	border-bottom: 2px solid @underline;
+	border-top: 2px solid transparent;
+
+	background: @shaded;
+}
+#tags button.output.focused {
+	background: @shaded;
 }
 #tags.primary button {
 	min-width: 70px;
 }
 #tags.secondary button {
 	min-width: 60px;
-}
-#tags button.occupied {
-	color: @foreground;
-	transition: none;
-}
-#tags button.focused {
-	border-bottom: 2px solid @underline;
-	border-top: 2px solid transparent;
-}
-#tags button.output.focused {
-	background: @shaded;
 }
 
 #network {

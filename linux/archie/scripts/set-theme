@@ -12,21 +12,37 @@ ICON_THEME="Obsidian-Sand"
 CURSOR_THEME="Oxygen-13-Green-Emerald"
 FONT_NAME="Iosevka SS18, 11"
 
+FOCUSED_COLOR=0xb46b18ff
+UNFOCUSED_COLOR=0x444444ff
 if [ "$THEME" = "plains" ]; then
 	export BG_IMG=~/Pictures/bg/bruno-martins-k1_UO1MGszs-unsplash.jpg
 	GTK_THEME="Desert-Teal-light-40"
 	ln -fs ~/.config/theme-colors/plains.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0xb46b18
-	riverctl border-color-unfocused 0x444444
+	FOCUSED_COLOR=0xb46b18ff
+elif [ "$THEME" = "mountain" ]; then
+	export BG_IMG=~/Pictures/bg/marc-bossow-MKDJjOfaKSg-unsplash.jpg
+	#GTK_THEME="Desert-Teal-light-40"
+	#GTK_THEME="Desert-Teal-Dark-40"
+	GTK_THEME="oomox-gruvbox-dark-soft"
+	CURSOR_THEME="Oxygen-20-Peach-Fruit"
+	ln -fs ~/.config/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
+	FOCUSED_COLOR=0xb46b18ff
+elif [ "$THEME" = "flowers" ]; then
+	export BG_IMG=~/Pictures/bg/flowers_yousef-espanioly-0iOOw41DZ28-unsplash.jpg
+	GTK_THEME="Skeuos-Violet-Dark"
+	ICON_THEME="Obsidian-Purple"
+	CURSOR_THEME="Oxygen-09-Lavender"
+	ln -fs ~/.config/theme-colors/flowers.css ~/.config/waybar/theme-colors.css
+	FOCUSED_COLOR=0x4f589cff
 elif [ "$THEME" = "forest" ]; then
 	export BG_IMG=~/Pictures/bg/forest.jpg
 	GTK_THEME="Desert-Teal-Dark-40"
 	CURSOR_THEME="Oxygen-19-Pink-Blossom"
 	ln -fs ~/.config/theme-colors/forest.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0xb46b18
-	riverctl border-color-unfocused 0x444444
+	FOCUSED_COLOR=0xb46b18ff
 elif [ "$THEME" = "bush" ]; then
 	export BG_IMG=~/Pictures/bg/daniel-angele-gKYrC6ozs6A-unsplash.jpg
+	#export BG_IMG=~/Pictures/bg/yvon-hoogers-lJINays-OpA-unsplash.jpg
 	# https://unsplash.com/photos/green-forest-with-fogs-gKYrC6ozs6A
 	#GTK_THEME="Desert-Teal-light-40"
 	#GTK_THEME="oomox-gruvbox-dark-soft"
@@ -35,17 +51,8 @@ elif [ "$THEME" = "bush" ]; then
 	#CURSOR_THEME="Oxygen-13-Green-Emerald"
 	CURSOR_THEME="Oxygen-19-Pink-Blossom"
 	ln -fs ~/.config/theme-colors/forest.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0xb46b18
-	riverctl border-color-unfocused 0x444444
-elif [ "$THEME" = "flowers" ]; then
-	export BG_IMG=~/Pictures/bg/flowers_yousef-espanioly-0iOOw41DZ28-unsplash.jpg
-	GTK_THEME="Skeuos-Violet-Dark"
-	ICON_THEME="Obsidian-Purple"
-	CURSOR_THEME="Oxygen-09-Lavender"
-	ln -fs ~/.config/theme-colors/flowers.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0x4f589c
-	riverctl border-color-unfocused 0x444444
-elif [ "$THEME" = "overcast" ]; then
+	FOCUSED_COLOR=0xb46b18ff
+elif [ "$THEME" = "ice" ]; then
 	export BG_IMG=~/Pictures/bg/guillaume-bourdages-m8q2I_jPYzI-unsplash.jpg
 	#export BG_IMG=~/Pictures/bg/snow.jpg
 	GTK_THEME="Ice"
@@ -54,38 +61,19 @@ elif [ "$THEME" = "overcast" ]; then
 	#CURSOR_THEME="cz-Hickson-Black"
 	CURSOR_THEME="Oxygen-11-Blue-Teal"
 	ln -fs ~/.config/theme-colors/snow.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0x74beb1
-	riverctl border-color-unfocused 0x444444
-elif [ "$THEME" = "mountain" ]; then
-	export BG_IMG=~/Pictures/bg/marc-bossow-MKDJjOfaKSg-unsplash.jpg
-	#GTK_THEME="Desert-Teal-light-40"
-	#GTK_THEME="Desert-Teal-Dark-40"
-	GTK_THEME="oomox-gruvbox-dark-soft"
-	CURSOR_THEME="Oxygen-20-Peach-Fruit"
-	ln -fs ~/.config/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0xb46b18
-	riverctl border-color-unfocused 0x444444
+	FOCUSED_COLOR=0x74beb1ff
 elif [ "$THEME" = "lake" ]; then
 	export BG_IMG=~/Pictures/bg/danny-postma-rdxj6E_v7l0-unsplash.jpg
 	GTK_THEME="Desert-Teal-light-40"
 	ln -fs ~/.config/theme-colors/flowers.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0x4f589c
-	riverctl border-color-unfocused 0x444444
+	FOCUSED_COLOR=0x4f589cff
 elif [ "$THEME" = "church" ]; then
 	export BG_IMG=~/Pictures/bg/zane-muir-P_PPnp-ai1Q-unsplash.jpg
 	#GTK_THEME="oomox-gruvbox-dark-soft"
 	GTK_THEME="Desert-Teal-Dark-40"
 	CURSOR_THEME="Oxygen-19-Pink-Blossom"
 	ln -fs ~/.config/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0xb46b18
-	riverctl border-color-unfocused 0x444444
-elif [ "$THEME" = "bush" ]; then
-	export BG_IMG=~/Pictures/bg/yvon-hoogers-lJINays-OpA-unsplash.jpg
-	GTK_THEME="Desert-Teal-Dark-40"
-	CURSOR_THEME="Oxygen-19-Pink-Blossom"
-	ln -fs ~/.config/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0xb46b18
-	riverctl border-color-unfocused 0x444444
+	FOCUSED_COLOR=0xb46b18ff
 elif [ "$THEME" = "shodan" ]; then
 	export BG_IMG=~/Pictures/bg/shodan.png
 	GTK_THEME="GreenCodded-theme"
@@ -93,16 +81,25 @@ elif [ "$THEME" = "shodan" ]; then
 	#CURSOR_THEME="Breeze_Hacked_Green"
 	CURSOR_THEME="Oxygen-14-Matrix-Green"
 	ln -fs ~/.config/theme-colors/shodan.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0x00aa33
-	riverctl border-color-unfocused 0x444444
+	FOCUSED_COLOR=0x00aa33ff
 else
 	# dark theme (default)
 	export BG_IMG=~/Pictures/bg/david-troeger-iLeIDlfNgpo-unsplash.jpg
 	GTK_THEME="Desert-Teal-Dark-40"
 	GTK_THEME="Skeuos-Violet-Dark"
 	ln -fs ~/.config/theme-colors/dark.css ~/.config/waybar/theme-colors.css
-	riverctl border-color-focused 0x007755
-	riverctl border-color-unfocused 0x444444
+	FOCUSED_COLOR=0x007755ff
+fi
+
+if pgrep -x "river" > /dev/null; then
+	riverctl border-color-focused $FOCUSED_COLOR
+	riverctl border-color-unfocused $UNFOCUSED_COLOR
+fi
+
+if pgrep -x "mango" > /dev/null; then
+	sed -i "/focuscolor/c\focuscolor=$FOCUSED_COLOR" ~/.config/mango/config.conf
+	sed -i "/bordercolor/c\bordercolor=$UNFOCUSED_COLOR" ~/.config/mango/config.conf
+	mmsg -d reload_config
 fi
 
 killall swaybg
@@ -112,9 +109,9 @@ swaybg -m fill -i ~/.config/theme/bg-img > /tmp/swaybg.tmp 2>&1 &
 killall waybar
 waybar > /tmp/waybar.log 2>&1 &
 
+echo "$GTK_THEME" > ~/.config/theme/theme_gtk
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 sed -i "/gtk-theme-name/c\gtk-theme-name=$GTK_THEME" ~/.config/gtk-3.0/settings.ini
-echo "$GTK_THEME" > ~/.config/theme/theme_gtk
 
 gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-3.0/settings.ini
@@ -124,6 +121,8 @@ gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_THEME"
 sed -i "/gtk-cursor-theme-name/c\gtk-cursor-theme-name=$CURSOR_THEME" ~/.config/gtk-3.0/settings.ini
 sed -i "/gtk-cursor-theme-name/c\gtk-cursor-theme-name=$CURSOR_THEME" ~/.config/gtk-4.0/settings.ini
 sed -i "/Inherits =/c\Inherits = $CURSOR_THEME" ~/.local/share/icons/default/index.theme
-riverctl xcursor-theme "$CURSOR_THEME"
+if pgrep -x "river" > /dev/null; then
+	riverctl xcursor-theme "$CURSOR_THEME"
+fi
 
 gsettings set org.gnome.desktop.interface font-name "$FONT_NAME"

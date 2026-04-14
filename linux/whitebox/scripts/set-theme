@@ -64,7 +64,10 @@ elif [ "$THEME" = "ice" ]; then
 	FOCUSED_COLOR=0x74beb1ff
 elif [ "$THEME" = "lake" ]; then
 	export BG_IMG=~/Pictures/bg/danny-postma-rdxj6E_v7l0-unsplash.jpg
-	GTK_THEME="Desert-Teal-light-40"
+	GTK_THEME="Ice"
+	CURSOR_THEME="Oxygen-11-Blue-Teal"
+	ICON_THEME="Obsidian-Teal"
+	#GTK_THEME="Desert-Teal-light-40"
 	ln -fs ~/.config/theme-colors/flowers.css ~/.config/waybar/theme-colors.css
 	FOCUSED_COLOR=0x4f589cff
 elif [ "$THEME" = "church" ]; then

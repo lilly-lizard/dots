@@ -1,7 +1,6 @@
 #!/bin/sh
 
-wlr-randr --output DP-1 --pos 0,250 --adaptive-sync disabled
-wlr-randr --output DP-2 --transform 270 --pos 2560,0 --adaptive-sync disabled
+ln -sfT ~/.config/waybar-mango ~/.config/waybar
 
 # launcher
 if [[ -z $(pidof ulauncher) ]]; then

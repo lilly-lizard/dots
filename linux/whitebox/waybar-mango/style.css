@@ -73,8 +73,6 @@ window#waybar.hidden {
 #tags button.focused {
 	border-bottom: 2px solid @underline;
 	border-top: 2px solid transparent;
-
-	background: @shaded;
 }
 #tags button.output.focused {
 	background: @shaded;

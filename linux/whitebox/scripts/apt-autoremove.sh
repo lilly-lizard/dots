@@ -1,5 +1,7 @@
-#/usr/bin/env zsh
+#!/bin/bash
 
 # repeat this until pacman -Qdtnq returns nothing
 # this is better than $(pacman -Qmq | pacman -Rs -) because it keeps 'optionally' required packages
-pacman -Qdtnq | doas pacman -R -
+while
+	pacman -Qdtnq | doas pacman -R -;
+do :; done

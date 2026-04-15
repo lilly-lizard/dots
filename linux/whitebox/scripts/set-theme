@@ -94,6 +94,8 @@ else
 	FOCUSED_COLOR=0x007755ff
 fi
 
+wal -nest -i $BG_IMG
+
 if pgrep -x "river" > /dev/null; then
 	riverctl border-color-focused $FOCUSED_COLOR
 	riverctl border-color-unfocused $UNFOCUSED_COLOR

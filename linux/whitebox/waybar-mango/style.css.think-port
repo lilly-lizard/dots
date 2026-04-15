@@ -27,42 +27,15 @@ window#waybar.hidden {
 }
 
 .module {
-	background: @background;
+	background: alpha(@background, 0.8);
 }
 .modules-left {
 }
 .modules-center {
 }
 .modules-right {
+	margin-right: 8px;
 	padding-left: 8px;
-}
-
-#custom-r-arr-1,
-#custom-l-arr-1 {
-    color: @background;
-    background: @color1;
-	font-size: 20px;
-}
-
-#custom-r-arr-2,
-#custom-l-arr-2 {
-    color: @color1;
-    background: @color5;
-	font-size: 20px;
-}
-
-#custom-r-arr-3,
-#custom-l-arr-3 {
-    color: @color5;
-    background: transparent;
-	font-size: 20px;
-}
-
-#custom-r-arr-4,
-#custom-l-arr-4 {
-    color: transparent;
-    background: transparent;
-	font-size: 20px;
 }
 
 #mpris,
@@ -80,7 +53,7 @@ window#waybar.hidden {
 #mpris.paused {
 	color: @muted-color;
 }
-#pulseaudio.muted {
+#pulseaudio.paused {
 	color: @muted-color;
 }
 
@@ -92,9 +65,9 @@ window#waybar.hidden {
 #custom-ddc_brightness_secondary:hover,
 #clock:hover,
 #custom-power:hover {
-	color: @background;
-	background: @muted-color;
-	transition-duration: .25s;
+	color: @accent-color;
+	background: alpha(darker(@background), 1.0);
+	transition-duration: .35s;
 }
 
 tooltip {
@@ -119,28 +92,25 @@ tooltip label {
     padding-bottom: 3px;
     color: @muted-color;
     animation: gradient_f 20s ease-in infinite;
+    transition: all 0.25s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 #tags button.occupied {
     color: lighter(@secondary-color);
-    transition: none;
 }
 #tags button.focused {
-    background: darker(darker(@color9));
-    transition: none;
+    background: darker(@background);
 }
 #tags button.output.focused {
     color: alpha(@background, 0.8);
     background: @foreground;
-    transition: none;
 }
 #tags button:hover {
-	color: @background;
-	background: @muted-color;
-	transition-duration: .25s;
+    color: lighter(@accent-color);
+    transition: none;
 }
 #tags button.focused:hover {
     color: darker(@secondary-color);
-	transition-duration: .25s;
+    transition: none;
 }
 #tags.primary button {
 	min-width: 60px;

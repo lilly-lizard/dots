@@ -1,35 +1,29 @@
 [{
+	"name": "left-mon",
 	"layer": "top",
 	"output": "DP-1",
 	"position": "bottom",
 	//"modules-left": ["dwl/tags#primary"],
-	"modules-left": ["dwl/tags#primary"],
-	"modules-center": ["mpris"],
-	"modules-right": ["tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time", "custom/power"],
+	"modules-left": [
+		"dwl/tags#primary",
+		"custom/r-arr-1","custom/r-arr-2","custom/r-arr-3","custom/r-arr-4"
+	],
+	"modules-center": [
+		"custom/l-arr-4","custom/l-arr-3","custom/l-arr-2","custom/l-arr-1",
+		"mpris",
+		"custom/r-arr-1","custom/r-arr-2","custom/r-arr-3","custom/r-arr-4"
+	],
+	"modules-right": [
+		"custom/l-arr-4","custom/l-arr-3","custom/l-arr-2","custom/l-arr-1",
+		"tray", "network", "pulseaudio", "custom/ddc_brightness_primary", "clock#calendar", "clock#time", "custom/power"
+	],
 
-	"mpris": {
-		"format": "{status_icon} {dynamic}",
-		"status-icons": {
-			"playing": "▶",
-			"paused": "⏸",
-		},
-		"max-length": 70,
-		"on-click": "mpris2controller PlayPause",
-		//"tooltip-format": "{player}",
+	"dwl/tags#primary": {
+		"num-tags": 8,
+		"on-scroll-up": "mmsg -d viewtoright,0",
+		"on-scroll-down": "mmsg -d viewtoleft,0",
+		"tag-labels": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
 	},
-	
-	"pulseaudio": {
-		"tooltip": false,
-		"scroll-step": 2,
-		"format": "{icon} {volume}%",
-		"format-muted": " {volume}%",
-		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"format-icons": {
-			"default": ["", "", ""]
-		},
-		"smooth-scrolling-threshold": 1.0,
-	},
-
 	"ext/workspaces#primary": {
 		"on-scroll-up": "mmsg -d viewtoright,0",
 		"on-scroll-down": "mmsg -d viewtoleft,0",
@@ -45,24 +39,18 @@
 		},
 		"format-icons": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
 	},
-	"dwl/tags#primary": {
-		"num-tags": 8,
-		"on-scroll-up": "mmsg -d viewtoright,0",
-		"on-scroll-down": "mmsg -d viewtoleft,0",
-		"tag-labels": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
-	},
-	"river/tags#primary": {
-		"num-tags": 8,
-		"on-scroll-up": "riverctl increment-focused-tags 8",
-		"on-scroll-down": "riverctl decrement-focused-tags 8",
-		"tag-labels": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
-	},
 
-	"river/window": {
-		"max-length": 50,
-		"tooltip": true,
+	"mpris": {
+		"format": "{status_icon} {dynamic}",
+		"status-icons": {
+			"playing": "▶",
+			"paused": "⏸",
+		},
+		"max-length": 70,
+		"on-click": "mpris2controller PlayPause",
+		//"tooltip-format": "{player}",
 	},
-
+	
 	"network": {
 		//"interface": "enp8s0",
 		"format-wifi": "{icon} {essid}",
@@ -73,6 +61,29 @@
 		"tooltip-format": "{ifname} - {ipaddr}",
 		"tooltip-disconnected": "{ifname}",
 		"on-click": "rfkill unblock wlan",
+	},
+
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 2,
+		"format": "{icon} {volume}%",
+		"format-muted": " {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"smooth-scrolling-threshold": 1.0,
+	},
+
+	"river/window": {
+		"max-length": 50,
+		"tooltip": true,
+	},
+
+	"tray":{
+		//"icon-size":18,
+		"spacing": 10,
+		"tooltip": false,
 	},
 
 	"custom/ddc_brightness_primary": {
@@ -87,19 +98,13 @@
 		"tooltip": false,
 	},
 
-	"tray":{
-		//"icon-size":18,
-		"spacing": 10,
-		"tooltip": false,
+	"clock#calendar": {
+		"format": " {:%a %d/%m/%y}"
 	},
 
 	"clock#time": {
 		"format": "󰥔 {:%H:%M}",
 		"interval":1,
-	},
-
-	"clock#calendar": {
-		"format": " {:%a %d/%m/%y}"
 	},
 
 	"custom/power": {
@@ -108,44 +113,61 @@
 		"tooltip": true,
 		"tooltip-format": "suspend",
 	},
+
+	"custom/r-arr-1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/r-arr-2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/r-arr-3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/r-arr-4": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-4": {
+		"format": "",
+		"tooltip": false
+	},
 },
 {
+	"name": "right-mon",
 	"layer": "top",
 	"output": "DP-2",
 	"position": "bottom",
-	"modules-left": ["dwl/tags#secondary"],
+	"modules-left": [
+		"dwl/tags#secondary",
+		"custom/r-arr-1","custom/r-arr-2","custom/r-arr-3","custom/r-arr-4"
+	],
 	//"modules-left": ["dwl/tags#secondary"],
-	"modules-right": ["network", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"],
+	"modules-right": [
+		"custom/l-arr-4","custom/l-arr-3","custom/l-arr-2","custom/l-arr-1",
+		"network", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"
+	],
 	
-	"pulseaudio": {
-		"tooltip": false,
-		"scroll-step": 2,
-		"format": "{icon} {volume}%",
-		"format-muted": " {volume}%",
-		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"format-icons": {
-			"default": ["", "", ""]
-		},
-		"smooth-scrolling-threshold": 1.0,
+	"dwl/tags#secondary": {
+		"num-tags": 8,
+		"on-scroll-up": "mmsg -d viewtoright,0",
+		"on-scroll-down": "mmsg -d viewtoleft,0",
+		"tag-labels": ["1", "2", "3", "4", "5", "", "", "󰝚"],
 	},
-
-	"clock#time": {
-		"format": "󰥔 {:%H:%M}",
-		"interval":1,
-	},
-
-	"custom/ddc_brightness_secondary": {
-		"format": "{icon} {percentage}%",
-		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-		"exec": "~/.config/waybar/waybar-ddc-module-secondary.sh",
-		"return-type": "json",
-		"on-scroll-up":   "echo '+'   > /tmp/waybar-ddc-module-rx-secondary",
-		"on-scroll-down": "echo '-'   > /tmp/waybar-ddc-module-rx-secondary",
-		"on-click":       "echo 'max' > /tmp/waybar-ddc-module-rx-secondary",
-		"on-click-right": "echo 'min' > /tmp/waybar-ddc-module-rx-secondary",
-		"tooltip": false,
-	},
-
 	"ext/workspaces#secondary": {
 		"on-scroll-up": "mmsg -d viewtoright,0",
 		"on-scroll-down": "mmsg -d viewtoleft,0",
@@ -161,23 +183,6 @@
 		},
 		"format-icons": ["1", "2", "3", "4", "5", "6", "", "󰹛"],
 	},
-	"dwl/tags#secondary": {
-		"num-tags": 8,
-		"on-scroll-up": "mmsg -d viewtoright,0",
-		"on-scroll-down": "mmsg -d viewtoleft,0",
-		"tag-labels": ["1", "2", "3", "4", "5", "", "", "󰝚"],
-	},
-	"river/tags#secondary": {
-		"num-tags": 8,
-		"on-scroll-up": "riverctl increment-focused-tags 8",
-		"on-scroll-down": "riverctl decrement-focused-tags 8",
-		"tag-labels": ["1", "2", "3", "4", "5", "", "", "󰝚"],
-	},
-
-	"river/window": {
-		"max-length": 70,
-		"tooltip": false,
-	},
 
 	"network": {
 		//"interface": "enp8s0",
@@ -191,4 +196,65 @@
 		"on-click": "rfkill unblock wlan",
 	},
 	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 2,
+		"format": "{icon} {volume}%",
+		"format-muted": " {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"smooth-scrolling-threshold": 1.0,
+	},
+
+	"custom/ddc_brightness_secondary": {
+		"format": "{icon} {percentage}%",
+		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+		"exec": "~/.config/waybar/waybar-ddc-module-secondary.sh",
+		"return-type": "json",
+		"on-scroll-up":   "echo '+'   > /tmp/waybar-ddc-module-rx-secondary",
+		"on-scroll-down": "echo '-'   > /tmp/waybar-ddc-module-rx-secondary",
+		"on-click":       "echo 'max' > /tmp/waybar-ddc-module-rx-secondary",
+		"on-click-right": "echo 'min' > /tmp/waybar-ddc-module-rx-secondary",
+		"tooltip": false,
+	},
+
+	"clock#time": {
+		"format": "󰥔 {:%H:%M}",
+		"interval":1,
+	},
+
+	"custom/r-arr-1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/r-arr-2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/r-arr-3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/r-arr-4": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/l-arr-4": {
+		"format": "",
+		"tooltip": false
+	},
 }]

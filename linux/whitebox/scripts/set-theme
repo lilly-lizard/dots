@@ -11,6 +11,7 @@ ICON_THEME="Obsidian-Sand"
 #CURSOR_THEME="cz-Hickson-White"
 CURSOR_THEME="Oxygen-13-Green-Emerald"
 FONT_NAME="Iosevka SS18, 11"
+DARK=true
 
 FOCUSED_COLOR=0xb46b18ff
 UNFOCUSED_COLOR=0x444444ff
@@ -19,6 +20,7 @@ if [ "$THEME" = "plains" ]; then
 	GTK_THEME="Desert-Teal-light-40"
 	ln -fs ~/.config/theme-colors/plains.css ~/.config/waybar/theme-colors.css
 	FOCUSED_COLOR=0xb46b18ff
+	DARK=false
 elif [ "$THEME" = "mountain" ]; then
 	export BG_IMG=~/Pictures/bg/marc-bossow-MKDJjOfaKSg-unsplash.jpg
 	#GTK_THEME="Desert-Teal-light-40"
@@ -27,6 +29,7 @@ elif [ "$THEME" = "mountain" ]; then
 	CURSOR_THEME="Oxygen-20-Peach-Fruit"
 	ln -fs ~/.config/theme-colors/mountain.css ~/.config/waybar/theme-colors.css
 	FOCUSED_COLOR=0xb46b18ff
+	DARK=false
 elif [ "$THEME" = "flowers" ]; then
 	export BG_IMG=~/Pictures/bg/flowers_yousef-espanioly-0iOOw41DZ28-unsplash.jpg
 	GTK_THEME="Skeuos-Violet-Dark"
@@ -62,6 +65,7 @@ elif [ "$THEME" = "ice" ]; then
 	CURSOR_THEME="Oxygen-11-Blue-Teal"
 	ln -fs ~/.config/theme-colors/snow.css ~/.config/waybar/theme-colors.css
 	FOCUSED_COLOR=0x74beb1ff
+	DARK=false
 elif [ "$THEME" = "lake" ]; then
 	export BG_IMG=~/Pictures/bg/danny-postma-rdxj6E_v7l0-unsplash.jpg
 	GTK_THEME="Ice"
@@ -70,6 +74,7 @@ elif [ "$THEME" = "lake" ]; then
 	#GTK_THEME="Desert-Teal-light-40"
 	ln -fs ~/.config/theme-colors/flowers.css ~/.config/waybar/theme-colors.css
 	FOCUSED_COLOR=0x4f589cff
+	DARK=false
 elif [ "$THEME" = "church" ]; then
 	export BG_IMG=~/Pictures/bg/zane-muir-P_PPnp-ai1Q-unsplash.jpg
 	#GTK_THEME="oomox-gruvbox-dark-soft"
@@ -128,6 +133,12 @@ sed -i "/gtk-cursor-theme-name/c\gtk-cursor-theme-name=$CURSOR_THEME" ~/.config/
 sed -i "/Inherits =/c\Inherits = $CURSOR_THEME" ~/.local/share/icons/default/index.theme
 if pgrep -x "river" > /dev/null; then
 	riverctl xcursor-theme "$CURSOR_THEME"
+fi
+
+if $DARK; then
+	gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+else
+	gsettings set org.gnome.desktop.interface color-scheme "default"
 fi
 
 gsettings set org.gnome.desktop.interface font-name "$FONT_NAME"

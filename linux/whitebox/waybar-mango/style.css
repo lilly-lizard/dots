@@ -98,48 +98,49 @@ window#waybar.hidden {
 }
 
 tooltip {
-    background: alpha(@background, 1.0);
-    border-radius: 10px;
-    border: 2px solid alpha(lighter(@main-color), 0.5);
+	background: alpha(@background, 1.0);
+	border-radius: 0px;
+	border: 2px solid alpha(lighter(@main-color), 0.5);
 }
 tooltip label {
-    color: @foreground;
+	color: @foreground;
 }
 
 #tray menu {
-    padding: 8px;
-    color: @foreground;
-    background: alpha(@background, 1.0);
-    border-radius: 10px;
-    border: 2px solid alpha(lighter(@main-color), 0.5);
+	padding: 8px;
+	color: @foreground;
+	background: alpha(@background, 1.0);
+	border-radius: 10px;
+	border: 2px solid alpha(lighter(@main-color), 0.5);
 }
 
 #tags button {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    color: @muted-color;
-    animation: gradient_f 20s ease-in infinite;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	color: @muted-color;
+	animation: gradient_f 20s ease-in infinite;
 }
 #tags button.occupied {
-    color: lighter(@secondary-color);
-    transition: none;
+	color: lighter(@secondary-color);
+	transition: none;
 }
 #tags button.focused {
-    background: darker(darker(@color9));
-    transition: none;
+	font-weight: bold;
+	background: linear-gradient(alpha(@color9, 0.35), alpha(@color9, 0.2));
+	transition: none;
 }
 #tags button.output.focused {
-    color: alpha(@background, 0.8);
-    background: @foreground;
-    transition: none;
+	color: alpha(@background, 0.8);
+	background: linear-gradient(@color5, alpha(@color5, 0.7));
+	transition: none;
 }
 #tags button:hover {
 	color: @background;
-	background: @muted-color;
+	background: linear-gradient(alpha(@muted-color, 0.8), @muted-color);
 	transition-duration: .25s;
 }
 #tags button.focused:hover {
-    color: darker(@secondary-color);
+	color: darker(@secondary-color);
 	transition-duration: .25s;
 }
 #tags.primary button {

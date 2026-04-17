@@ -10,6 +10,7 @@ cp ~/.config/gitignore_global .
 cp -r ~/.config/lf/ .
 cp -r ~/.config/ncmpcpp/config .
 cp ~/.config/nvim/init.vim nvim/
+cp ~/.config/nvim/colors/* nvim/colors/
 cp -r ~/.config/river/ .
 cp -r ~/.config/mango/ .
 

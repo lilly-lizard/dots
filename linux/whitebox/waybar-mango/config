@@ -3,7 +3,6 @@
 	"layer": "top",
 	"output": "DP-1",
 	"position": "bottom",
-	//"modules-left": ["dwl/tags#primary"],
 	"modules-left": [
 		"dwl/tags#primary",
 		"custom/r-arr-1","custom/r-arr-2","custom/r-arr-3","custom/r-arr-4"
@@ -109,9 +108,10 @@
 
 	"custom/power": {
 		"format": "󰐥",
-		"on-click": "systemctl suspend",
+		//"on-click": "mmsg -q",
+		"on-click": "~/.local/share/quickshell-lockscreen/lock.sh",
 		"tooltip": true,
-		"tooltip-format": "suspend",
+		"tooltip-format": "lock",
 	},
 
 	"custom/r-arr-1": {
@@ -156,7 +156,6 @@
 		"dwl/tags#secondary",
 		"custom/r-arr-1","custom/r-arr-2","custom/r-arr-3","custom/r-arr-4"
 	],
-	//"modules-left": ["dwl/tags#secondary"],
 	"modules-right": [
 		"custom/l-arr-4","custom/l-arr-3","custom/l-arr-2","custom/l-arr-1",
 		"network", "pulseaudio", "custom/ddc_brightness_secondary", "clock#time"

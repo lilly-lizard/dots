@@ -11,8 +11,10 @@
 
 	"custom/lock": {
 		"format": "",
-		"on-click": "swaylock",
-		"tooltip": false,
+		//"on-click": "mmsg -q",
+		"on-click": "~/.local/share/quickshell-lockscreen/lock.sh",
+		"tooltip": true,
+		"tooltip-format": "logout",
 	},
 	
 	"pulseaudio": {

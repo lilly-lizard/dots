@@ -12,11 +12,6 @@
     font-size: 13px;
 }
 
-window#waybar {
-    border-radius: 40px;
-    background: linear-gradient(alpha(@background, 0.5), alpha(@background, 0.9));
-}
-
 #backlight,
 #battery,
 #bluetooth,
@@ -30,17 +25,13 @@ window#waybar {
     padding: 0px 11px 0px 11px;
     transition-duration: .5s;
 }
+#pulseaudio.muted {
+	color: @muted-color;
+}
 
-#backlight:hover,
-#battery:hover,
-#bluetooth:hover,
-#clock:hover,
-#custom-lock:hover,
-#pulseaudio:hover,
-#network:hover,
-#tray:hover {
-    color: @accent-color;
-    background: linear-gradient(alpha(lighter(@background), 0.3), alpha(darker(@background), 1.0));
+window#waybar {
+    border-radius: 40px;
+    background: linear-gradient(alpha(@background, 0.5), alpha(@background, 0.9));
 }
 
 #custom-lock {
@@ -54,8 +45,16 @@ window#waybar {
     border-bottom-left-radius: 40px;
 }
 
-#pulseaudio.muted {
-	color: @muted-color;
+#backlight:hover,
+#battery:hover,
+#bluetooth:hover,
+#clock:hover,
+#custom-lock:hover,
+#pulseaudio:hover,
+#network:hover,
+#tray:hover {
+    color: @accent-color;
+    background: linear-gradient(alpha(lighter(@background), 0.3), alpha(darker(@background), 1.0));
 }
 
 #tags {
@@ -107,7 +106,7 @@ window#waybar {
 
 tooltip {
     background: alpha(@background, 1.0);
-    border-radius: 10px;
+    border-radius: 0px;
     border: 2px solid alpha(lighter(@main-color), 0.5);
 }
 tooltip label {

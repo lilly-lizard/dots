@@ -36,7 +36,7 @@ vnoremap x "_x
 
 " relative line numbers with absolute cursor line
 set nu
-set rnu
+"set rnu
 
 " make backspace work normally in insert mode
 set backspace=indent,eol,start

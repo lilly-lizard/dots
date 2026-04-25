@@ -13,7 +13,7 @@ persistent_logging = false
 history = 100000
 
 [window]
-opacity = 0.6
+opacity = 0.7
 
 dimensions.columns = 110
 dimensions.lines = 36

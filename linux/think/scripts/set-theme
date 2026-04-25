@@ -10,6 +10,7 @@ fi
 # autocompletion list in /usr/share/zsh/site-functions/_set-theme
 # compdef _set-theme set-theme
 echo "${THEME}" > ~/.config/theme/system_theme
+DARK=true
 
 UNFOCUSED_COLOR=0x586e75ff
 FOCUSED_COLOR=0x66e1b4
@@ -20,6 +21,7 @@ if [ "$THEME" = "tree" ]; then
 	FOCUSED_COLOR=0x66e1b4ff
 	export BORDER1="66e1b4"
 	export BORDER2="66e1b4"
+	DARK=false
 elif [ "$THEME" = "night" ]; then
 	export BG=/home/david/Pictures/bg/1027689.png
 	export GTK_THEME="Skeuos-Violet-Dark"
@@ -35,6 +37,7 @@ elif [ "$THEME" = "garden" ]; then
 	FOCUSED_COLOR=0x67AC68ff
 	export BORDER1="90b172"
 	export BORDER2="55aa69"
+	DARK=false
 elif [ "$THEME" = "bush" ]; then
 	export BG=/home/david/Pictures/bg/bench_hollow_Queens_Gardens.png
 	export GTK_THEME="Skeuos-Violet-Dark"
@@ -87,6 +90,12 @@ sed -i "/gtk-theme-name/c\gtk-theme-name=$GTK_THEME" ~/.config/gtk-3.0/settings.
 gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-3.0/settings.ini
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-4.0/settings.ini
+
+if $DARK; then
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+else
+    gsettings set org.gnome.desktop.interface color-scheme "default"
+fi
 
 killall swaybg
 ln -snf $BG ~/.config/theme/bg-img

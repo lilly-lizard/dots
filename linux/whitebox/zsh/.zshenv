@@ -10,6 +10,7 @@ export WORDCHARS="*?_-.[]~&;\!#$%^(){}<>"
 
 # default programs
 export VISUAL=nvim
+export EDITOR=nvim
 export TERMINAL=alacritty
 export BROWSER=firefox
 export GRIM_DEFAULT_DIR=/home/david/Pictures/Screenshots

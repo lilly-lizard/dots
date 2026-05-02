@@ -13,6 +13,8 @@ cp ~/.config/nvim/init.vim nvim/
 cp ~/.config/nvim/colors/* nvim/colors/
 cp -r ~/.config/river/ .
 cp -r ~/.config/mango/ .
+cp ~/.config/zed/settings.json .
+cp -r ~/.config/zed/themes .
 
 cp ~/Documents/bin/apt-autoremove.sh scripts/
 cp ~/Documents/bin/disable-auto-mute-root.sh scripts/

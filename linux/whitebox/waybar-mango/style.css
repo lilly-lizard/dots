@@ -92,7 +92,7 @@ window#waybar.hidden {
 #tags button:hover {
 	color: @background;
 	border-top: 1px solid shade(@color1, 1.6);
-	background: linear-gradient(shade(@color1, 1.4) 0%, shade(@color1, 1.2) 15%, shade(@color1, 1.0) 85%, shade(@color1, 0.6) 100%);
+	background: linear-gradient(shade(@color1, 1.4) 0%, shade(@color1, 1.15) 15%, shade(@color1, 1.0) 85%, shade(@color1, 0.6) 100%);
 	border-bottom: 1px solid shade(@color1, 0.2);
 	transition-duration: .25s;
 }

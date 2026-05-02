@@ -3,9 +3,9 @@
   "logo": {
     // https://github.com/blyxyas/uwu-neofetch-art
     "type": "file",
-    //"source": "~/.local/share/fastfetch/sailor-moon-cat.txt",
-    "source": "~/.local/share/fastfetch/uwu.txt",
-    //"source": "~/.local/share/fastfetch/anime-girl.txt",
+    //"source": "~/.config/fastfetch/logos/sailor-moon-cat.txt",
+    "source": "~/.config/fastfetch/logos/uwu.txt",
+    //"source": "~/.config/fastfetch/logos/anime-girl.txt",
     "color": {             // Override logo colors
         // uwu
         "1": "yellow",

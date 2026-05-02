@@ -14,7 +14,7 @@
   "workbench.startupEditor": "none",
   "explorer.confirmDragAndDrop": false,
 
-  "terminal.external.linuxExec": "alacritty",
+  "terminal.external.linuxExec": "kitty",
   "terminal.integrated.sendKeybindingsToShell": true,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.allowMnemonics": true,
@@ -86,7 +86,8 @@
   },
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "chat.disableAIFeatures": true,
-  "workbench.colorTheme": "Dark Modern",
+  "workbench.colorTheme": "Greyout",
+  "terminal.integrated.fontSize": 12,
 
   //"files.associations": {
   //    "*.fsh": "glsl",

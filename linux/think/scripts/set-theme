@@ -69,18 +69,9 @@ elif [ "$THEME" = "shodan" ]; then
 	export BORDER2="55aa69"
 fi
 
-if pgrep -x "river" > /dev/null; then
-	riverctl border-color-focused $FOCUSED_COLOR
-	riverctl border-color-unfocused $UNFOCUSED_COLOR
-fi
-
-if pgrep -x "mango" > /dev/null; then
-	sed -i "/focuscolor/c\focuscolor=$FOCUSED_COLOR" ~/.config/mango/config.conf
-	sed -i "/bordercolor/c\bordercolor=$UNFOCUSED_COLOR" ~/.config/mango/config.conf
-	mmsg -d reload_config
-fi
-
-wal -nest -i $BG
+killall swaybg
+ln -snf $BG ~/.config/theme/bg-img
+swaybg -m fill -i $BG > /tmp/swaybg.tmp 2>&1 &
 
 echo "$THEME" > ~/.config/theme/theme
 echo "$GTK_THEME" > ~/.config/theme/theme_gtk
@@ -91,17 +82,25 @@ gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-3.0/settings.ini
 sed -i "/gtk-icon-theme-name/c\gtk-icon-theme-name=$ICON_THEME" ~/.config/gtk-4.0/settings.ini
 
+wal -nest -i $BG
+killall waybar
+waybar &> /tmp/waybar.log &
+
 if $DARK; then
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 else
     gsettings set org.gnome.desktop.interface color-scheme "default"
 fi
 
-killall swaybg
-ln -snf $BG ~/.config/theme/bg-img
-swaybg -m fill -i $BG > /tmp/swaybg.tmp 2>&1 &
+if pgrep -x "river" > /dev/null; then
+	riverctl border-color-focused $FOCUSED_COLOR
+	riverctl border-color-unfocused $UNFOCUSED_COLOR
+fi
 
-killall waybar
-waybar &> /tmp/waybar.log &
+if pgrep -x "mango" > /dev/null; then
+	sed -i "/focuscolor/c\focuscolor=$FOCUSED_COLOR" ~/.config/mango/config.conf
+	sed -i "/bordercolor/c\bordercolor=$UNFOCUSED_COLOR" ~/.config/mango/config.conf
+	mmsg -d reload_config
+fi
 
 sed -i -e "/\$border1 = rgb/c\$border1 = rgb($BORDER1)" -e "/\$border2 = rgb/c\$border2 = rgb($BORDER2)" ~/.config/hypr/hyprland.conf

@@ -137,8 +137,10 @@ fi
 
 if $DARK; then
 	gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+	echo "solarized" > ~/.config/theme/rofi-theme
 else
 	gsettings set org.gnome.desktop.interface color-scheme "default"
+	echo "gruvbox-light-soft" > ~/.config/theme/rofi-theme
 fi
 
 gsettings set org.gnome.desktop.interface font-name "$FONT_NAME"
